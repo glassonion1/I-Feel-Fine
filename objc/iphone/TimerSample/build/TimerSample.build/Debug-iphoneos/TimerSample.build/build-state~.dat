@@ -1,0 +1,398 @@
+TTimerSample
+v7
+r0
+t300029225.680547
+cCheck dependencies
+cCpResource build/Debug-iphoneos/TimerSample.app/ResourceRules.plist /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/ResourceRules.plist
+cProcessInfoPlistFile /Users/glassonion/Public/develop/iphone/TimerSample/build/Debug-iphoneos/TimerSample.app/Info.plist TimerSample-Info.plist
+cCompileXIB /Users/glassonion/Public/develop/iphone/TimerSample/MainWindow.xib
+cCompileXIB /Users/glassonion/Public/develop/iphone/TimerSample/TimerSampleViewController.xib
+cProcessPCH /var/folders/XF/XF4F9xIPFmqBq+M69mXNE++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TimerSample_Prefix-chgsmywgzmzweobxldkqzzsbgsad/TimerSample_Prefix.pch.gch TimerSample_Prefix.pch normal armv6 objective-c com.apple.compilers.gcc.4_2
+cProcessPCH /var/folders/XF/XF4F9xIPFmqBq+M69mXNE++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TimerSample_Prefix-ewsaehlyuryrlcajlyhroyxufkhe/TimerSample_Prefix.pch.gch TimerSample_Prefix.pch normal armv7 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/TimerSample.build/Debug-iphoneos/TimerSample.build/Objects-normal/armv6/main.o /Users/glassonion/Public/develop/iphone/TimerSample/main.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/TimerSample.build/Debug-iphoneos/TimerSample.build/Objects-normal/armv6/TimerSampleAppDelegate.o /Users/glassonion/Public/develop/iphone/TimerSample/Classes/TimerSampleAppDelegate.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/TimerSample.build/Debug-iphoneos/TimerSample.build/Objects-normal/armv6/TimerSampleViewController.o /Users/glassonion/Public/develop/iphone/TimerSample/Classes/TimerSampleViewController.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/TimerSample.build/Debug-iphoneos/TimerSample.build/Objects-normal/armv7/main.o /Users/glassonion/Public/develop/iphone/TimerSample/main.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/TimerSample.build/Debug-iphoneos/TimerSample.build/Objects-normal/armv7/TimerSampleAppDelegate.o /Users/glassonion/Public/develop/iphone/TimerSample/Classes/TimerSampleAppDelegate.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/TimerSample.build/Debug-iphoneos/TimerSample.build/Objects-normal/armv7/TimerSampleViewController.o /Users/glassonion/Public/develop/iphone/TimerSample/Classes/TimerSampleViewController.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+cProcessProductPackaging "/Users/glassonion/Library/MobileDevice/Provisioning Profiles/A1C9579E-8650-4F4C-A50F-D093880F9EA9.mobileprovision" /Users/glassonion/Public/develop/iphone/TimerSample/build/Debug-iphoneos/TimerSample.app/embedded.mobileprovision
+cProcessProductPackaging /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/Entitlements.plist /Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/TimerSample.xcent
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk
+c000000004C05C1B10000000000000110
+t1275445681
+s272
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/Entitlements.plist
+c000000004BF4B7F900000000000001A7
+t1274329081
+s423
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/ResourceRules.plist
+c000000004BF4B7F900000000000001E5
+t1274329081
+s485
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c000000004BFE06FA000000000034A850
+t1274939130
+s3450960
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004BFE07D200000000003E1EB0
+t1274939346
+s4071088
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004BFE07B10000000000001466
+t1274939313
+s5222
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
+c000000004C04711400000000000009CD
+t1275359508
+s2509
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c000000004C0471FC0000000002D563E0
+t1275359740
+s47539168
+
+N/Users/glassonion/Library/MobileDevice/Provisioning Profiles/A1C9579E-8650-4F4C-A50F-D093880F9EA9.mobileprovision
+c000000004C1393B30000000000001CC2
+t1276351411
+s7362
+
+N/Users/glassonion/Public/develop/iphone/TimerSample/Classes/TimerSampleAppDelegate.h
+c000000004C31DBEA00000000000001F3
+t1278335978
+s499
+i<UIKit/UIKit.h>
+
+N/Users/glassonion/Public/develop/iphone/TimerSample/Classes/TimerSampleAppDelegate.m
+c000000004C31DCD10000000000000A98
+t1278336209
+s2712
+i"TimerSampleAppDelegate.h"
+i"TimerSampleViewController.h"
+
+N/Users/glassonion/Public/develop/iphone/TimerSample/Classes/TimerSampleViewController.h
+c000000004C31DCE70000000000000106
+t1278336231
+s262
+i<UIKit/UIKit.h>
+
+N/Users/glassonion/Public/develop/iphone/TimerSample/Classes/TimerSampleViewController.m
+c000000004C31DDA7000000000000088E
+t1278336423
+s2190
+i"TimerSampleViewController.h"
+
+N/Users/glassonion/Public/develop/iphone/TimerSample/MainWindow.xib
+c000000004C31DBEA0000000000004E59
+t1278335978
+s20057
+
+N/Users/glassonion/Public/develop/iphone/TimerSample/TimerSampleViewController.xib
+c000000004C31DBEA0000000000001A55
+t1278335978
+s6741
+
+N/Users/glassonion/Public/develop/iphone/TimerSample/TimerSample_Prefix.pch
+c000000004C31DBEA00000000000000BF
+t1278335978
+s191
+i<Foundation/Foundation.h>
+i<UIKit/UIKit.h>
+
+N/Users/glassonion/Public/develop/iphone/TimerSample/build/Debug-iphoneos/TimerSample.app
+t2
+s0
+
+N/Users/glassonion/Public/develop/iphone/TimerSample/build/Debug-iphoneos/TimerSample.app.dSYM
+t2
+s0
+
+N/Users/glassonion/Public/develop/iphone/TimerSample/build/Debug-iphoneos/TimerSample.app/Info.plist
+t1278336423
+s779
+
+N/Users/glassonion/Public/develop/iphone/TimerSample/build/Debug-iphoneos/TimerSample.app/MainWindow.nib
+t1278336424
+s1131
+
+N/Users/glassonion/Public/develop/iphone/TimerSample/build/Debug-iphoneos/TimerSample.app/PkgInfo
+t1278336423
+s8
+
+N/Users/glassonion/Public/develop/iphone/TimerSample/build/Debug-iphoneos/TimerSample.app/ResourceRules.plist
+t1278336423
+s485
+
+N/Users/glassonion/Public/develop/iphone/TimerSample/build/Debug-iphoneos/TimerSample.app/TimerSample
+t2
+s0
+
+N/Users/glassonion/Public/develop/iphone/TimerSample/build/Debug-iphoneos/TimerSample.app/TimerSampleViewController.nib
+t1278336424
+s795
+
+N/Users/glassonion/Public/develop/iphone/TimerSample/build/Debug-iphoneos/TimerSample.app/embedded.mobileprovision
+t1278336425
+s7362
+
+N/Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/Objects-normal/armv6/TimerSample
+t2
+s0
+
+N/Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/Objects-normal/armv6/TimerSample.LinkFileList
+c000000004C31DDA700000000000001C2
+t1278336423
+s450
+
+N/Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/Objects-normal/armv6/TimerSampleAppDelegate.o
+t1278336425
+s47384
+
+N/Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/Objects-normal/armv6/TimerSampleViewController.o
+t2
+s0
+
+N/Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/Objects-normal/armv6/main.o
+t1278336425
+s6464
+
+N/Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/Objects-normal/armv7/TimerSample
+t2
+s0
+
+N/Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/Objects-normal/armv7/TimerSample.LinkFileList
+c000000004C31DDA700000000000001C2
+t1278336423
+s450
+
+N/Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/Objects-normal/armv7/TimerSampleAppDelegate.o
+t1278336425
+s47296
+
+N/Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/Objects-normal/armv7/TimerSampleViewController.o
+t2
+s0
+
+N/Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/Objects-normal/armv7/main.o
+t1278336425
+s6448
+
+N/Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/TimerSample.xcent
+t1278336425
+s428
+
+N/Users/glassonion/Public/develop/iphone/TimerSample/main.m
+c000000004C31DBEA0000000000000169
+t1278335978
+s361
+i<UIKit/UIKit.h>
+
+N/var/folders/XF/XF4F9xIPFmqBq+M69mXNE++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TimerSample_Prefix-chgsmywgzmzweobxldkqzzsbgsad/TimerSample_Prefix.pch.gch
+t1278336425
+s9831984
+
+N/var/folders/XF/XF4F9xIPFmqBq+M69mXNE++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TimerSample_Prefix-ewsaehlyuryrlcajlyhroyxufkhe/TimerSample_Prefix.pch.gch
+t1278336425
+s10290736
+
+NTimerSample-Info.plist
+c000000004C31DCC200000000000003BE
+t1278336194
+s958
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies300029223#300029223#0(0"0(0#1#0"8629378176#0"0#
+
+CCodeSign /Users/glassonion/Public/develop/iphone/TimerSample/build/Debug-iphoneos/TimerSample.app
+r0
+
+CCompileC build/TimerSample.build/Debug-iphoneos/TimerSample.build/Objects-normal/armv6/TimerSampleAppDelegate.o /Users/glassonion/Public/develop/iphone/TimerSample/Classes/TimerSampleAppDelegate.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s300029225.436275
+e300029225.516705
+r1
+xCompileC
+xbuild/TimerSample.build/Debug-iphoneos/TimerSample.build/Objects-normal/armv6/TimerSampleAppDelegate.o
+x/Users/glassonion/Public/develop/iphone/TimerSample/Classes/TimerSampleAppDelegate.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@92"Compile /Users/glassonion/Public/develop/iphone/TimerSample/Classes/TimerSampleAppDelegate.m300029225#300029225#0(0"0(0#0#84"/Users/glassonion/Public/develop/iphone/TimerSample/Classes/TimerSampleAppDelegate.m8627023520#1991"    cd /Users/glassonion/Public/develop/iphone/TimerSample    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/TimerSample-generated-files.hmap -I/Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/TimerSample-own-target-headers.hmap -I/Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/TimerSample-all-target-headers.hmap -iquote /Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/TimerSample-project-headers.hmap -F/Users/glassonion/Public/develop/iphone/TimerSample/build/Debug-iphoneos -I/Users/glassonion/Public/develop/iphone/TimerSample/build/Debug-iphoneos/include -I/Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/DerivedSources/armv6 -I/Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/DerivedSources -include /var/folders/XF/XF4F9xIPFmqBq+M69mXNE++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TimerSample_Prefix-chgsmywgzmzweobxldkqzzsbgsad/TimerSample_Prefix.pch -c /Users/glassonion/Public/develop/iphone/TimerSample/Classes/TimerSampleAppDelegate.m -o /Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/Objects-normal/armv6/TimerSampleAppDelegate.o0#
+
+CCompileC build/TimerSample.build/Debug-iphoneos/TimerSample.build/Objects-normal/armv6/TimerSampleViewController.o /Users/glassonion/Public/develop/iphone/TimerSample/Classes/TimerSampleViewController.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s300029225.486861
+e300029225.534370
+r0
+xCompileC
+xbuild/TimerSample.build/Debug-iphoneos/TimerSample.build/Objects-normal/armv6/TimerSampleViewController.o
+x/Users/glassonion/Public/develop/iphone/TimerSample/Classes/TimerSampleViewController.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+o/Users/glassonion/Public/develop/iphone/TimerSample/Classes/TimerSampleViewController.m: In function '-[TimerSampleViewController viewWillAppear]':
+o/Users/glassonion/Public/develop/iphone/TimerSample/Classes/TimerSampleViewController.m:51: error: 'scheduledTimerWithTimeInterval' undeclared (first use in this function)
+o/Users/glassonion/Public/develop/iphone/TimerSample/Classes/TimerSampleViewController.m:51: error: (Each undeclared identifier is reported only once
+o/Users/glassonion/Public/develop/iphone/TimerSample/Classes/TimerSampleViewController.m:51: error: for each function it appears in.)
+o/Users/glassonion/Public/develop/iphone/TimerSample/Classes/TimerSampleViewController.m:51: error: expected ';' before ':' token
+o/Users/glassonion/Public/develop/iphone/TimerSample/Classes/TimerSampleViewController.m:55: error: expected statement before ']' token
+lSLF07#2@95"Compile /Users/glassonion/Public/develop/iphone/TimerSample/Classes/TimerSampleViewController.m300029225#300029225#0(866"/Users/glassonion/Public/develop/iphone/TimerSample/Classes/TimerSampleViewController.m: In function '-[TimerSampleViewController viewWillAppear]':/Users/glassonion/Public/develop/iphone/TimerSample/Classes/TimerSampleViewController.m:51: error: 'scheduledTimerWithTimeInterval' undeclared (first use in this function)/Users/glassonion/Public/develop/iphone/TimerSample/Classes/TimerSampleViewController.m:51: error: (Each undeclared identifier is reported only once/Users/glassonion/Public/develop/iphone/TimerSample/Classes/TimerSampleViewController.m:51: error: for each function it appears in.)/Users/glassonion/Public/develop/iphone/TimerSample/Classes/TimerSampleViewController.m:51: error: expected ';' before ':' token/Users/glassonion/Public/develop/iphone/TimerSample/Classes/TimerSampleViewController.m:55: error: expected statement before ']' token3(4@72"'scheduledTimerWithTimeInterval' undeclared (first use in this function)300029225#148#172#0(6@87"/Users/glassonion/Public/develop/iphone/TimerSample/Classes/TimerSampleViewController.m300029223#51#0#51#0#43"'*' undeclared (first use in this function)0(4@29"Expected ';' before ':' token300029225#602#129#0(6@87"/Users/glassonion/Public/develop/iphone/TimerSample/Classes/TimerSampleViewController.m300029223#51#0#51#0#19"expected * before *0(4@35"Expected statement before ']' token300029225#731#135#0(6@87"/Users/glassonion/Public/develop/iphone/TimerSample/Classes/TimerSampleViewController.m300029223#55#0#55#0#19"expected * before *0(0#0#87"/Users/glassonion/Public/develop/iphone/TimerSample/Classes/TimerSampleViewController.m8627062240#1997"    cd /Users/glassonion/Public/develop/iphone/TimerSample    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/TimerSample-generated-files.hmap -I/Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/TimerSample-own-target-headers.hmap -I/Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/TimerSample-all-target-headers.hmap -iquote /Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/TimerSample-project-headers.hmap -F/Users/glassonion/Public/develop/iphone/TimerSample/build/Debug-iphoneos -I/Users/glassonion/Public/develop/iphone/TimerSample/build/Debug-iphoneos/include -I/Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/DerivedSources/armv6 -I/Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/DerivedSources -include /var/folders/XF/XF4F9xIPFmqBq+M69mXNE++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TimerSample_Prefix-chgsmywgzmzweobxldkqzzsbgsad/TimerSample_Prefix.pch -c /Users/glassonion/Public/develop/iphone/TimerSample/Classes/TimerSampleViewController.m -o /Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/Objects-normal/armv6/TimerSampleViewController.o1#
+
+CCompileC build/TimerSample.build/Debug-iphoneos/TimerSample.build/Objects-normal/armv6/main.o /Users/glassonion/Public/develop/iphone/TimerSample/main.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s300029225.434927
+e300029225.486752
+r1
+xCompileC
+xbuild/TimerSample.build/Debug-iphoneos/TimerSample.build/Objects-normal/armv6/main.o
+x/Users/glassonion/Public/develop/iphone/TimerSample/main.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@66"Compile /Users/glassonion/Public/develop/iphone/TimerSample/main.m300029225#300029225#0(0"0(0#0#58"/Users/glassonion/Public/develop/iphone/TimerSample/main.m8629472288#1947"    cd /Users/glassonion/Public/develop/iphone/TimerSample    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/TimerSample-generated-files.hmap -I/Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/TimerSample-own-target-headers.hmap -I/Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/TimerSample-all-target-headers.hmap -iquote /Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/TimerSample-project-headers.hmap -F/Users/glassonion/Public/develop/iphone/TimerSample/build/Debug-iphoneos -I/Users/glassonion/Public/develop/iphone/TimerSample/build/Debug-iphoneos/include -I/Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/DerivedSources/armv6 -I/Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/DerivedSources -include /var/folders/XF/XF4F9xIPFmqBq+M69mXNE++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TimerSample_Prefix-chgsmywgzmzweobxldkqzzsbgsad/TimerSample_Prefix.pch -c /Users/glassonion/Public/develop/iphone/TimerSample/main.m -o /Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/Objects-normal/armv6/main.o0#
+
+CCompileC build/TimerSample.build/Debug-iphoneos/TimerSample.build/Objects-normal/armv7/TimerSampleAppDelegate.o /Users/glassonion/Public/develop/iphone/TimerSample/Classes/TimerSampleAppDelegate.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+s300029225.534472
+e300029225.628524
+r1
+xCompileC
+xbuild/TimerSample.build/Debug-iphoneos/TimerSample.build/Objects-normal/armv7/TimerSampleAppDelegate.o
+x/Users/glassonion/Public/develop/iphone/TimerSample/Classes/TimerSampleAppDelegate.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@92"Compile /Users/glassonion/Public/develop/iphone/TimerSample/Classes/TimerSampleAppDelegate.m300029225#300029225#0(0"0(0#0#84"/Users/glassonion/Public/develop/iphone/TimerSample/Classes/TimerSampleAppDelegate.m8625382496#1991"    cd /Users/glassonion/Public/develop/iphone/TimerSample    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/TimerSample-generated-files.hmap -I/Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/TimerSample-own-target-headers.hmap -I/Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/TimerSample-all-target-headers.hmap -iquote /Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/TimerSample-project-headers.hmap -F/Users/glassonion/Public/develop/iphone/TimerSample/build/Debug-iphoneos -I/Users/glassonion/Public/develop/iphone/TimerSample/build/Debug-iphoneos/include -I/Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/DerivedSources/armv7 -I/Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/DerivedSources -include /var/folders/XF/XF4F9xIPFmqBq+M69mXNE++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TimerSample_Prefix-ewsaehlyuryrlcajlyhroyxufkhe/TimerSample_Prefix.pch -c /Users/glassonion/Public/develop/iphone/TimerSample/Classes/TimerSampleAppDelegate.m -o /Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/Objects-normal/armv7/TimerSampleAppDelegate.o0#
+
+CCompileC build/TimerSample.build/Debug-iphoneos/TimerSample.build/Objects-normal/armv7/TimerSampleViewController.o /Users/glassonion/Public/develop/iphone/TimerSample/Classes/TimerSampleViewController.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+s300029225.597571
+e300029225.644136
+r0
+xCompileC
+xbuild/TimerSample.build/Debug-iphoneos/TimerSample.build/Objects-normal/armv7/TimerSampleViewController.o
+x/Users/glassonion/Public/develop/iphone/TimerSample/Classes/TimerSampleViewController.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+o/Users/glassonion/Public/develop/iphone/TimerSample/Classes/TimerSampleViewController.m: In function '-[TimerSampleViewController viewWillAppear]':
+o/Users/glassonion/Public/develop/iphone/TimerSample/Classes/TimerSampleViewController.m:51: error: 'scheduledTimerWithTimeInterval' undeclared (first use in this function)
+o/Users/glassonion/Public/develop/iphone/TimerSample/Classes/TimerSampleViewController.m:51: error: (Each undeclared identifier is reported only once
+o/Users/glassonion/Public/develop/iphone/TimerSample/Classes/TimerSampleViewController.m:51: error: for each function it appears in.)
+o/Users/glassonion/Public/develop/iphone/TimerSample/Classes/TimerSampleViewController.m:51: error: expected ';' before ':' token
+o/Users/glassonion/Public/develop/iphone/TimerSample/Classes/TimerSampleViewController.m:55: error: expected statement before ']' token
+lSLF07#2@95"Compile /Users/glassonion/Public/develop/iphone/TimerSample/Classes/TimerSampleViewController.m300029225#300029225#0(866"/Users/glassonion/Public/develop/iphone/TimerSample/Classes/TimerSampleViewController.m: In function '-[TimerSampleViewController viewWillAppear]':/Users/glassonion/Public/develop/iphone/TimerSample/Classes/TimerSampleViewController.m:51: error: 'scheduledTimerWithTimeInterval' undeclared (first use in this function)/Users/glassonion/Public/develop/iphone/TimerSample/Classes/TimerSampleViewController.m:51: error: (Each undeclared identifier is reported only once/Users/glassonion/Public/develop/iphone/TimerSample/Classes/TimerSampleViewController.m:51: error: for each function it appears in.)/Users/glassonion/Public/develop/iphone/TimerSample/Classes/TimerSampleViewController.m:51: error: expected ';' before ':' token/Users/glassonion/Public/develop/iphone/TimerSample/Classes/TimerSampleViewController.m:55: error: expected statement before ']' token3(4@72"'scheduledTimerWithTimeInterval' undeclared (first use in this function)300029225#148#172#0(6@87"/Users/glassonion/Public/develop/iphone/TimerSample/Classes/TimerSampleViewController.m300029223#51#0#51#0#43"'*' undeclared (first use in this function)0(4@29"Expected ';' before ':' token300029225#602#129#0(6@87"/Users/glassonion/Public/develop/iphone/TimerSample/Classes/TimerSampleViewController.m300029223#51#0#51#0#19"expected * before *0(4@35"Expected statement before ']' token300029225#731#135#0(6@87"/Users/glassonion/Public/develop/iphone/TimerSample/Classes/TimerSampleViewController.m300029223#55#0#55#0#19"expected * before *0(0#0#87"/Users/glassonion/Public/develop/iphone/TimerSample/Classes/TimerSampleViewController.m8629510944#1997"    cd /Users/glassonion/Public/develop/iphone/TimerSample    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/TimerSample-generated-files.hmap -I/Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/TimerSample-own-target-headers.hmap -I/Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/TimerSample-all-target-headers.hmap -iquote /Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/TimerSample-project-headers.hmap -F/Users/glassonion/Public/develop/iphone/TimerSample/build/Debug-iphoneos -I/Users/glassonion/Public/develop/iphone/TimerSample/build/Debug-iphoneos/include -I/Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/DerivedSources/armv7 -I/Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/DerivedSources -include /var/folders/XF/XF4F9xIPFmqBq+M69mXNE++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TimerSample_Prefix-ewsaehlyuryrlcajlyhroyxufkhe/TimerSample_Prefix.pch -c /Users/glassonion/Public/develop/iphone/TimerSample/Classes/TimerSampleViewController.m -o /Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/Objects-normal/armv7/TimerSampleViewController.o1#
+
+CCompileC build/TimerSample.build/Debug-iphoneos/TimerSample.build/Objects-normal/armv7/main.o /Users/glassonion/Public/develop/iphone/TimerSample/main.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+s300029225.516807
+e300029225.597462
+r1
+xCompileC
+xbuild/TimerSample.build/Debug-iphoneos/TimerSample.build/Objects-normal/armv7/main.o
+x/Users/glassonion/Public/develop/iphone/TimerSample/main.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@66"Compile /Users/glassonion/Public/develop/iphone/TimerSample/main.m300029225#300029225#0(0"0(0#0#58"/Users/glassonion/Public/develop/iphone/TimerSample/main.m8624390336#1947"    cd /Users/glassonion/Public/develop/iphone/TimerSample    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/TimerSample-generated-files.hmap -I/Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/TimerSample-own-target-headers.hmap -I/Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/TimerSample-all-target-headers.hmap -iquote /Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/TimerSample-project-headers.hmap -F/Users/glassonion/Public/develop/iphone/TimerSample/build/Debug-iphoneos -I/Users/glassonion/Public/develop/iphone/TimerSample/build/Debug-iphoneos/include -I/Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/DerivedSources/armv7 -I/Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/DerivedSources -include /var/folders/XF/XF4F9xIPFmqBq+M69mXNE++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TimerSample_Prefix-ewsaehlyuryrlcajlyhroyxufkhe/TimerSample_Prefix.pch -c /Users/glassonion/Public/develop/iphone/TimerSample/main.m -o /Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/Objects-normal/armv7/main.o0#
+
+CCompileXIB /Users/glassonion/Public/develop/iphone/TimerSample/MainWindow.xib
+s300029223.681130
+e300029224.114146
+r1
+xCompileXIB
+x/Users/glassonion/Public/develop/iphone/TimerSample/MainWindow.xib
+lSLF07#2@25"CompileXIB MainWindow.xib300029223#300029224#0(0"0(0#0#66"/Users/glassonion/Public/develop/iphone/TimerSample/MainWindow.xib8629489152#585"    cd /Users/glassonion/Public/develop/iphone/TimerSample    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.0    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/glassonion/Public/develop/iphone/TimerSample/build/Debug-iphoneos/TimerSample.app/MainWindow.nib /Users/glassonion/Public/develop/iphone/TimerSample/MainWindow.xib --sdk /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk0#
+
+CCompileXIB /Users/glassonion/Public/develop/iphone/TimerSample/TimerSampleViewController.xib
+s300029223.681859
+e300029224.094668
+r1
+xCompileXIB
+x/Users/glassonion/Public/develop/iphone/TimerSample/TimerSampleViewController.xib
+lSLF07#2@40"CompileXIB TimerSampleViewController.xib300029223#300029224#0(0"0(0#0#81"/Users/glassonion/Public/develop/iphone/TimerSample/TimerSampleViewController.xib8629335744#615"    cd /Users/glassonion/Public/develop/iphone/TimerSample    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.0    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/glassonion/Public/develop/iphone/TimerSample/build/Debug-iphoneos/TimerSample.app/TimerSampleViewController.nib /Users/glassonion/Public/develop/iphone/TimerSample/TimerSampleViewController.xib --sdk /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk0#
+
+CCpResource build/Debug-iphoneos/TimerSample.app/ResourceRules.plist /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/ResourceRules.plist
+s300029223.636418
+e300029223.681053
+r1
+xCpResource
+xbuild/Debug-iphoneos/TimerSample.app/ResourceRules.plist
+x/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/ResourceRules.plist
+lSLF07#2@94"Copy /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/ResourceRules.plist300029223#300029223#0(0"0(0#0#89"/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/ResourceRules.plist8629353952#510"    cd /Users/glassonion/Public/develop/iphone/TimerSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/ResourceRules.plist /Users/glassonion/Public/develop/iphone/TimerSample/build/Debug-iphoneos/TimerSample.app0#
+
+CCreateUniversalBinary /Users/glassonion/Public/develop/iphone/TimerSample/build/Debug-iphoneos/TimerSample.app/TimerSample normal "armv6 armv7"
+r0
+
+CGenerateDSYMFile /Users/glassonion/Public/develop/iphone/TimerSample/build/Debug-iphoneos/TimerSample.app.dSYM /Users/glassonion/Public/develop/iphone/TimerSample/build/Debug-iphoneos/TimerSample.app/TimerSample
+r0
+
+CLd /Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/Objects-normal/armv6/TimerSample normal armv6
+r0
+
+CLd /Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/Objects-normal/armv7/TimerSample normal armv7
+r0
+
+CProcessInfoPlistFile /Users/glassonion/Public/develop/iphone/TimerSample/build/Debug-iphoneos/TimerSample.app/Info.plist TimerSample-Info.plist
+s300029223.637334
+e300029223.661170
+r1
+xProcessInfoPlistFile
+x/Users/glassonion/Public/develop/iphone/TimerSample/build/Debug-iphoneos/TimerSample.app/Info.plist
+xTimerSample-Info.plist
+lSLF07#2@30"Process TimerSample-Info.plist300029223#300029223#0(0"0(0#0#74"/Users/glassonion/Public/develop/iphone/TimerSample/TimerSample-Info.plist8629197024#630"    cd /Users/glassonion/Public/develop/iphone/TimerSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility TimerSample-Info.plist -genpkginfo /Users/glassonion/Public/develop/iphone/TimerSample/build/Debug-iphoneos/TimerSample.app/PkgInfo -expandbuildsettings -format binary -platform iphoneos -resourcerulesfile /Users/glassonion/Public/develop/iphone/TimerSample/build/Debug-iphoneos/TimerSample.app/ResourceRules.plist -o /Users/glassonion/Public/develop/iphone/TimerSample/build/Debug-iphoneos/TimerSample.app/Info.plist0#
+
+CProcessPCH /var/folders/XF/XF4F9xIPFmqBq+M69mXNE++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TimerSample_Prefix-chgsmywgzmzweobxldkqzzsbgsad/TimerSample_Prefix.pch.gch TimerSample_Prefix.pch normal armv6 objective-c com.apple.compilers.gcc.4_2
+s300029224.114257
+e300029225.434791
+r1
+xProcessPCH
+x/var/folders/XF/XF4F9xIPFmqBq+M69mXNE++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TimerSample_Prefix-chgsmywgzmzweobxldkqzzsbgsad/TimerSample_Prefix.pch.gch
+xTimerSample_Prefix.pch
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@33"Precompile TimerSample_Prefix.pch300029224#300029225#0(0"0(0#0#74"/Users/glassonion/Public/develop/iphone/TimerSample/TimerSample_Prefix.pch8629615712#1828"    cd /Users/glassonion/Public/develop/iphone/TimerSample    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/TimerSample-generated-files.hmap -I/Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/TimerSample-own-target-headers.hmap -I/Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/TimerSample-all-target-headers.hmap -iquote /Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/TimerSample-project-headers.hmap -F/Users/glassonion/Public/develop/iphone/TimerSample/build/Debug-iphoneos -I/Users/glassonion/Public/develop/iphone/TimerSample/build/Debug-iphoneos/include -I/Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/DerivedSources/armv6 -I/Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/DerivedSources -c /Users/glassonion/Public/develop/iphone/TimerSample/TimerSample_Prefix.pch -o /var/folders/XF/XF4F9xIPFmqBq+M69mXNE++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TimerSample_Prefix-chgsmywgzmzweobxldkqzzsbgsad/TimerSample_Prefix.pch.gch0#
+
+CProcessPCH /var/folders/XF/XF4F9xIPFmqBq+M69mXNE++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TimerSample_Prefix-ewsaehlyuryrlcajlyhroyxufkhe/TimerSample_Prefix.pch.gch TimerSample_Prefix.pch normal armv7 objective-c com.apple.compilers.gcc.4_2
+s300029224.115142
+e300029225.343243
+r1
+xProcessPCH
+x/var/folders/XF/XF4F9xIPFmqBq+M69mXNE++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TimerSample_Prefix-ewsaehlyuryrlcajlyhroyxufkhe/TimerSample_Prefix.pch.gch
+xTimerSample_Prefix.pch
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@33"Precompile TimerSample_Prefix.pch300029224#300029225#0(0"0(0#0#74"/Users/glassonion/Public/develop/iphone/TimerSample/TimerSample_Prefix.pch8629553152#1828"    cd /Users/glassonion/Public/develop/iphone/TimerSample    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/TimerSample-generated-files.hmap -I/Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/TimerSample-own-target-headers.hmap -I/Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/TimerSample-all-target-headers.hmap -iquote /Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/TimerSample-project-headers.hmap -F/Users/glassonion/Public/develop/iphone/TimerSample/build/Debug-iphoneos -I/Users/glassonion/Public/develop/iphone/TimerSample/build/Debug-iphoneos/include -I/Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/DerivedSources/armv7 -I/Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/DerivedSources -c /Users/glassonion/Public/develop/iphone/TimerSample/TimerSample_Prefix.pch -o /var/folders/XF/XF4F9xIPFmqBq+M69mXNE++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TimerSample_Prefix-ewsaehlyuryrlcajlyhroyxufkhe/TimerSample_Prefix.pch.gch0#
+
+CProcessProductPackaging "/Users/glassonion/Library/MobileDevice/Provisioning Profiles/A1C9579E-8650-4F4C-A50F-D093880F9EA9.mobileprovision" /Users/glassonion/Public/develop/iphone/TimerSample/build/Debug-iphoneos/TimerSample.app/embedded.mobileprovision
+s300029225.644241
+e300029225.658188
+r1
+xProcessProductPackaging
+x/Users/glassonion/Library/MobileDevice/Provisioning Profiles/A1C9579E-8650-4F4C-A50F-D093880F9EA9.mobileprovision
+x/Users/glassonion/Public/develop/iphone/TimerSample/build/Debug-iphoneos/TimerSample.app/embedded.mobileprovision
+lSLF07#2@201"ProcessProductPackaging "/Users/glassonion/Library/MobileDevice/Provisioning Profiles/A1C9579E-8650-4F4C-A50F-D093880F9EA9.mobileprovision" build/Debug-iphoneos/TimerSample.app/embedded.mobileprovision300029225#300029225#0(0"0(0#0#113"/Users/glassonion/Public/develop/iphone/TimerSample/build/Debug-iphoneos/TimerSample.app/embedded.mobileprovision8601592992#458"    cd /Users/glassonion/Public/develop/iphone/TimerSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    <com.apple.tools.product-pkg-utility> "/Users/glassonion/Library/MobileDevice/Provisioning Profiles/A1C9579E-8650-4F4C-A50F-D093880F9EA9.mobileprovision" -o /Users/glassonion/Public/develop/iphone/TimerSample/build/Debug-iphoneos/TimerSample.app/embedded.mobileprovision0#
+
+CProcessProductPackaging /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/Entitlements.plist /Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/TimerSample.xcent
+s300029225.658261
+e300029225.680447
+r1
+xProcessProductPackaging
+x/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/Entitlements.plist
+x/Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/TimerSample.xcent
+lSLF07#2@187"ProcessProductPackaging /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/Entitlements.plist build/TimerSample.build/Debug-iphoneos/TimerSample.build/TimerSample.xcent300029225#300029225#0(0"0(0#0#126"/Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/TimerSample.xcent8627034752#470"    cd /Users/glassonion/Public/develop/iphone/TimerSample    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    <com.apple.tools.product-pkg-utility> /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/Entitlements.plist -entitlements -format xml -o /Users/glassonion/Public/develop/iphone/TimerSample/build/TimerSample.build/Debug-iphoneos/TimerSample.build/TimerSample.xcent0#
+
+CTouch /Users/glassonion/Public/develop/iphone/TimerSample/build/Debug-iphoneos/TimerSample.app
+r0
+

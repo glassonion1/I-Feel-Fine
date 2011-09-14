@@ -1,0 +1,8 @@
+//
+// Prefix header for all source files of the 'TimerSample' target in the 'TimerSample' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+    #import <UIKit/UIKit.h>
+#endif
