@@ -2,7 +2,7 @@
 *.swp
 *~.nib
 build/*
-*.xcodeproj/project.xcworkspace/xcuserdata/*
+objc/*/*/*.xcodeproj/project.xcworkspace/xcuserdata/*
 *.pbxuser
 *.perspective
 *.perspectivev3
