@@ -12,4 +12,8 @@
     
 }
 
+- (IBAction)respondToSaveButtonClick:(id)sender;
+
+- (IBAction)respondToLoadButtonClick:(id)sender;
+
 @end
