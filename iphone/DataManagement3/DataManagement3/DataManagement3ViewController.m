@@ -50,7 +50,7 @@
 
 - (IBAction)respondToSaveButtonClick:(id)sender
 {
-    /*
+
      Person *tYamada = [[[Person alloc] init] autorelease];
      tYamada.name = @"山田太郎";
      Address *yAddress = [[[Address alloc] init] autorelease];
@@ -76,14 +76,9 @@
      NSData *data2 = [NSKeyedArchiver archivedDataWithRootObject:hYamada];
      NSData *data3 = [NSKeyedArchiver archivedDataWithRootObject:tanaka];
      
-     NSArray *array = [NSArray arrayWithObjects:data, data2, data3, nil];
-     BOOL successful = [array writeToFile:filePath atomically:YES];
-     if (successful) {
-     NSLog(@"%@", @"データの保存に成功しました。");
-     }
-     */
     
-    NSArray *array = [NSArray arrayWithObjects:@"山田太郎", @"東京都中央区", nil];
+    //NSArray *array = [NSArray arrayWithObjects:@"山田太郎", @"東京都中央区", nil];
+    NSArray *array = [NSArray arrayWithObjects:data, nil];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:array forKey:@"dataofyamada"];
     BOOL successful = [defaults synchronize];
@@ -108,7 +103,7 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSArray *array = [defaults arrayForKey:@"dataofyamada"];
     if (array) {
-        for (NSString *data in array) {
+        for (NSData *data in array) {
             NSLog(@"%@", data);
         }
     } else {
