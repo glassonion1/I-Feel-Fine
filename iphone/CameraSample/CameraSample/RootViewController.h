@@ -11,9 +11,19 @@
 
 @interface RootViewController : UIViewController {
     UIView *cameraView;
+    UIBarButtonItem *captureButton;
+    UIBarButtonItem *cancelButton;
     AVCaptureSession *session;
+    AVCaptureStillImageOutput *output;
+    UIImage *capturedImage;
 }
 
 @property (nonatomic, retain) IBOutlet UIView *cameraView;
+@property (nonatomic, retain) IBOutlet UIBarButtonItem *captureButton;
+@property (nonatomic, retain) IBOutlet UIBarButtonItem *cancelButton;
+
+-(IBAction)respondToCaptureButtonClick:(id)sender;
+
+-(IBAction)respondToCancelButtonClick:(id)sender;
 
 @end
