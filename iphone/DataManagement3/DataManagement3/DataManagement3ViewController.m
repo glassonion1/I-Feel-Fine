@@ -50,35 +50,34 @@
 
 - (IBAction)respondToSaveButtonClick:(id)sender
 {
-
-     Person *tYamada = [[[Person alloc] init] autorelease];
-     tYamada.name = @"山田太郎";
-     Address *yAddress = [[[Address alloc] init] autorelease];
-     yAddress.zipCode = @"104-0061";
-     yAddress.state = @"東京都";
-     yAddress.city = @"中央区";
-     yAddress.other = @"銀座1丁目";
-     tYamada.address = yAddress;
+    /*
+    Person *tYamada = [[[Person alloc] init] autorelease];
+    tYamada.name = @"山田太郎";
+    Address *yAddress = [[[Address alloc] init] autorelease];
+    yAddress.zipCode = @"104-0061";
+    yAddress.state = @"東京都";
+    yAddress.city = @"中央区";
+    yAddress.other = @"銀座1丁目";
+    tYamada.address = yAddress;
      
-     Person *hYamada = [[[Person alloc] init] autorelease];
-     hYamada.name = @"山田花子";
-     hYamada.address = yAddress;
+    Person *hYamada = [[[Person alloc] init] autorelease];
+    hYamada.name = @"山田花子";
+    hYamada.address = yAddress;
      
-     Person *tanaka = [[[Person alloc] init] autorelease];
-     tanaka.name = @"田中次郎";
-     Address *tAddress = [[[Address alloc] init] autorelease];
-     tAddress.zipCode = @"145-0071";
-     tAddress.state = @"東京都";
-     tAddress.city = @"大田区";
-     tAddress.other = @"田園調布1丁目";
-     tanaka.address = tAddress;
-     NSData *data = [NSKeyedArchiver archivedDataWithRootObject:tYamada];
-     NSData *data2 = [NSKeyedArchiver archivedDataWithRootObject:hYamada];
-     NSData *data3 = [NSKeyedArchiver archivedDataWithRootObject:tanaka];
-     
-    
-    //NSArray *array = [NSArray arrayWithObjects:@"山田太郎", @"東京都中央区", nil];
+    Person *tanaka = [[[Person alloc] init] autorelease];
+    tanaka.name = @"田中次郎";
+    Address *tAddress = [[[Address alloc] init] autorelease];
+    tAddress.zipCode = @"145-0071";
+    tAddress.state = @"東京都";
+    tAddress.city = @"大田区";
+    tAddress.other = @"田園調布1丁目";
+    tanaka.address = tAddress;
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:tYamada];
+    NSData *data2 = [NSKeyedArchiver archivedDataWithRootObject:hYamada];
+    NSData *data3 = [NSKeyedArchiver archivedDataWithRootObject:tanaka];
     NSArray *array = [NSArray arrayWithObjects:data, nil];
+    */
+    NSArray *array = [NSArray arrayWithObjects:@"山田太郎", @"東京都中央区", nil];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:array forKey:@"dataofyamada"];
     BOOL successful = [defaults synchronize];
@@ -103,7 +102,7 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSArray *array = [defaults arrayForKey:@"dataofyamada"];
     if (array) {
-        for (NSData *data in array) {
+        for (NSString *data in array) {
             NSLog(@"%@", data);
         }
     } else {
