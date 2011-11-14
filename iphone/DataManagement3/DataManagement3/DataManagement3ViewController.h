@@ -16,4 +16,6 @@
 
 - (IBAction)respondToLoadButtonClick:(id)sender;
 
+- (IBAction)respondToRemoveButtonClick:(id)sender;
+
 @end

@@ -110,4 +110,14 @@
     }
 }
 
+- (IBAction)respondToRemoveButtonClick:(id)sender
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults removeObjectForKey:@"dataofyamada"];
+    NSArray *array = [defaults arrayForKey:@"dataofyamada"];
+    if (!array) {
+        NSLog(@"%@", @"データが存在しません。");
+    }
+}
+
 @end
