@@ -7,6 +7,7 @@
 //
 
 #import "DetailEditViewController.h"
+#import "Address.h"
 
 @implementation DetailEditViewController
 
@@ -45,7 +46,12 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
                                                                                            target:self 
                                                                                            action:@selector(done)];
-    nameField = [[[UITextField alloc] initWithFrame:CGRectMake(0, 0, 200, 31)] autorelease];
+    nameField = [[UITextField alloc] initWithFrame:CGRectMake(85, 10, 200, 31)];
+    Address *address = [NSEntityDescription insertNewObjectForEntityForName:@"Address" 
+                                                      inManagedObjectContext:managedObjectContext];
+    person.address = address;
+    person.address.zipCode = @"145-0072";
+    NSLog(@"%@", person.address);
 }
 
 - (void)viewDidUnload
@@ -101,10 +107,17 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:CellIdentifier] autorelease];
+        if (indexPath.section == 0) {
+            [cell.contentView addSubview:nameField];
+        }
     }
     
-    if (indexPath.row == 0) {
-        [cell.contentView addSubview:nameField];
+    switch (indexPath.section) {
+        case 0:
+            cell.textLabel.text = @"名前";
+            break;
+        default:
+            break;
     }
     
     return cell;
