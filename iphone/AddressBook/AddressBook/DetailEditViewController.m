@@ -24,7 +24,6 @@
 
 - (void)dealloc
 {
-    [nameField release];
     self.managedObjectContext = nil;
     self.person = nil;
     [super dealloc];
@@ -46,18 +45,11 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
                                                                                            target:self 
                                                                                            action:@selector(done)];
-    nameField = [[UITextField alloc] initWithFrame:CGRectMake(85, 10, 200, 31)];
-    Address *address = [NSEntityDescription insertNewObjectForEntityForName:@"Address" 
-                                                      inManagedObjectContext:managedObjectContext];
-    person.address = address;
-    person.address.zipCode = @"145-0072";
-    NSLog(@"%@", person.address);
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    [nameField release];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -91,7 +83,7 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -107,14 +99,16 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:CellIdentifier] autorelease];
-        if (indexPath.section == 0) {
-            [cell.contentView addSubview:nameField];
-        }
+        UITextField *field = [[UITextField alloc] initWithFrame:CGRectMake(85, 10, 200, 31)];
+        [cell.contentView addSubview:field];
     }
     
     switch (indexPath.section) {
         case 0:
             cell.textLabel.text = @"名前";
+            break;
+        case 1:
+            cell.textLabel.text = @"郵便番号";
             break;
         default:
             break;
@@ -178,7 +172,12 @@
 
 - (void)done
 {
-    person.name = nameField.text;
+    UITableViewCell *nameCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    person.name = [[nameCell.contentView.subviews objectAtIndex:0] text];
+    
+    UITableViewCell *zipCodeCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:01]];
+    person.address.zipCode = [[zipCodeCell.contentView.subviews objectAtIndex:0] text];
+    
     // Save the context.
     NSError *error = nil;
     if (![self.managedObjectContext save:&error]) {

@@ -10,6 +10,7 @@
 #import "DetailViewController.h"
 #import "DetailEditViewController.h"
 #import "Person.h"
+#import "Address.h"
 
 @interface MasterViewController ()
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
@@ -286,11 +287,15 @@
     // Create a new instance of the entity managed by the fetched results controller.
     NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
     NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
-    Person *newPerson = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
+    Person *newPerson = [NSEntityDescription insertNewObjectForEntityForName:[entity name] 
+                                                      inManagedObjectContext:context];
     
     DetailEditViewController *editController = [[[DetailEditViewController alloc] initWithNibName:NSStringFromClass([DetailEditViewController class])
                                                                                           bundle:nil] autorelease];
     editController.person = newPerson;
+    Address *address = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([Address class]) 
+                                                     inManagedObjectContext:context];
+    editController.person.address = address;
     editController.managedObjectContext = context;
     UINavigationController *navi = [[[UINavigationController alloc] initWithRootViewController:editController] autorelease];
     [self presentViewController:navi animated:YES completion:nil];
