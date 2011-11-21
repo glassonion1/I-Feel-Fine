@@ -9,7 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "Person.h"
 
-@interface DetailEditViewController : UITableViewController
+@interface DetailEditViewController : UITableViewController {
+    UITextField *nameField;
+    UITextField *zipCodeField;
+    UITextField *stateField;
+    UITextField *cityField;
+    UITextField *otherField;
+}
 
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (strong, nonatomic) Person *person;

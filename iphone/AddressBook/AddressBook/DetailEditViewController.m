@@ -7,7 +7,7 @@
 //
 
 #import "DetailEditViewController.h"
-#import "Address.h"
+
 
 @implementation DetailEditViewController
 
@@ -26,6 +26,11 @@
 {
     self.managedObjectContext = nil;
     self.person = nil;
+    [nameField release];
+    [zipCodeField release];
+    [stateField release];
+    [cityField release];
+    [otherField release];
     [super dealloc];
 }
 
@@ -42,9 +47,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+    self.navigationItem.leftBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
                                                                                            target:self 
-                                                                                           action:@selector(done)];
+                                                                                           action:@selector(cancel)] autorelease];
+    self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                                                                                            target:self 
+                                                                                            action:@selector(done)] autorelease];
+    CGRect rect = CGRectMake(85, 10, 200, 31);
+    nameField = [[UITextField alloc] initWithFrame:rect];
+    zipCodeField = [[UITextField alloc] initWithFrame:rect];
+    stateField = [[UITextField alloc] initWithFrame:rect];
+    cityField = [[UITextField alloc] initWithFrame:rect];
+    otherField = [[UITextField alloc] initWithFrame:rect];
 }
 
 - (void)viewDidUnload
@@ -83,7 +97,7 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 2;
+    return 5;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -99,16 +113,28 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:CellIdentifier] autorelease];
-        UITextField *field = [[UITextField alloc] initWithFrame:CGRectMake(85, 10, 200, 31)];
-        [cell.contentView addSubview:field];
     }
     
     switch (indexPath.section) {
         case 0:
             cell.textLabel.text = @"名前";
+            [cell.contentView addSubview:nameField];
             break;
         case 1:
             cell.textLabel.text = @"郵便番号";
+            [cell.contentView addSubview:zipCodeField];
+            break;
+        case 2:
+            cell.textLabel.text = @"都道府県";
+            [cell.contentView addSubview:stateField];
+            break;
+        case 3:
+            cell.textLabel.text = @"市区町村";
+            [cell.contentView addSubview:cityField];
+            break;
+        case 4:
+            cell.textLabel.text = @"町名・建物";
+            [cell.contentView addSubview:otherField];
             break;
         default:
             break;
@@ -170,14 +196,20 @@
      */
 }
 
+- (void)cancel
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 - (void)done
 {
-    UITableViewCell *nameCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-    person.name = [[nameCell.contentView.subviews objectAtIndex:0] text];
+    person.name = nameField.text;
+    person.address.zipCode = zipCodeField.text;
+    person.address.state = stateField.text;
+    person.address.city = cityField.text;
+    person.address.other = otherField.text;
     
-    UITableViewCell *zipCodeCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:01]];
-    person.address.zipCode = [[zipCodeCell.contentView.subviews objectAtIndex:0] text];
-    
+    NSLog(@"%@,%@,%@,%@,%@", person.name, person.address.zipCode, person.address.state, person.address.city, person.address.other);
     // Save the context.
     NSError *error = nil;
     if (![self.managedObjectContext save:&error]) {
