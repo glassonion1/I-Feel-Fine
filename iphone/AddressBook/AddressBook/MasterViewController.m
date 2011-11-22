@@ -14,6 +14,7 @@
 
 @interface MasterViewController ()
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
+- (Person *)createNewPerson;
 @end
 
 @implementation MasterViewController
@@ -56,9 +57,8 @@
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
     //self.addButton.target = self;
     //self.addButton.action = @selector(insertNewObject);
-    self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
-                                                                                            target:self 
-                                                                                            action:@selector(insertNewObject)] autorelease];
+    UIBarButtonItem *addButton = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject)] autorelease];
+    self.navigationItem.rightBarButtonItem = addButton;
 }
 
 - (void)viewDidUnload
@@ -160,27 +160,20 @@
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         Person *selectedObject = [[self fetchedResultsController] objectAtIndexPath:indexPath];
         self.detailViewController.detailItem = selectedObject;
-        self.managedObjectContext = [self.fetchedResultsController managedObjectContext];
+        self.detailViewController.managedObjectContext = self.fetchedResultsController.managedObjectContext;
     }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    Person *person;
-    NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        person = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-    } else if ([[segue identifier] isEqualToString:@"createDetail"]) {
-        NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
-        person = [NSEntityDescription insertNewObjectForEntityForName:[entity name] 
-                                                          inManagedObjectContext:context];
-        Address *address = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([Address class]) 
-                                                         inManagedObjectContext:context];
-        person.address = address;
+        Person *selectedObject = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+        [[segue destinationViewController] setDetailItem:selectedObject];
+    } else {
+        [[segue destinationViewController] setDetailItem:[self createNewPerson]];
     }
-    [[segue destinationViewController] setDetailItem:person];
-    [[segue destinationViewController] setManagedObjectContext:context];
+    [[segue destinationViewController] setManagedObjectContext:self.fetchedResultsController.managedObjectContext];
 }
 
 #pragma mark - Fetched results controller
@@ -296,18 +289,23 @@
 - (void)insertNewObject
 {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
-        NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
-        Person *newPerson = [NSEntityDescription insertNewObjectForEntityForName:[entity name] 
-                                                          inManagedObjectContext:context];
-        Address *address = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([Address class]) 
-                                                         inManagedObjectContext:context];
-        newPerson.address = address;
-        self.detailViewController.detailItem = newPerson;
-        self.detailViewController.managedObjectContext = context;
+        self.detailViewController.detailItem = [self createNewPerson];
+        self.detailViewController.managedObjectContext = self.fetchedResultsController.managedObjectContext;
     } else {
         [self performSegueWithIdentifier:@"createDetail" sender:self];
     }
+}
+
+- (Person *)createNewPerson
+{
+    NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
+    NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
+    Person *newPerson = [NSEntityDescription insertNewObjectForEntityForName:[entity name] 
+                                                      inManagedObjectContext:context];
+    Address *address = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([Address class]) 
+                                                     inManagedObjectContext:context];
+    newPerson.address = address;
+    return newPerson;
 }
 
 @end

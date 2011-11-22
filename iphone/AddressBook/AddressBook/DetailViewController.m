@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+#import "MasterViewController.h"
 
 @interface DetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
@@ -17,13 +18,13 @@
 
 @synthesize managedObjectContext;
 @synthesize detailItem = _detailItem;
-@synthesize nameField, zipCodeField, stateField, cityField, otherField;
+@synthesize scrollView, nameField, zipCodeField, stateField, cityField, otherField;
 @synthesize masterPopoverController = _masterPopoverController;
 
 - (void)dealloc
 {
     [_detailItem release];
-    self.managedObjectContext = nil;
+    self.scrollView = nil;
     self.nameField = nil;
     self.zipCodeField = nil;
     self.stateField = nil;
@@ -76,7 +77,9 @@
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }
-    [self.navigationController popViewControllerAnimated:YES];
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -93,12 +96,14 @@
     self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
                                                                                             target:self 
                                                                                             action:@selector(done)] autorelease];
+    self.scrollView.contentSize = CGSizeMake(320, 800);
     [self configureView];
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
+    self.scrollView = nil;
     self.nameField = nil;
     self.zipCodeField = nil;
     self.stateField = nil;
