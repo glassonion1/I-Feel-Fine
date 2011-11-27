@@ -8,7 +8,6 @@
 
 #import "MasterViewController.h"
 #import "DetailViewController.h"
-#import "DetailEditViewController.h"
 #import "Person.h"
 #import "Address.h"
 

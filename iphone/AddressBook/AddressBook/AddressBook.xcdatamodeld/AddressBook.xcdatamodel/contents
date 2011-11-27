@@ -12,7 +12,7 @@
         <relationship name="address" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Address" inverseName="person" inverseEntity="Address" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Person" positionX="-54" positionY="-126" width="128" height="75"/>
-        <element name="Address" positionX="-54" positionY="-9" width="128" height="120"/>
+        <element name="Address" positionX="-110" positionY="-408" width="128" height="120"/>
+        <element name="Person" positionX="-99" positionY="-549" width="128" height="75"/>
     </elements>
 </model>
