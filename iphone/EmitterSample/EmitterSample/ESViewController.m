@@ -21,7 +21,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    emitterLayers = [NSMutableArray array];
+    emitterLayers = [NSMutableDictionary dictionary];
 }
 
 - (void)viewDidUnload
@@ -62,41 +62,48 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    // Particle
-    CGPoint pt = [[touches anyObject] locationInView:self.view];
-    emitterLayer = [CAEmitterLayer layer];
-    emitterLayer.emitterPosition = pt;
-    emitterLayer.emitterShape = kCAEmitterLayerCircle;
-    emitterLayer.renderMode = kCAEmitterLayerOldestFirst;
-    emitterLayer.emitterSize = CGSizeMake(3.0, 3.0);
-    CAEmitterCell *cell = [CAEmitterCell emitterCell];
-    cell.lifetime = 0.7f;
-    cell.contents = (id)[[UIImage imageNamed:@"ring"] CGImage];
-    cell.scale = 1.0f;
-    cell.velocity = 20.0f;
-    cell.scaleSpeed = -1.5f;
-    [cell setName:@"ring"];
-    emitterLayer.emitterCells = [NSArray arrayWithObject:cell];
-    [self.view.layer addSublayer:emitterLayer];
-    
+    for (UITouch *touch in touches) {
+        CAEmitterLayer *layer = [CAEmitterLayer layer];
+        layer.emitterPosition =  [touch locationInView:self.view];
+        layer.emitterShape = kCAEmitterLayerCircle;
+        layer.renderMode = kCAEmitterLayerOldestFirst;
+        layer.emitterSize = CGSizeMake(3.0, 3.0);
+        CAEmitterCell *cell = [CAEmitterCell emitterCell];
+        cell.lifetime = 0.7f;
+        cell.contents = (id)[[UIImage imageNamed:@"ring"] CGImage];
+        cell.scale = 1.0f;
+        cell.velocity = 20.0f;
+        cell.scaleSpeed = -1.5f;
+        [cell setName:@"ring"];
+        layer.emitterCells = [NSArray arrayWithObject:cell];
+        [self.view.layer addSublayer:layer];
+        [emitterLayers setObject:layer forKey:[NSNumber numberWithInt:[touch hash]]];
+    }
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    [emitterLayer removeFromSuperlayer];
-    emitterLayer = nil;
+    for (UITouch *touch in touches) {
+        NSNumber *key = [NSNumber numberWithInt:[touch hash]];
+        CAEmitterLayer *layer = [emitterLayers objectForKey:key];
+        [layer removeFromSuperlayer];
+        [emitterLayers removeObjectForKey:key];
+    }    
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    CGPoint pt = [[touches anyObject] locationInView:self.view];
-    [CATransaction begin];
-    [CATransaction setValue:(id)kCFBooleanTrue forKey:kCATransactionDisableActions];
-    CAEmitterCell *cell = [emitterLayer.emitterCells objectAtIndex:0];
-    cell.birthRate = 100.0;
-    emitterLayer.emitterPosition = pt;
-    [CATransaction commit];
-    [self performSelector:@selector(hideEffect:) withObject:nil afterDelay:0.1];
+    for (UITouch *touch in touches) {
+        [CATransaction begin];
+        [CATransaction setValue:(id)kCFBooleanTrue forKey:kCATransactionDisableActions];
+        NSNumber *key = [NSNumber numberWithInt:[touch hash]];
+        CAEmitterLayer *layer = [emitterLayers objectForKey:key];
+        CAEmitterCell *cell = [layer.emitterCells objectAtIndex:0];
+        cell.birthRate = 100.0;
+        layer.emitterPosition = [touch locationInView:self.view];
+        [CATransaction commit];
+        [self performSelector:@selector(hideEffect:) withObject:layer afterDelay:0.1];
+    }
 }
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
@@ -104,8 +111,8 @@
     [self touchesEnded:touches withEvent:event];
 }
 
-- (void)hideEffect:(CAEmitterCell *)cell {
-    [emitterLayer setValue:[NSNumber numberWithFloat:0.0f] forKeyPath:@"emitterCells.ring.birthRate"];
+- (void)hideEffect:(CAEmitterLayer *)layer {
+    [layer setValue:[NSNumber numberWithFloat:0.0f] forKeyPath:@"emitterCells.ring.birthRate"];
 }
 
 @end

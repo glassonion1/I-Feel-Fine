@@ -11,7 +11,7 @@
 
 @interface ESViewController : UIViewController {
     CAEmitterLayer *emitterLayer;
-    NSMutableArray *emitterLayers;
+    NSMutableDictionary *emitterLayers;
 }
 
 @end
