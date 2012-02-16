@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+#import "MasterViewController.h"
 
 @interface DetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
@@ -15,14 +16,20 @@
 
 @implementation DetailViewController
 
+@synthesize managedObjectContext;
 @synthesize detailItem = _detailItem;
-@synthesize detailDescriptionLabel = _detailDescriptionLabel;
+@synthesize scrollView, nameField, zipCodeField, stateField, cityField, otherField;
 @synthesize masterPopoverController = _masterPopoverController;
 
 - (void)dealloc
 {
     [_detailItem release];
-    [_detailDescriptionLabel release];
+    self.scrollView = nil;
+    self.nameField = nil;
+    self.zipCodeField = nil;
+    self.stateField = nil;
+    self.cityField = nil;
+    self.otherField = nil;
     [_masterPopoverController release];
     [super dealloc];
 }
@@ -49,7 +56,29 @@
     // Update the user interface for the detail item.
 
     if (self.detailItem) {
-        self.detailDescriptionLabel.text = [self.detailItem description];
+        self.nameField.text = self.detailItem.name;
+        self.zipCodeField.text = self.detailItem.address.zipCode;
+        self.stateField.text = self.detailItem.address.state;
+        self.cityField.text = self.detailItem.address.city;
+        self.otherField.text = self.detailItem.address.other;
+    }
+}
+
+- (void)done
+{
+    self.detailItem.name = nameField.text;
+    self.detailItem.address.zipCode = zipCodeField.text;
+    self.detailItem.address.state = stateField.text;
+    self.detailItem.address.city = cityField.text;
+    self.detailItem.address.other = otherField.text;
+    
+    NSError *error = nil;
+    if (![self.managedObjectContext save:&error]) {
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        [self.navigationController popViewControllerAnimated:YES];
     }
 }
 
@@ -64,15 +93,22 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                                                                                            target:self 
+                                                                                            action:@selector(done)] autorelease];
+    self.scrollView.contentSize = CGSizeMake(320, 800);
     [self configureView];
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+    self.scrollView = nil;
+    self.nameField = nil;
+    self.zipCodeField = nil;
+    self.stateField = nil;
+    self.cityField = nil;
+    self.otherField = nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated

@@ -7,11 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Person.h"
 
 @interface DetailViewController : UIViewController <UISplitViewControllerDelegate>
 
-@property (strong, nonatomic) id detailItem;
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (strong, nonatomic) Person *detailItem;
 
-@property (strong, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (strong, nonatomic) IBOutlet UITextField *nameField;
+@property (strong, nonatomic) IBOutlet UITextField *zipCodeField;
+@property (strong, nonatomic) IBOutlet UITextField *stateField;
+@property (strong, nonatomic) IBOutlet UITextField *cityField;
+@property (strong, nonatomic) IBOutlet UITextField *otherField;
 
 @end

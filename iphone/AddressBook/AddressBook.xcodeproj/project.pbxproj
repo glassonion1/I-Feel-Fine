@@ -21,8 +21,6 @@
 		FFA540B3146E6E33005589B6 /* AddressBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FFA540B1146E6E33005589B6 /* AddressBook.xcdatamodeld */; };
 		FFA540B6146E6E33005589B6 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA540B5146E6E33005589B6 /* MasterViewController.m */; };
 		FFA540B9146E6E33005589B6 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA540B8146E6E33005589B6 /* DetailViewController.m */; };
-		FFB1D6DE1470866D005366F4 /* DetailEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB1D6DC1470866D005366F4 /* DetailEditViewController.m */; };
-		FFB1D6DF1470866D005366F4 /* DetailEditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB1D6DD1470866D005366F4 /* DetailEditViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,9 +46,6 @@
 		FFA540B5146E6E33005589B6 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		FFA540B7146E6E33005589B6 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		FFA540B8146E6E33005589B6 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
-		FFB1D6DB1470866D005366F4 /* DetailEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailEditViewController.h; sourceTree = "<group>"; };
-		FFB1D6DC1470866D005366F4 /* DetailEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailEditViewController.m; sourceTree = "<group>"; };
-		FFB1D6DD1470866D005366F4 /* DetailEditViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailEditViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,9 +107,6 @@
 				FF084DE0146E74490092A1A2 /* Person.m */,
 				FF084DE3146E746D0092A1A2 /* Address.h */,
 				FF084DE4146E746D0092A1A2 /* Address.m */,
-				FFB1D6DB1470866D005366F4 /* DetailEditViewController.h */,
-				FFB1D6DC1470866D005366F4 /* DetailEditViewController.m */,
-				FFB1D6DD1470866D005366F4 /* DetailEditViewController.xib */,
 				FFA540A0146E6E33005589B6 /* Supporting Files */,
 			);
 			path = AddressBook;
@@ -185,7 +177,6 @@
 				FFA540A4146E6E33005589B6 /* InfoPlist.strings in Resources */,
 				FFA540AD146E6E33005589B6 /* MainStoryboard_iPhone.storyboard in Resources */,
 				FFA540B0146E6E33005589B6 /* MainStoryboard_iPad.storyboard in Resources */,
-				FFB1D6DF1470866D005366F4 /* DetailEditViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,7 +194,6 @@
 				FFA540B9146E6E33005589B6 /* DetailViewController.m in Sources */,
 				FF084DE1146E74490092A1A2 /* Person.m in Sources */,
 				FF084DE5146E746D0092A1A2 /* Address.m in Sources */,
-				FFB1D6DE1470866D005366F4 /* DetailEditViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
