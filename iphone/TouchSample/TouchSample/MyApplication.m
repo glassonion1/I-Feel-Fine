@@ -12,8 +12,17 @@
 
 - (void)sendEvent:(UIEvent *)event
 {
+    NSLog(@"%@", @"UIApplication#sendEvent: start");
     [super sendEvent:event];
-    NSLog(@"%@", @"UIApplication#sendEvent:");
+    NSLog(@"%@", @"UIApplication#sendEvent: end");
+}
+
+- (BOOL)sendAction:(SEL)action to:(id)target from:(id)sender forEvent:(UIEvent *)event
+{
+    NSLog(@"%@", @"UIApplication#sendAction: start");
+    BOOL result = [super sendAction:action to:target from:sender forEvent:event];
+    NSLog(@"%@", @"UIApplication#sendAction: end");
+    return  result;
 }
 
 @end

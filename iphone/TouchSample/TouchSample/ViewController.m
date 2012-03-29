@@ -18,10 +18,16 @@
 
 #pragma mark - View lifecycle
 
+- (void)loadView
+{
+    NSLog(@"%@", @"loadView");
+    [super loadView];
+}
+
 - (void)viewDidLoad
 {
+    NSLog(@"%@", @"viewDidLoad");
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)viewDidUnload
@@ -33,21 +39,25 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    NSLog(@"%@", @"viewWillAppear:");
     [super viewWillAppear:animated];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    NSLog(@"%@", @"viewDidAppear:");
     [super viewDidAppear:animated];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
+    NSLog(@"%@", @"viewWillDisappear:");
 	[super viewWillDisappear:animated];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
 {
+    NSLog(@"%@", @"viewDidDisappear:");
 	[super viewDidDisappear:animated];
 }
 
