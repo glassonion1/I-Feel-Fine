@@ -1,12 +1,16 @@
 //
 //  ViewController.m
-//  TouchSample
+//  LifecycleEventSample
 //
-//  Created by Fujita Taiuke on 12/02/16.
-//  Copyright (c) 2012年 Revolution 9 All rights reserved.
+//  Created by taisuke fujita on 12/04/02.
+//  Copyright (c) 2012年 Revolution 9. All rights reserved.
 //
 
 #import "ViewController.h"
+
+@interface ViewController ()
+
+@end
 
 @implementation ViewController
 
@@ -15,8 +19,6 @@
     NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     [super didReceiveMemoryWarning];
 }
-
-#pragma mark - View lifecycle
 
 - (void)loadView
 {
@@ -68,7 +70,6 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    // Return YES for supported orientations
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
     } else {

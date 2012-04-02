@@ -11,41 +11,15 @@
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
                 <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="3" customClass="TouchView">
+                    <view key="view" contentMode="scaleToFill" id="3">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view tag="1" contentMode="scaleToFill" id="mR9-UH-dmX" customClass="TouchView">
-                                <rect key="frame" x="40" y="20" width="240" height="240"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <subviews>
-                                    <view tag="2" contentMode="scaleToFill" id="fBr-kK-P0d" customClass="TouchView">
-                                        <rect key="frame" x="60" y="60" width="120" height="120"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="name" value="cyan"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="name" value="red"/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <view tag="3" contentMode="scaleToFill" id="SF4-aW-HVn" customClass="TouchView">
-                                <rect key="frame" x="100" y="320" width="120" height="120"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="name" value="green"/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1Sz-jq-y89">
-                                <rect key="frame" x="124" y="268" width="72" height="37"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="DvE-es-mry">
+                                <rect key="frame" x="100" y="211" width="120" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal">
+                                <state key="normal" title="画面を表示する">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -53,32 +27,29 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="jcC-fZ-5sK" kind="modal" id="A2T-PE-MKc"/>
+                                    <segue destination="V8w-c0-jDf" kind="modal" id="Orh-Fg-p6D"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="string" keyPath="name" value="root"/>
-                        </userDefinedRuntimeAttributes>
                     </view>
                 </viewController>
             </objects>
         </scene>
         <!--Modal View Controller-->
-        <scene sceneID="c8y-jg-0c5">
+        <scene sceneID="Pz7-tz-Svj">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="a9X-Jd-dVR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="jcC-fZ-5sK" customClass="ModalViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ir5-8x-DQw">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qxX-Yr-U4n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="V8w-c0-jDf" customClass="ModalViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ono-Cy-Ues">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dfs-eU-jGH">
-                                <rect key="frame" x="124" y="211" width="72" height="37"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gHq-ls-vBA">
+                                <rect key="frame" x="110" y="211" width="100" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal">
+                                <state key="normal" title="画面を閉じる">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -86,7 +57,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="buttonClick:" destination="jcC-fZ-5sK" eventType="touchUpInside" id="LcW-Av-1uB"/>
+                                    <action selector="buttonClick:" destination="V8w-c0-jDf" eventType="touchUpInside" id="xXz-vy-1do"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -94,7 +65,7 @@
                     </view>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="579" y="-105"/>
+            <point key="canvasLocation" x="564" y="41"/>
         </scene>
     </scenes>
     <classes>
@@ -103,9 +74,6 @@
             <relationships>
                 <relationship kind="action" name="buttonClick:"/>
             </relationships>
-        </class>
-        <class className="TouchView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TouchView.h"/>
         </class>
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>

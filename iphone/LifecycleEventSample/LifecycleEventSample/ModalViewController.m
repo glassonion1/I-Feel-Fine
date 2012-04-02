@@ -1,22 +1,33 @@
 //
-//  ViewController.m
+//  ModalViewController.m
 //  TouchSample
 //
-//  Created by Fujita Taiuke on 12/02/16.
-//  Copyright (c) 2012年 Revolution 9 All rights reserved.
+//  Created by taisuke fujita on 12/03/30.
+//  Copyright (c) 2012年 Colopl, Inc. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "ModalViewController.h"
 
-@implementation ViewController
+@interface ModalViewController ()
+
+@end
+
+@implementation ModalViewController
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
 
 - (void)didReceiveMemoryWarning
 {
     NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     [super didReceiveMemoryWarning];
 }
-
-#pragma mark - View lifecycle
 
 - (void)loadView
 {
@@ -68,12 +79,13 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    // Return YES for supported orientations
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
-    } else {
-        return YES;
-    }
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (IBAction)buttonClick:(id)sender
+{
+    NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

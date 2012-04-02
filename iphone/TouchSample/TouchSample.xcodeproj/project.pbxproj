@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E55685315258152000803AA /* ModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E55685215258152000803AA /* ModalViewController.m */; };
 		9633413E14EC9B8C0083A8D9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9633413D14EC9B8C0083A8D9 /* UIKit.framework */; };
 		9633414014EC9B8C0083A8D9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9633413F14EC9B8C0083A8D9 /* Foundation.framework */; };
 		9633414214EC9B8C0083A8D9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9633414114EC9B8C0083A8D9 /* CoreGraphics.framework */; };
@@ -22,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6E55685115258152000803AA /* ModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModalViewController.h; sourceTree = "<group>"; };
+		6E55685215258152000803AA /* ModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModalViewController.m; sourceTree = "<group>"; };
 		9633413914EC9B8C0083A8D9 /* TouchSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TouchSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9633413D14EC9B8C0083A8D9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9633413F14EC9B8C0083A8D9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -100,6 +103,8 @@
 				9633415614EC9B8D0083A8D9 /* ViewController.m */,
 				968F22B114ECB2CA00614603 /* TouchView.h */,
 				968F22B214ECB2CA00614603 /* TouchView.m */,
+				6E55685115258152000803AA /* ModalViewController.h */,
+				6E55685215258152000803AA /* ModalViewController.m */,
 				9633414414EC9B8D0083A8D9 /* Supporting Files */,
 			);
 			path = TouchSample;
@@ -186,6 +191,7 @@
 				9633416314ECA7C60083A8D9 /* MyApplication.m in Sources */,
 				9633416614ECAAB90083A8D9 /* MyWindow.m in Sources */,
 				968F22B314ECB2CA00614603 /* TouchView.m in Sources */,
+				6E55685315258152000803AA /* ModalViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
