@@ -25,4 +25,12 @@
     return  result;
 }
 
+- (UIResponder*)nextResponder
+{
+    //NSLog(@"%@", [NSThread callStackSymbols]);
+    UIResponder *responder = [super nextResponder];
+    NSLog(@"Responder %@", NSStringFromClass([responder class]));
+    return responder;
+}
+
 @end

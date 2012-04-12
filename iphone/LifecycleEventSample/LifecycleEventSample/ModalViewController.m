@@ -63,18 +63,21 @@
 {
     NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     [super viewDidAppear:animated];
+    NSLog(@"%@", [NSThread callStackSymbols]);
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
 	[super viewWillDisappear:animated];
+    //NSLog(@"%@", [NSThread callStackSymbols]);
 }
 
 - (void)viewDidDisappear:(BOOL)animated
 {
     NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
 	[super viewDidDisappear:animated];
+    NSLog(@"%@", [NSThread callStackSymbols]);
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

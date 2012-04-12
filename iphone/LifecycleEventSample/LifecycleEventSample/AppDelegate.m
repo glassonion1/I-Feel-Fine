@@ -36,6 +36,7 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    NSLog(@"%@", [NSThread callStackSymbols]);
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

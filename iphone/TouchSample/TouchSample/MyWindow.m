@@ -22,6 +22,7 @@
     NSLog(@"%@", @"UIWindow#hitTest:withEvent:");
     UIView *view = [super hitTest:point withEvent:event];
     NSLog(@"tag %d", [view tag]);
+    NSLog(@"%@", [NSThread callStackSymbols]);
     return view;
 }
 
@@ -29,6 +30,14 @@
 {
     NSLog(@"%@", @"UIWindow#pointInside:withEvent:");
     return [super pointInside:point withEvent:event];
+}
+
+- (UIResponder*)nextResponder
+{
+    //NSLog(@"%@", [NSThread callStackSymbols]);
+    UIResponder *responder = [super nextResponder];
+    NSLog(@"Responder %@", NSStringFromClass([responder class]));
+    return responder;
 }
 
 @end

@@ -10,6 +10,8 @@
 
 @implementation ViewController
 
+@synthesize touchView;
+
 - (void)didReceiveMemoryWarning
 {
     NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
@@ -52,6 +54,7 @@
 {
     NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     [super viewDidAppear:animated];
+    [self.touchView becomeFirstResponder];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -63,7 +66,52 @@
 - (void)viewDidDisappear:(BOOL)animated
 {
     NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    [self.touchView resignFirstResponder];
 	[super viewDidDisappear:animated];
+}
+
+/*
+- (BOOL)canBecomeFirstResponder
+{
+    return YES;
+}
+*/
+
+- (UIResponder*)nextResponder
+{
+    //NSLog(@"%@", [NSThread callStackSymbols]);
+    UIResponder *responder = [super nextResponder];
+    NSLog(@"Responder %@", NSStringFromClass([responder class]));
+    return responder;
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+}
+
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+}
+
+- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
+{
+}
+
+- (void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event
+{
+}
+
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
+{
+}
+
+- (void)motionCancelled:(UIEventSubtype)motion withEvent:(UIEvent *)event
+{
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -74,12 +122,6 @@
     } else {
         return YES;
     }
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-    [super prepareForSegue:segue sender:sender];
 }
 
 @end

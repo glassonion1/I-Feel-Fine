@@ -48,12 +48,14 @@
 {
     NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     [super viewWillAppear:animated];
+    //NSLog(@"%@", [NSThread callStackSymbols]);
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     [super viewDidAppear:animated];
+    //NSLog(@"%@", [NSThread callStackSymbols]);
 }
 
 - (void)viewWillDisappear:(BOOL)animated

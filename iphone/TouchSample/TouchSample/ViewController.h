@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TouchView.h"
 
 @interface ViewController : UIViewController
+
+@property (strong, nonatomic) IBOutlet TouchView *touchView;
 
 @end
