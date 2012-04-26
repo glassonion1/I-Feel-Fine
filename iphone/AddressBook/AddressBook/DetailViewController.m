@@ -54,18 +54,30 @@
 - (void)configureView
 {
     // Update the user interface for the detail item.
-
+    [self becomeFirstResponder];
     if (self.detailItem) {
         self.nameField.text = self.detailItem.name;
         self.zipCodeField.text = self.detailItem.address.zipCode;
         self.stateField.text = self.detailItem.address.state;
         self.cityField.text = self.detailItem.address.city;
         self.otherField.text = self.detailItem.address.other;
+    } else {
+        self.nameField.text = nil;
+        self.zipCodeField.text = nil;
+        self.stateField.text = nil;
+        self.cityField.text = nil;
+        self.otherField.text = nil;
     }
 }
 
 - (void)done
 {
+    if (!self.detailItem) {
+        _detailItem = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([Person class]) 
+                                                    inManagedObjectContext:self.managedObjectContext];
+        _detailItem.address = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([Address class]) 
+                                                            inManagedObjectContext:self.managedObjectContext];
+    }
     self.detailItem.name = nameField.text;
     self.detailItem.address.zipCode = zipCodeField.text;
     self.detailItem.address.state = stateField.text;
@@ -80,6 +92,7 @@
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         [self.navigationController popViewControllerAnimated:YES];
     }
+    [self.view endEditing:YES];
 }
 
 - (void)didReceiveMemoryWarning
