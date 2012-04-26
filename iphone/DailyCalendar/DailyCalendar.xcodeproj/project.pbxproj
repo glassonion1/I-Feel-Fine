@@ -1,0 +1,308 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6EDB41DC153E6E5700FA3CBB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDB41DB153E6E5700FA3CBB /* UIKit.framework */; };
+		6EDB41DE153E6E5700FA3CBB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDB41DD153E6E5700FA3CBB /* Foundation.framework */; };
+		6EDB41E0153E6E5700FA3CBB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDB41DF153E6E5700FA3CBB /* CoreGraphics.framework */; };
+		6EDB41E6153E6E5700FA3CBB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6EDB41E4153E6E5700FA3CBB /* InfoPlist.strings */; };
+		6EDB41E8153E6E5700FA3CBB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDB41E7153E6E5700FA3CBB /* main.m */; };
+		6EDB41EC153E6E5700FA3CBB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDB41EB153E6E5700FA3CBB /* AppDelegate.m */; };
+		6EDB41EF153E6E5700FA3CBB /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDB41EE153E6E5700FA3CBB /* RootViewController.m */; };
+		6EDB41F2153E6E5700FA3CBB /* DataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDB41F1153E6E5700FA3CBB /* DataViewController.m */; };
+		6EDB41F5153E6E5700FA3CBB /* ModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDB41F4153E6E5700FA3CBB /* ModelController.m */; };
+		6EDB41F8153E6E5700FA3CBB /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EDB41F6153E6E5700FA3CBB /* MainStoryboard_iPhone.storyboard */; };
+		6EDB41FB153E6E5700FA3CBB /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EDB41F9153E6E5700FA3CBB /* MainStoryboard_iPad.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		6EDB41D7153E6E5700FA3CBB /* DailyCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6EDB41DB153E6E5700FA3CBB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		6EDB41DD153E6E5700FA3CBB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		6EDB41DF153E6E5700FA3CBB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		6EDB41E3153E6E5700FA3CBB /* DailyCalendar-Info.plist */ = {isa = PBXFileReference; path = "DailyCalendar-Info.plist"; sourceTree = "<group>"; };
+		6EDB41E5153E6E5700FA3CBB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6EDB41E7153E6E5700FA3CBB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6EDB41E9153E6E5700FA3CBB /* DailyCalendar-Prefix.pch */ = {isa = PBXFileReference; path = "DailyCalendar-Prefix.pch"; sourceTree = "<group>"; };
+		6EDB41EA153E6E5700FA3CBB /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		6EDB41EB153E6E5700FA3CBB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		6EDB41ED153E6E5700FA3CBB /* RootViewController.h */ = {isa = PBXFileReference; path = RootViewController.h; sourceTree = "<group>"; };
+		6EDB41EE153E6E5700FA3CBB /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		6EDB41F0153E6E5700FA3CBB /* DataViewController.h */ = {isa = PBXFileReference; path = DataViewController.h; sourceTree = "<group>"; };
+		6EDB41F1153E6E5700FA3CBB /* DataViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataViewController.m; sourceTree = "<group>"; };
+		6EDB41F3153E6E5700FA3CBB /* ModelController.h */ = {isa = PBXFileReference; path = ModelController.h; sourceTree = "<group>"; };
+		6EDB41F4153E6E5700FA3CBB /* ModelController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModelController.m; sourceTree = "<group>"; };
+		6EDB41F7153E6E5700FA3CBB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		6EDB41FA153E6E5700FA3CBB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6EDB41D4153E6E5700FA3CBB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6EDB41DC153E6E5700FA3CBB /* UIKit.framework in Frameworks */,
+				6EDB41DE153E6E5700FA3CBB /* Foundation.framework in Frameworks */,
+				6EDB41E0153E6E5700FA3CBB /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6EDB41CC153E6E5700FA3CBB = {
+			isa = PBXGroup;
+			children = (
+				6EDB41E1153E6E5700FA3CBB /* DailyCalendar */,
+				6EDB41DA153E6E5700FA3CBB /* Frameworks */,
+				6EDB41D8153E6E5700FA3CBB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6EDB41D8153E6E5700FA3CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6EDB41D7153E6E5700FA3CBB /* DailyCalendar.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6EDB41DA153E6E5700FA3CBB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6EDB41DB153E6E5700FA3CBB /* UIKit.framework */,
+				6EDB41DD153E6E5700FA3CBB /* Foundation.framework */,
+				6EDB41DF153E6E5700FA3CBB /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6EDB41E1153E6E5700FA3CBB /* DailyCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				6EDB41EA153E6E5700FA3CBB /* AppDelegate.h */,
+				6EDB41EB153E6E5700FA3CBB /* AppDelegate.m */,
+				6EDB41ED153E6E5700FA3CBB /* RootViewController.h */,
+				6EDB41EE153E6E5700FA3CBB /* RootViewController.m */,
+				6EDB41F0153E6E5700FA3CBB /* DataViewController.h */,
+				6EDB41F1153E6E5700FA3CBB /* DataViewController.m */,
+				6EDB41F3153E6E5700FA3CBB /* ModelController.h */,
+				6EDB41F4153E6E5700FA3CBB /* ModelController.m */,
+				6EDB41F6153E6E5700FA3CBB /* MainStoryboard_iPhone.storyboard */,
+				6EDB41F9153E6E5700FA3CBB /* MainStoryboard_iPad.storyboard */,
+				6EDB41E2153E6E5700FA3CBB /* Supporting Files */,
+			);
+			path = DailyCalendar;
+			sourceTree = "<group>";
+		};
+		6EDB41E2153E6E5700FA3CBB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6EDB41E3153E6E5700FA3CBB /* DailyCalendar-Info.plist */,
+				6EDB41E4153E6E5700FA3CBB /* InfoPlist.strings */,
+				6EDB41E7153E6E5700FA3CBB /* main.m */,
+				6EDB41E9153E6E5700FA3CBB /* DailyCalendar-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6EDB41D6153E6E5700FA3CBB /* DailyCalendar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6EDB41FE153E6E5700FA3CBB /* Build configuration list for PBXNativeTarget "DailyCalendar" */;
+			buildPhases = (
+				6EDB41D3153E6E5700FA3CBB /* Sources */,
+				6EDB41D4153E6E5700FA3CBB /* Frameworks */,
+				6EDB41D5153E6E5700FA3CBB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DailyCalendar;
+			productName = DailyCalendar;
+			productReference = 6EDB41D7153E6E5700FA3CBB /* DailyCalendar.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6EDB41CE153E6E5700FA3CBB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = "Revolution 9";
+			};
+			buildConfigurationList = 6EDB41D1153E6E5700FA3CBB /* Build configuration list for PBXProject "DailyCalendar" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 6EDB41CC153E6E5700FA3CBB;
+			productRefGroup = 6EDB41D8153E6E5700FA3CBB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6EDB41D6153E6E5700FA3CBB /* DailyCalendar */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6EDB41D5153E6E5700FA3CBB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6EDB41E6153E6E5700FA3CBB /* InfoPlist.strings in Resources */,
+				6EDB41F8153E6E5700FA3CBB /* MainStoryboard_iPhone.storyboard in Resources */,
+				6EDB41FB153E6E5700FA3CBB /* MainStoryboard_iPad.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6EDB41D3153E6E5700FA3CBB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6EDB41E8153E6E5700FA3CBB /* main.m in Sources */,
+				6EDB41EC153E6E5700FA3CBB /* AppDelegate.m in Sources */,
+				6EDB41EF153E6E5700FA3CBB /* RootViewController.m in Sources */,
+				6EDB41F2153E6E5700FA3CBB /* DataViewController.m in Sources */,
+				6EDB41F5153E6E5700FA3CBB /* ModelController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		6EDB41E4153E6E5700FA3CBB /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6EDB41E5153E6E5700FA3CBB /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		6EDB41F6153E6E5700FA3CBB /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6EDB41F7153E6E5700FA3CBB /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		6EDB41F9153E6E5700FA3CBB /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6EDB41FA153E6E5700FA3CBB /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6EDB41FC153E6E5700FA3CBB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6EDB41FD153E6E5700FA3CBB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6EDB41FF153E6E5700FA3CBB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DailyCalendar/DailyCalendar-Prefix.pch";
+				INFOPLIST_FILE = "DailyCalendar/DailyCalendar-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		6EDB4200153E6E5700FA3CBB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DailyCalendar/DailyCalendar-Prefix.pch";
+				INFOPLIST_FILE = "DailyCalendar/DailyCalendar-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6EDB41D1153E6E5700FA3CBB /* Build configuration list for PBXProject "DailyCalendar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6EDB41FC153E6E5700FA3CBB /* Debug */,
+				6EDB41FD153E6E5700FA3CBB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6EDB41FE153E6E5700FA3CBB /* Build configuration list for PBXNativeTarget "DailyCalendar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6EDB41FF153E6E5700FA3CBB /* Debug */,
+				6EDB4200153E6E5700FA3CBB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6EDB41CE153E6E5700FA3CBB /* Project object */;
+}
