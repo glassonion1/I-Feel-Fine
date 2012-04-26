@@ -22,7 +22,7 @@
     NSLog(@"%@", @"UIWindow#hitTest:withEvent:");
     UIView *view = [super hitTest:point withEvent:event];
     NSLog(@"tag %d", [view tag]);
-    NSLog(@"%@", [NSThread callStackSymbols]);
+    //NSLog(@"%@", [NSThread callStackSymbols]);
     return view;
 }
 

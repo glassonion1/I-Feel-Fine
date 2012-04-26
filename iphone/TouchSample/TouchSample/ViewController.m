@@ -48,13 +48,15 @@
 {
     NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     [super viewWillAppear:animated];
+    NSLog(@"aaaaaaaa:%@", self.view.superview);
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     [super viewDidAppear:animated];
-    [self.touchView becomeFirstResponder];
+    NSLog(@"aaaaaaaa:%@", self.view.superview);
+    [self becomeFirstResponder];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -66,7 +68,7 @@
 - (void)viewDidDisappear:(BOOL)animated
 {
     NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-    [self.touchView resignFirstResponder];
+    [self resignFirstResponder];
 	[super viewDidDisappear:animated];
 }
 
@@ -124,4 +126,19 @@
     }
 }
 
+- (void)remoteControlReceivedWithEvent:(UIEvent *)receivedEvent
+{
+    if (receivedEvent.type == UIEventTypeRemoteControl) {
+        switch (receivedEvent.subtype) {
+            case UIEventSubtypeRemoteControlTogglePlayPause:
+                break;
+            case UIEventSubtypeRemoteControlPreviousTrack:
+                break;
+            case UIEventSubtypeRemoteControlNextTrack:
+                break;
+            default:
+                break;
+        }
+    }
+}
 @end

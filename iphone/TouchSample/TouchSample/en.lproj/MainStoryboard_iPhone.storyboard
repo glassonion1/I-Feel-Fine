@@ -77,7 +77,7 @@
                     </view>
                     <connections>
                         <outlet property="touchView" destination="Rtb-0w-Mu0" id="VFH-wZ-8oT"/>
-                        <outlet property="view" destination="3" id="boH-BO-DZv"/>
+                        <outlet property="view" destination="3" id="zzq-aq-mDZ"/>
                     </connections>
                 </viewController>
             </objects>
@@ -87,7 +87,7 @@
         <class className="TouchView" superclassName="UIView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TouchView.h"/>
         </class>
-        <class className="TouchView2" superclassName="UIView">
+        <class className="TouchView2" superclassName="TouchView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TouchView2.h"/>
         </class>
         <class className="ViewController" superclassName="UIViewController">

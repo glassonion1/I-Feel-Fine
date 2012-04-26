@@ -88,6 +88,7 @@
 - (IBAction)buttonClick:(id)sender
 {
     NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    NSLog(@"%@", [NSThread callStackSymbols]);
     [self dismissModalViewControllerAnimated:YES];
 }
 
