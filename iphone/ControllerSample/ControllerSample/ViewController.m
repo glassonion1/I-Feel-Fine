@@ -14,10 +14,17 @@
 
 @implementation ViewController
 
+@synthesize textView = _textView;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self.textView becomeFirstResponder];
 }
 
 - (void)viewDidUnload
@@ -33,6 +40,11 @@
     } else {
         return YES;
     }
+}
+
+- (IBAction)save:(id)sender
+{
+    NSLog(@"%@", [NSThread callStackSymbols]);
 }
 
 @end

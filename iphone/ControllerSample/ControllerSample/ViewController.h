@@ -10,4 +10,8 @@
 
 @interface ViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UITextView *textView;
+
+- (IBAction)save:(id)sender;
+
 @end
