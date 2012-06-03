@@ -1,8 +1,8 @@
 //
 //  AppDelegate.m
-//  ControllerSample
+//  ShakeCounter
 //
-//  Created by taisuke fujita on 12/04/17.
+//  Created by taisuke fujita on 12/05/17.
 //  Copyright (c) 2012年 Revolution 9. All rights reserved.
 //
 

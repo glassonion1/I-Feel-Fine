@@ -1,5 +1,5 @@
 //
-// Prefix header for all source files of the 'ControllerSample' target in the 'ControllerSample' project
+// Prefix header for all source files of the 'MyFirstApp' target in the 'MyFirstApp' project
 //
 
 #import <Availability.h>

@@ -23,6 +23,18 @@
     return self;
 }
 
+- (void)awakeFromNib
+{
+    NSLog(@"%@", [NSThread callStackSymbols]);
+    NSLog(@"nibName:%@", self.nibName);
+}
+
+- (UIStoryboard *)storyboard
+{
+    //NSLog(@"%@", [NSThread callStackSymbols]);
+    return [super storyboard];
+}
+
 - (void)didReceiveMemoryWarning
 {
     NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
@@ -37,8 +49,10 @@
 
 - (void)viewDidLoad
 {
+    NSLog(@"%@", self.storyboard);
     NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     [super viewDidLoad];
+    //NSLog(@"%@", [NSThread callStackSymbols]);
 }
 
 - (void)viewWillUnload
@@ -57,20 +71,22 @@
 {
     NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     [super viewWillAppear:animated];
+    //NSLog(@"%@", [NSThread callStackSymbols]);
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     [super viewDidAppear:animated];
-    NSLog(@"%@", [NSThread callStackSymbols]);
+    //NSLog(@"%@", [NSThread callStackSymbols]);
+    NSLog(@"bbbbb%@", self.view.superview);
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
 	[super viewWillDisappear:animated];
-    //NSLog(@"%@", [NSThread callStackSymbols]);
+    NSLog(@"%@", [NSThread callStackSymbols]);
 }
 
 - (void)viewDidDisappear:(BOOL)animated

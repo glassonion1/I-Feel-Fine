@@ -10,6 +10,11 @@
 
 @implementation MyApplication
 
+- (id)init
+{
+    return [super init];
+}
+
 - (void)sendEvent:(UIEvent *)event
 {
     NSLog(@"%@", @"UIApplication#sendEvent: start");

@@ -15,6 +15,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    NSLog(@"%@", [NSThread callStackSymbols]);
+    NSLog(@"rootViewController:%@", [[[UIApplication sharedApplication].windows objectAtIndex:0] rootViewController]);
     return YES;
 }
 
@@ -36,7 +38,6 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-    NSLog(@"%@", [NSThread callStackSymbols]);
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

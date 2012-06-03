@@ -21,6 +21,12 @@
     return self;
 }
 
+- (void)awakeFromNib
+{
+    NSLog(@"Name %@, %@#%@", self. name, NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    //NSLog(@"%@", [NSThread callStackSymbols]);
+}
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

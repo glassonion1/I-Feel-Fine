@@ -30,13 +30,6 @@
     [super awakeFromNib];
 }
 
-- (void)dealloc
-{
-    [_detailViewController release];
-    [__fetchedResultsController release];
-    [__managedObjectContext release];
-    [super dealloc];
-}
 
 - (void)didReceiveMemoryWarning
 {
@@ -54,9 +47,9 @@
     self.detailViewController.managedObjectContext = self.managedObjectContext;
     // Set up the edit and add buttons.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
-    UIBarButtonItem *addButton = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd 
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd 
                                                                                 target:self 
-                                                                                action:@selector(insertNewObject)] autorelease];
+                                                                                action:@selector(insertNewObject)];
     self.navigationItem.rightBarButtonItem = addButton;
 }
 
@@ -183,7 +176,7 @@
     
     // Set up the fetched results controller.
     // Create the fetch request for the entity.
-    NSFetchRequest *fetchRequest = [[[NSFetchRequest alloc] init] autorelease];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     // Edit the entity name as appropriate.
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Person" inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:entity];
@@ -192,14 +185,14 @@
     [fetchRequest setFetchBatchSize:20];
     
     // Edit the sort key as appropriate.
-    NSSortDescriptor *sortDescriptor = [[[NSSortDescriptor alloc] initWithKey:@"name" ascending:NO] autorelease];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:NO];
     NSArray *sortDescriptors = [NSArray arrayWithObjects:sortDescriptor, nil];
     
     [fetchRequest setSortDescriptors:sortDescriptors];
     
     // Edit the section name key path and cache name if appropriate.
     // nil for section name key path means "no sections".
-    NSFetchedResultsController *aFetchedResultsController = [[[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:@"Master"] autorelease];
+    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:@"Master"];
     aFetchedResultsController.delegate = self;
     self.fetchedResultsController = aFetchedResultsController;
     

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E0C2872155CE3AB00448914 /* CustomSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0C2871155CE3AB00448914 /* CustomSegue.m */; };
 		6E0D385715292B7A0041E571 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E0D385615292B7A0041E571 /* UIKit.framework */; };
 		6E0D385915292B7A0041E571 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E0D385815292B7A0041E571 /* Foundation.framework */; };
 		6E0D385B15292B7A0041E571 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E0D385A15292B7A0041E571 /* CoreGraphics.framework */; };
@@ -20,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6E0C2870155CE3AB00448914 /* CustomSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSegue.h; sourceTree = "<group>"; };
+		6E0C2871155CE3AB00448914 /* CustomSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSegue.m; sourceTree = "<group>"; };
 		6E0D385215292B7A0041E571 /* LifecycleEventSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LifecycleEventSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E0D385615292B7A0041E571 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6E0D385815292B7A0041E571 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -90,6 +93,8 @@
 				6E0D386B15292B7B0041E571 /* MainStoryboard_iPad.storyboard */,
 				6E0D386E15292B7B0041E571 /* ViewController.h */,
 				6E0D386F15292B7B0041E571 /* ViewController.m */,
+				6E0C2870155CE3AB00448914 /* CustomSegue.h */,
+				6E0C2871155CE3AB00448914 /* CustomSegue.m */,
 				6E0D385D15292B7A0041E571 /* Supporting Files */,
 			);
 			path = LifecycleEventSample;
@@ -174,6 +179,7 @@
 				6E0D386715292B7B0041E571 /* AppDelegate.m in Sources */,
 				6E0D387015292B7B0041E571 /* ViewController.m in Sources */,
 				6E0D387C15292BF00041E571 /* ModalViewController.m in Sources */,
+				6E0C2872155CE3AB00448914 /* CustomSegue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

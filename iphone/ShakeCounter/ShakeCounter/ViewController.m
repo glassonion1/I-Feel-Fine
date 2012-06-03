@@ -1,8 +1,8 @@
 //
 //  ViewController.m
-//  ControllerSample
+//  ShakeCounter
 //
-//  Created by taisuke fujita on 12/04/17.
+//  Created by taisuke fujita on 12/05/17.
 //  Copyright (c) 2012年 Revolution 9. All rights reserved.
 //
 
@@ -14,17 +14,10 @@
 
 @implementation ViewController
 
-@synthesize textView = _textView;
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    [self.textView becomeFirstResponder];
+	// Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)viewDidUnload
@@ -40,11 +33,6 @@
     } else {
         return YES;
     }
-}
-
-- (IBAction)save:(id)sender
-{
-    NSLog(@"%@", [NSThread callStackSymbols]);
 }
 
 @end

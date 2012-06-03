@@ -17,14 +17,6 @@
 @synthesize managedObjectModel = __managedObjectModel;
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
 
-- (void)dealloc
-{
-    [_window release];
-    [__managedObjectContext release];
-    [__managedObjectModel release];
-    [__persistentStoreCoordinator release];
-    [super dealloc];
-}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

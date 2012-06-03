@@ -10,6 +10,12 @@
 
 @implementation MyWindow
 
+- (id)initWithFrame:(CGRect)frame;
+{
+    NSLog(@"%@", [NSThread callStackSymbols]);
+    return [super initWithFrame:frame];
+}
+
 - (void)sendEvent:(UIEvent *)event
 {
     NSLog(@"%@", @"UIWindow#sendEvent: start");
@@ -38,6 +44,18 @@
     UIResponder *responder = [super nextResponder];
     NSLog(@"Responder %@", NSStringFromClass([responder class]));
     return responder;
+}
+
+- (UIViewController *)rootViewController
+{
+    NSLog(@"%@", [NSThread callStackSymbols]);
+    return [super rootViewController];
+}
+
+- (void)addSubview:(UIView *)view
+{
+    NSLog(@"%@", [NSThread callStackSymbols]);
+    [super addSubview:view];
 }
 
 @end

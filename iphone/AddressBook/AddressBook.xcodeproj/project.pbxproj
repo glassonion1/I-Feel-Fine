@@ -275,6 +275,7 @@
 		FFA540BD146E6E33005589B6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AddressBook/AddressBook-Prefix.pch";
 				INFOPLIST_FILE = "AddressBook/AddressBook-Info.plist";
@@ -286,6 +287,7 @@
 		FFA540BE146E6E33005589B6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AddressBook/AddressBook-Prefix.pch";
 				INFOPLIST_FILE = "AddressBook/AddressBook-Info.plist";

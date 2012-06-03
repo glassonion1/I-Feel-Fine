@@ -12,6 +12,18 @@
 
 @synthesize touchView;
 
+- (void)awakeFromNib
+{
+    NSLog(@"nibName:%@", self.nibName);
+    NSLog(@"%@", [NSThread callStackSymbols]);
+}
+
+- (UIStoryboard *)storyboard
+{
+    //NSLog(@"%@", [NSThread callStackSymbols]);
+    return [super storyboard];
+}
+
 - (void)didReceiveMemoryWarning
 {
     NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
@@ -30,6 +42,7 @@
 {
     NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     [super viewDidLoad];
+    NSLog(@"%@", [NSThread callStackSymbols]);
 }
 
 - (void)viewWillUnload
@@ -49,6 +62,7 @@
     NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     [super viewWillAppear:animated];
     NSLog(@"aaaaaaaa:%@", self.view.superview);
+    NSLog(@"%@", [NSThread callStackSymbols]);
 }
 
 - (void)viewDidAppear:(BOOL)animated

@@ -16,31 +16,23 @@
 
 @implementation DetailViewController
 
-@synthesize managedObjectContext;
+@synthesize managedObjectContext = _managedObjectContext;
 @synthesize detailItem = _detailItem;
-@synthesize scrollView, nameField, zipCodeField, stateField, cityField, otherField;
+@synthesize scrollView = _scrollView;
+@synthesize nameField = _nameField;
+@synthesize zipCodeField = _zipCodeField;
+@synthesize stateField = _stateField;
+@synthesize cityField = _cityField;
+@synthesize otherField = _otherField;
 @synthesize masterPopoverController = _masterPopoverController;
 
-- (void)dealloc
-{
-    [_detailItem release];
-    self.scrollView = nil;
-    self.nameField = nil;
-    self.zipCodeField = nil;
-    self.stateField = nil;
-    self.cityField = nil;
-    self.otherField = nil;
-    [_masterPopoverController release];
-    [super dealloc];
-}
 
 #pragma mark - Managing the detail item
 
 - (void)setDetailItem:(id)newDetailItem
 {
     if (_detailItem != newDetailItem) {
-        [_detailItem release]; 
-        _detailItem = [newDetailItem retain]; 
+        _detailItem = newDetailItem; 
 
         // Update the view.
         [self configureView];
@@ -78,11 +70,11 @@
         _detailItem.address = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([Address class]) 
                                                             inManagedObjectContext:self.managedObjectContext];
     }
-    self.detailItem.name = nameField.text;
-    self.detailItem.address.zipCode = zipCodeField.text;
-    self.detailItem.address.state = stateField.text;
-    self.detailItem.address.city = cityField.text;
-    self.detailItem.address.other = otherField.text;
+    self.detailItem.name = self.nameField.text;
+    self.detailItem.address.zipCode = self.zipCodeField.text;
+    self.detailItem.address.state = self.stateField.text;
+    self.detailItem.address.city = self.cityField.text;
+    self.detailItem.address.other = self.otherField.text;
     
     NSError *error = nil;
     if (![self.managedObjectContext save:&error]) {
@@ -106,9 +98,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
                                                                                             target:self 
-                                                                                            action:@selector(done)] autorelease];
+                                                                                            action:@selector(done)];
     self.scrollView.contentSize = CGSizeMake(320, 800);
     [self configureView];
 }
