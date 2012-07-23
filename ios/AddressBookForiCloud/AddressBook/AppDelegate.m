@@ -107,14 +107,16 @@
     }
     
     NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
-    if (coordinator != nil)
-    {
+    if (coordinator != nil) {
         NSManagedObjectContext* moc = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
         
         [moc performBlockAndWait:^{
             [moc setPersistentStoreCoordinator: coordinator];
             
-            [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(mergeChangesFrom_iCloud:) name:NSPersistentStoreDidImportUbiquitousContentChangesNotification object:coordinator];
+            [[NSNotificationCenter defaultCenter]addObserver:self 
+                                                    selector:@selector(mergeChangesFrom_iCloud:) 
+                                                        name:NSPersistentStoreDidImportUbiquitousContentChangesNotification 
+                                                      object:coordinator];
         }];
         __managedObjectContext = moc;
     }
@@ -142,41 +144,30 @@
  */
 - (NSPersistentStoreCoordinator *)persistentStoreCoordinator
 {
-    if (__persistentStoreCoordinator != nil)
-    {
+    if (__persistentStoreCoordinator != nil) {
         return __persistentStoreCoordinator;
     }
     
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"AddressBook.sqlite"];
     
     __persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
-    __weak NSPersistentStoreCoordinator *psc = __persistentStoreCoordinator;
     
+    __weak NSPersistentStoreCoordinator *psc = __persistentStoreCoordinator;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSFileManager *fileManager = [NSFileManager defaultManager];
-        NSDictionary *options = nil;
-        NSURL *cloudURL = [fileManager URLForUbiquityContainerIdentifier:@"HUVJ3972SJ.com.9revolution9.AddressBook"];
-        NSString *coreDataCloudContent = [[cloudURL path] stringByAppendingPathComponent:@"data"];
-        if ([coreDataCloudContent length] != 0) {
+        NSMutableDictionary *options = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                                  [NSNumber numberWithBool:YES], NSMigratePersistentStoresAutomaticallyOption,
+                                                  [NSNumber numberWithBool:YES], NSInferMappingModelAutomaticallyOption,
+                                                  nil];
+        NSURL *cloudURL = [[NSFileManager defaultManager] URLForUbiquityContainerIdentifier:@"HUVJ3972SJ.com.9revolution9.AddressBook"];
+        if (cloudURL) {
             // iCloud is available
-            cloudURL = [NSURL fileURLWithPath:coreDataCloudContent];
-            options = [NSDictionary dictionaryWithObjectsAndKeys:
-                       [NSNumber numberWithBool:YES], NSMigratePersistentStoresAutomaticallyOption,
-                       [NSNumber numberWithBool:YES], NSInferMappingModelAutomaticallyOption,
-                       @"AddressBook.store", NSPersistentStoreUbiquitousContentNameKey,
-                       cloudURL, NSPersistentStoreUbiquitousContentURLKey,
-                       nil];
-        } else {
-            // iCloud is not available
-            options = [NSDictionary dictionaryWithObjectsAndKeys:
-                       [NSNumber numberWithBool:YES], NSMigratePersistentStoresAutomaticallyOption,
-                       [NSNumber numberWithBool:YES], NSInferMappingModelAutomaticallyOption,
-                       nil];
+            cloudURL = [cloudURL URLByAppendingPathComponent:@"data"];
+            [options setValue:@"AddressBook.store" forKey:NSPersistentStoreUbiquitousContentNameKey];
+            [options setValue:cloudURL forKey:NSPersistentStoreUbiquitousContentURLKey];
         }
         NSError *error = nil;
         [psc lock];
-        if (![psc addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:options error:&error])
-        {
+        if (![psc addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:options error:&error]) {
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
             abort();
         }
