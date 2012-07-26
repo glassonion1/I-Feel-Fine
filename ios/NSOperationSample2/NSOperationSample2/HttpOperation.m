@@ -14,15 +14,14 @@
 - (id)initWithURL:(NSURL *)targetUrl {
     self = [super init];
     if (self) {
-        url = [targetUrl retain];
+        url = targetUrl;
     }
     
     return self;
 }
 
 - (void)dealloc {
-    [url release], url = nil;
-    [super dealloc];
+    url = nil;
 }
 
 - (void)main {
@@ -35,7 +34,6 @@
     if (error == nil) {
         NSString *responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         NSLog(@"%@", responseString);
-        [responseString release];
     }
 }
 

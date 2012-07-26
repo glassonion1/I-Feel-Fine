@@ -15,7 +15,7 @@
 - (void)main {
     //NSLog(@"isMainThread:%d", [NSThread isMainThread]);
     NSLog(@"Thread:%@", [NSThread currentThread]);
-    Sample *s = [[[Sample alloc] init] autorelease];
+    Sample *s = [[Sample alloc] init];
     [s doSomething];
     /*
     NSOperationQueue *queue = [NSOperationQueue currentQueue];

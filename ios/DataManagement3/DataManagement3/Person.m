@@ -17,8 +17,8 @@
 {
     self = [super init];
     if (self) {
-        name = [[decoder decodeObjectForKey:@"name"] retain];
-        address = [[decoder decodeObjectForKey:@"address"] retain];
+        name = [decoder decodeObjectForKey:@"name"];
+        address = [decoder decodeObjectForKey:@"address"];
     }
     return self;
 }
@@ -29,12 +29,6 @@
     [encoder encodeObject:address forKey:@"address"];
 }
 
-- (void)dealloc
-{
-    self.name = nil;
-    self.address = nil;
-    [super dealloc];
-}
 
 -(NSString*)description{
     return [NSString stringWithFormat:@"<%@ :%p , name:%@, address:%@>", 

@@ -17,10 +17,10 @@
 {
     self = [super init];
     if (self) {
-        zipCode = [[decoder decodeObjectForKey:@"zipCode"] retain];
-        state = [[decoder decodeObjectForKey:@"state"] retain];
-        city = [[decoder decodeObjectForKey:@"city"] retain];
-        other = [[decoder decodeObjectForKey:@"other"] retain];
+        zipCode = [decoder decodeObjectForKey:@"zipCode"];
+        state = [decoder decodeObjectForKey:@"state"];
+        city = [decoder decodeObjectForKey:@"city"];
+        other = [decoder decodeObjectForKey:@"other"];
     }
     return self;
 }
@@ -33,14 +33,6 @@
     [encoder encodeObject:other forKey:@"other"];
 }
 
-- (void)dealloc
-{
-    self.zipCode = nil;
-    self.state = nil;
-    self.city = nil;
-    self.other = nil;
-    [super dealloc];
-}
 
 -(NSString*)description{
     return [NSString stringWithFormat:@"<%@ :%p , zipCode:%@, state:%@, city:%@, other:%@>", 

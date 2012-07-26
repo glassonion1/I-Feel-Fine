@@ -17,7 +17,6 @@
 
 - (void)dealloc {
      NSLog(@"%@", @"Dealloc!!!");
-    [super dealloc];
 }
 
 @end

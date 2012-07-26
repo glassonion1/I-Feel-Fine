@@ -16,17 +16,6 @@
 
 @implementation DetailViewController
 
-@synthesize managedObjectContext = _managedObjectContext;
-@synthesize detailItem = _detailItem;
-@synthesize scrollView = _scrollView;
-@synthesize nameField = _nameField;
-@synthesize zipCodeField = _zipCodeField;
-@synthesize stateField = _stateField;
-@synthesize cityField = _cityField;
-@synthesize otherField = _otherField;
-@synthesize masterPopoverController = _masterPopoverController;
-
-
 #pragma mark - Managing the detail item
 
 - (void)setDetailItem:(id)newDetailItem

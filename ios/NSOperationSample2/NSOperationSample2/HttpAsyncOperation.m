@@ -24,37 +24,36 @@
 }
 
 - (BOOL)isExecuting {
-    return isExecuting;
+    return _isExecuting;
 }
 
 - (BOOL)isFinished {
-    return isFinished;
+    return _isFinished;
 }
 
 - (id)initWithURL:(NSURL *)targetUrl {
     self = [super init];
     if (self) {
-        url = [targetUrl retain];
+        url = targetUrl;
     }
-    isExecuting = NO;
-	isFinished = NO;
+    _isExecuting = NO;
+	_isFinished = NO;
     return self;
 }
 
 - (void)dealloc {
-    [url release], url = nil;
-    [super dealloc];
+    url = nil;
 }
 
 - (void)start {
-    [self setValue:[NSNumber numberWithBool:YES] forKey:@"isExecuting"];
+    [self setValue:@(YES) forKey:@"isExecuting"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     NSURLConnection *conn = [NSURLConnection connectionWithRequest:request delegate:self];
     if (conn != nil) {
         // NSURLConnection は RunLoop をまわさないと並列実行モードで動かない
         do {
-            [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
-        } while (isExecuting);
+            [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate dateWithTimeIntervalSinceNow:0.1]];
+        } while (_isExecuting);
     }
 }
 
@@ -67,18 +66,17 @@
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
-    NSLog(@"%@", @"エラー");
-    [self setValue:[NSNumber numberWithBool:NO] forKey:@"isExecuting"];
-    [self setValue:[NSNumber numberWithBool:YES] forKey:@"isFinished"];
+    self.responseString = [error description];
+    [self setValue:@(NO) forKey:@"isExecuting"];
+    [self setValue:@(YES) forKey:@"isFinished"];
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
-    NSString *responseString = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
-    NSLog(@"%@", responseString);
-    [responseData release];
-    [responseString release];
-    [self setValue:[NSNumber numberWithBool:NO] forKey:@"isExecuting"];
-    [self setValue:[NSNumber numberWithBool:YES] forKey:@"isFinished"];
+    if (responseData) {
+        self.responseString = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+    }
+    [self setValue:@(NO) forKey:@"isExecuting"];
+    [self setValue:@(YES) forKey:@"isFinished"];
 }
 
 @end

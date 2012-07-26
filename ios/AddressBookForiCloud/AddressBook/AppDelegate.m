@@ -12,11 +12,9 @@
 
 @implementation AppDelegate
 
-@synthesize window = _window;
-@synthesize managedObjectContext = __managedObjectContext;
-@synthesize managedObjectModel = __managedObjectModel;
-@synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
-
+@synthesize managedObjectContext = _managedObjectContext;
+@synthesize managedObjectModel = _managedObjectModel;
+@synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -101,9 +99,9 @@
  */
 - (NSManagedObjectContext *)managedObjectContext
 {
-    if (__managedObjectContext != nil)
+    if (_managedObjectContext != nil)
     {
-        return __managedObjectContext;
+        return _managedObjectContext;
     }
     
     NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
@@ -118,9 +116,9 @@
                                                         name:NSPersistentStoreDidImportUbiquitousContentChangesNotification 
                                                       object:coordinator];
         }];
-        __managedObjectContext = moc;
+        _managedObjectContext = moc;
     }
-    return __managedObjectContext;
+    return _managedObjectContext;
 }
 
 /**
@@ -129,13 +127,13 @@
  */
 - (NSManagedObjectModel *)managedObjectModel
 {
-    if (__managedObjectModel != nil)
+    if (_managedObjectModel != nil)
     {
-        return __managedObjectModel;
+        return _managedObjectModel;
     }
     NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"AddressBook" withExtension:@"momd"];
-    __managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
-    return __managedObjectModel;
+    _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
+    return _managedObjectModel;
 }
 
 /**
@@ -144,20 +142,18 @@
  */
 - (NSPersistentStoreCoordinator *)persistentStoreCoordinator
 {
-    if (__persistentStoreCoordinator != nil) {
-        return __persistentStoreCoordinator;
+    if (_persistentStoreCoordinator != nil) {
+        return _persistentStoreCoordinator;
     }
     
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"AddressBook.sqlite"];
     
-    __persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
+    _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
     
-    __weak NSPersistentStoreCoordinator *psc = __persistentStoreCoordinator;
+    __weak NSPersistentStoreCoordinator *psc = _persistentStoreCoordinator;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSMutableDictionary *options = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                                  [NSNumber numberWithBool:YES], NSMigratePersistentStoresAutomaticallyOption,
-                                                  [NSNumber numberWithBool:YES], NSInferMappingModelAutomaticallyOption,
-                                                  nil];
+        NSMutableDictionary *options =  [@{NSMigratePersistentStoresAutomaticallyOption : @(YES),
+                                           NSInferMappingModelAutomaticallyOption : @(YES)} mutableCopy];
         NSURL *cloudURL = [[NSFileManager defaultManager] URLForUbiquityContainerIdentifier:@"HUVJ3972SJ.com.9revolution9.AddressBook"];
         if (cloudURL) {
             // iCloud is available
@@ -177,7 +173,7 @@
             [[NSNotificationCenter defaultCenter] postNotificationName:@"RefetchAllDatabaseData" object:self userInfo:nil];
         });
     });
-    return __persistentStoreCoordinator;
+    return _persistentStoreCoordinator;
 }
 
 - (void)mergeChangesFrom_iCloud:(NSNotification *)notification {

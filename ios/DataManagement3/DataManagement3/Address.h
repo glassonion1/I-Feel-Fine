@@ -16,9 +16,9 @@
     NSString *other;
 }
 
-@property (nonatomic, retain) NSString *zipCode;
-@property (nonatomic, retain) NSString *state;
-@property (nonatomic, retain) NSString *city;
-@property (nonatomic, retain) NSString *other;
+@property (nonatomic, strong) NSString *zipCode;
+@property (nonatomic, strong) NSString *state;
+@property (nonatomic, strong) NSString *city;
+@property (nonatomic, strong) NSString *other;
 
 @end

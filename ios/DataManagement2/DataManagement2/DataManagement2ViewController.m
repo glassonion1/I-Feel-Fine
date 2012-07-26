@@ -12,10 +12,6 @@
 
 @implementation DataManagement2ViewController
 
-- (void)dealloc
-{
-    [super dealloc];
-}
 
 - (void)didReceiveMemoryWarning
 {
@@ -80,14 +76,14 @@
     NSData *data2 = [NSKeyedArchiver archivedDataWithRootObject:hYamada];
     NSData *data3 = [NSKeyedArchiver archivedDataWithRootObject:tanaka];
     
-    NSArray *array = [NSArray arrayWithObjects:data, data2, data3, nil];
+    NSArray *array = @[data, data2, data3];
     BOOL successful = [array writeToFile:filePath atomically:YES];
     if (successful) {
         NSLog(@"%@", @"データの保存に成功しました。");
     }
      */
     
-    NSArray *array = [NSArray arrayWithObjects:@"山田太郎", @"東京都中央区", nil];
+    NSArray *array = @[@"山田太郎", @"東京都中央区"];
     BOOL successful = [array writeToFile:filePath atomically:NO];
     if (successful) {
         NSLog(@"%@", @"データの保存に成功しました。");
@@ -100,7 +96,7 @@
     NSString *directory = [paths objectAtIndex:0];
     NSString *filePath = [directory stringByAppendingPathComponent:@"data.plist"];
     
-    NSArray *array = [[[NSArray alloc] initWithContentsOfFile:filePath] autorelease];
+    NSArray *array = [[NSArray alloc] initWithContentsOfFile:filePath];
     /*
     if (array) {
         for (NSData *data in array) {

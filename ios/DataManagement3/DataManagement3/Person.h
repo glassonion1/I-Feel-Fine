@@ -16,7 +16,7 @@
     Address *address;
 }
 
-@property (nonatomic, retain) NSString *name;
-@property (nonatomic, retain) Address *address;
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) Address *address;
 
 @end

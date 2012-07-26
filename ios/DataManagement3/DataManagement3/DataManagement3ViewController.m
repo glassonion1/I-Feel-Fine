@@ -12,11 +12,6 @@
 
 @implementation DataManagement3ViewController
 
-- (void)dealloc
-{
-    [super dealloc];
-}
-
 - (void)didReceiveMemoryWarning
 {
     // Releases the view if it doesn't have a superview.
@@ -75,9 +70,9 @@
     NSData *data = [NSKeyedArchiver archivedDataWithRootObject:tYamada];
     NSData *data2 = [NSKeyedArchiver archivedDataWithRootObject:hYamada];
     NSData *data3 = [NSKeyedArchiver archivedDataWithRootObject:tanaka];
-    NSArray *array = [NSArray arrayWithObjects:data, nil];
+    NSArray *array = @[data];
     */
-    NSArray *array = [NSArray arrayWithObjects:@"山田太郎", @"東京都中央区", nil];
+    NSArray *array = @[@"山田太郎", @"東京都中央区"];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:array forKey:@"dataofyamada"];
     BOOL successful = [defaults synchronize];

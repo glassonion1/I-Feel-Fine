@@ -13,11 +13,6 @@
 
 @implementation DataManagementViewController
 
-- (void)dealloc
-{
-    [super dealloc];
-}
-
 - (void)didReceiveMemoryWarning
 {
     // Releases the view if it doesn't have a superview.
@@ -53,34 +48,34 @@
     NSString *directory = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
     NSString *filePath = [NSString stringWithFormat:@"%@/data.dat", directory];
     
-    Person *tYamada = [[[Person alloc] init] autorelease];
+    Person *tYamada = [[Person alloc] init];
     tYamada.name = @"山田太郎";
-    Address *yAddress = [[[Address alloc] init] autorelease];
+    Address *yAddress = [[Address alloc] init];
     yAddress.zipCode = @"104-0061";
     yAddress.state = @"東京都";
     yAddress.city = @"中央区";
     yAddress.other = @"銀座1丁目";
     tYamada.address = yAddress;
     
-    Person *hYamada = [[[Person alloc] init] autorelease];
+    Person *hYamada = [[Person alloc] init];
     hYamada.name = @"山田花子";
     hYamada.address = yAddress;
     
-    Person *tanaka = [[[Person alloc] init] autorelease];
+    Person *tanaka = [[Person alloc] init];
     tanaka.name = @"田中次郎";
-    Address *tAddress = [[[Address alloc] init] autorelease];
+    Address *tAddress = [[Address alloc] init];
     tAddress.zipCode = @"145-0071";
     tAddress.state = @"東京都";
     tAddress.city = @"大田区";
     tAddress.other = @"田園調布1丁目";
     tanaka.address = tAddress;
-    NSArray *array = [NSArray arrayWithObjects:tYamada, hYamada, tanaka, nil];
+    NSArray *array = @[tYamada, hYamada, tanaka];
     BOOL successful = [NSKeyedArchiver archiveRootObject:array toFile:filePath];
     if (successful) {
         NSLog(@"%@", @"データの保存に成功しました。");
     }
     /*
-    NSArray *array = [NSArray arrayWithObjects:@"山田太郎", @"東京都中央区", nil];
+    NSArray *array = @[@"山田太郎", @"東京都中央区"];
     BOOL successful = [NSKeyedArchiver archiveRootObject:array toFile:filePath];
     if (successful) {
         NSLog(@"%@", @"データの保存に成功しました。");

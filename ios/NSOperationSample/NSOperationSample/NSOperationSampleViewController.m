@@ -11,10 +11,6 @@
 
 @implementation NSOperationSampleViewController
 
-- (void)dealloc
-{
-    [super dealloc];
-}
 
 - (void)didReceiveMemoryWarning
 {
