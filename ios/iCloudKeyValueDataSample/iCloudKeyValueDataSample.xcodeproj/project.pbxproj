@@ -1,0 +1,316 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6E75258715C38D15001328C6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E75258615C38D15001328C6 /* UIKit.framework */; };
+		6E75258915C38D15001328C6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E75258815C38D15001328C6 /* Foundation.framework */; };
+		6E75258B15C38D15001328C6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E75258A15C38D15001328C6 /* CoreGraphics.framework */; };
+		6E75259115C38D15001328C6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E75258F15C38D15001328C6 /* InfoPlist.strings */; };
+		6E75259315C38D15001328C6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E75259215C38D15001328C6 /* main.m */; };
+		6E75259715C38D15001328C6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E75259615C38D15001328C6 /* AppDelegate.m */; };
+		6E75259A15C38D15001328C6 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E75259915C38D15001328C6 /* RootViewController.m */; };
+		6E75259D15C38D15001328C6 /* DataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E75259C15C38D15001328C6 /* DataViewController.m */; };
+		6E7525A015C38D15001328C6 /* ModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E75259F15C38D15001328C6 /* ModelController.m */; };
+		6E7525A315C38D15001328C6 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E7525A115C38D15001328C6 /* MainStoryboard_iPhone.storyboard */; };
+		6E7525A615C38D15001328C6 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E7525A415C38D15001328C6 /* MainStoryboard_iPad.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		6E75258215C38D15001328C6 /* iCloudKeyValueDataSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCloudKeyValueDataSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E75258615C38D15001328C6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		6E75258815C38D15001328C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		6E75258A15C38D15001328C6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		6E75258E15C38D15001328C6 /* iCloudKeyValueDataSample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iCloudKeyValueDataSample-Info.plist"; sourceTree = "<group>"; };
+		6E75259015C38D15001328C6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6E75259215C38D15001328C6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6E75259415C38D15001328C6 /* iCloudKeyValueDataSample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iCloudKeyValueDataSample-Prefix.pch"; sourceTree = "<group>"; };
+		6E75259515C38D15001328C6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		6E75259615C38D15001328C6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		6E75259815C38D15001328C6 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		6E75259915C38D15001328C6 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		6E75259B15C38D15001328C6 /* DataViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataViewController.h; sourceTree = "<group>"; };
+		6E75259C15C38D15001328C6 /* DataViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataViewController.m; sourceTree = "<group>"; };
+		6E75259E15C38D15001328C6 /* ModelController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelController.h; sourceTree = "<group>"; };
+		6E75259F15C38D15001328C6 /* ModelController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModelController.m; sourceTree = "<group>"; };
+		6E7525A215C38D15001328C6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		6E7525A515C38D15001328C6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		6E7525AC15C3B148001328C6 /* iCloudKeyValueDataSample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = iCloudKeyValueDataSample.entitlements; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6E75257F15C38D15001328C6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E75258715C38D15001328C6 /* UIKit.framework in Frameworks */,
+				6E75258915C38D15001328C6 /* Foundation.framework in Frameworks */,
+				6E75258B15C38D15001328C6 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6E75257715C38D15001328C6 = {
+			isa = PBXGroup;
+			children = (
+				6E75258C15C38D15001328C6 /* iCloudKeyValueDataSample */,
+				6E75258515C38D15001328C6 /* Frameworks */,
+				6E75258315C38D15001328C6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6E75258315C38D15001328C6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6E75258215C38D15001328C6 /* iCloudKeyValueDataSample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6E75258515C38D15001328C6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6E75258615C38D15001328C6 /* UIKit.framework */,
+				6E75258815C38D15001328C6 /* Foundation.framework */,
+				6E75258A15C38D15001328C6 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6E75258C15C38D15001328C6 /* iCloudKeyValueDataSample */ = {
+			isa = PBXGroup;
+			children = (
+				6E7525AC15C3B148001328C6 /* iCloudKeyValueDataSample.entitlements */,
+				6E75259515C38D15001328C6 /* AppDelegate.h */,
+				6E75259615C38D15001328C6 /* AppDelegate.m */,
+				6E75259815C38D15001328C6 /* RootViewController.h */,
+				6E75259915C38D15001328C6 /* RootViewController.m */,
+				6E75259B15C38D15001328C6 /* DataViewController.h */,
+				6E75259C15C38D15001328C6 /* DataViewController.m */,
+				6E75259E15C38D15001328C6 /* ModelController.h */,
+				6E75259F15C38D15001328C6 /* ModelController.m */,
+				6E7525A115C38D15001328C6 /* MainStoryboard_iPhone.storyboard */,
+				6E7525A415C38D15001328C6 /* MainStoryboard_iPad.storyboard */,
+				6E75258D15C38D15001328C6 /* Supporting Files */,
+			);
+			path = iCloudKeyValueDataSample;
+			sourceTree = "<group>";
+		};
+		6E75258D15C38D15001328C6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6E75258E15C38D15001328C6 /* iCloudKeyValueDataSample-Info.plist */,
+				6E75258F15C38D15001328C6 /* InfoPlist.strings */,
+				6E75259215C38D15001328C6 /* main.m */,
+				6E75259415C38D15001328C6 /* iCloudKeyValueDataSample-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6E75258115C38D15001328C6 /* iCloudKeyValueDataSample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6E7525A915C38D15001328C6 /* Build configuration list for PBXNativeTarget "iCloudKeyValueDataSample" */;
+			buildPhases = (
+				6E75257E15C38D15001328C6 /* Sources */,
+				6E75257F15C38D15001328C6 /* Frameworks */,
+				6E75258015C38D15001328C6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iCloudKeyValueDataSample;
+			productName = iCloudKeyValueDataSample;
+			productReference = 6E75258215C38D15001328C6 /* iCloudKeyValueDataSample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6E75257915C38D15001328C6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "fujita taisuke";
+			};
+			buildConfigurationList = 6E75257C15C38D15001328C6 /* Build configuration list for PBXProject "iCloudKeyValueDataSample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 6E75257715C38D15001328C6;
+			productRefGroup = 6E75258315C38D15001328C6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6E75258115C38D15001328C6 /* iCloudKeyValueDataSample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6E75258015C38D15001328C6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E75259115C38D15001328C6 /* InfoPlist.strings in Resources */,
+				6E7525A315C38D15001328C6 /* MainStoryboard_iPhone.storyboard in Resources */,
+				6E7525A615C38D15001328C6 /* MainStoryboard_iPad.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6E75257E15C38D15001328C6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E75259315C38D15001328C6 /* main.m in Sources */,
+				6E75259715C38D15001328C6 /* AppDelegate.m in Sources */,
+				6E75259A15C38D15001328C6 /* RootViewController.m in Sources */,
+				6E75259D15C38D15001328C6 /* DataViewController.m in Sources */,
+				6E7525A015C38D15001328C6 /* ModelController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		6E75258F15C38D15001328C6 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6E75259015C38D15001328C6 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		6E7525A115C38D15001328C6 /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6E7525A215C38D15001328C6 /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		6E7525A415C38D15001328C6 /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6E7525A515C38D15001328C6 /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6E7525A715C38D15001328C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6E7525A815C38D15001328C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6E7525AA15C38D15001328C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = iCloudKeyValueDataSample/iCloudKeyValueDataSample.entitlements;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iCloudKeyValueDataSample/iCloudKeyValueDataSample-Prefix.pch";
+				INFOPLIST_FILE = "iCloudKeyValueDataSample/iCloudKeyValueDataSample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		6E7525AB15C38D15001328C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = iCloudKeyValueDataSample/iCloudKeyValueDataSample.entitlements;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iCloudKeyValueDataSample/iCloudKeyValueDataSample-Prefix.pch";
+				INFOPLIST_FILE = "iCloudKeyValueDataSample/iCloudKeyValueDataSample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6E75257C15C38D15001328C6 /* Build configuration list for PBXProject "iCloudKeyValueDataSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E7525A715C38D15001328C6 /* Debug */,
+				6E7525A815C38D15001328C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6E7525A915C38D15001328C6 /* Build configuration list for PBXNativeTarget "iCloudKeyValueDataSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E7525AA15C38D15001328C6 /* Debug */,
+				6E7525AB15C38D15001328C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6E75257915C38D15001328C6 /* Project object */;
+}
