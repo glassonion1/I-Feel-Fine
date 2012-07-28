@@ -99,21 +99,19 @@
  */
 - (NSManagedObjectContext *)managedObjectContext
 {
-    if (_managedObjectContext != nil)
-    {
+    if (_managedObjectContext != nil) {
         return _managedObjectContext;
     }
     
     NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
     if (coordinator != nil) {
-        NSManagedObjectContext* moc = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
-        
+        NSManagedObjectContext *moc = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
         [moc performBlockAndWait:^{
-            [moc setPersistentStoreCoordinator: coordinator];
-            
-            [[NSNotificationCenter defaultCenter]addObserver:self 
-                                                    selector:@selector(mergeChangesFrom_iCloud:) 
-                                                        name:NSPersistentStoreDidImportUbiquitousContentChangesNotification 
+            [moc setPersistentStoreCoordinator:coordinator];
+            // iCloud からデータの変更通知を受ける設定
+            [[NSNotificationCenter defaultCenter]addObserver:self
+                                                    selector:@selector(mergeChangesFrom_iCloud:)
+                                                        name:NSPersistentStoreDidImportUbiquitousContentChangesNotification
                                                       object:coordinator];
         }];
         _managedObjectContext = moc;
@@ -154,9 +152,9 @@
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSMutableDictionary *options =  [@{NSMigratePersistentStoresAutomaticallyOption : @(YES),
                                            NSInferMappingModelAutomaticallyOption : @(YES)} mutableCopy];
-        NSURL *cloudURL = [[NSFileManager defaultManager] URLForUbiquityContainerIdentifier:@"HUVJ3972SJ.com.9revolution9.AddressBook"];
+        NSURL *cloudURL = [[NSFileManager defaultManager] URLForUbiquityContainerIdentifier:nil];
         if (cloudURL) {
-            // iCloud is available
+            // iCloud 用の設定
             cloudURL = [cloudURL URLByAppendingPathComponent:@"data"];
             [options setValue:@"AddressBook.store" forKey:NSPersistentStoreUbiquitousContentNameKey];
             [options setValue:cloudURL forKey:NSPersistentStoreUbiquitousContentURLKey];
@@ -170,6 +168,7 @@
         [psc unlock];
         
         dispatch_async(dispatch_get_main_queue(), ^{
+            // Core Data のセットアップが終わったことを通知する
             [[NSNotificationCenter defaultCenter] postNotificationName:@"RefetchAllDatabaseData" object:self userInfo:nil];
         });
     });
