@@ -62,7 +62,7 @@
      NSData *data = [NSKeyedArchiver archivedDataWithRootObject:tYamada];
      NSData *data2 = [NSKeyedArchiver archivedDataWithRootObject:hYamada];
      NSData *data3 = [NSKeyedArchiver archivedDataWithRootObject:tanaka];
-     NSArray *array = @[data];
+     NSArray *array = @[data, data2, data3];
      */
     // 初期値の設定
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
