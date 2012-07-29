@@ -72,13 +72,28 @@
     NSData *data3 = [NSKeyedArchiver archivedDataWithRootObject:tanaka];
     NSArray *array = @[data];
     */
-    NSArray *array = @[@"山田太郎", @"東京都中央区"];
+    /*
+    NSArray *array = @[@"http://www.apple.com", @"http://www.9revolution9.com", @"https://twitter.com/"];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:array forKey:@"dataofyamada"];
+    [defaults setObject:array forKey:@"bookmarks"];
     BOOL successful = [defaults synchronize];
     if (successful) {
         NSLog(@"%@", @"データの保存に成功しました。");
     }
+    */
+    // Bulk insert
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSDictionary *dict = @{
+        @"home" : @"http://www.google.co.jp",
+        @"bookmarks": @[@"http://www.apple.com", @"http://www.9revolution9.com", @"https://twitter.com/"],
+        @"font-size" : @14,
+        @"javascript-enabled" : @(YES)
+    };
+    [defaults registerDefaults:dict];
+    NSLog(@"%@", [defaults objectForKey:@"home"]);
+    NSLog(@"%@", [defaults objectForKey:@"bookmarks"]);
+    NSLog(@"%d", [defaults integerForKey:@"font-size"]);
+    NSLog(@"%d", [defaults boolForKey:@"javascript-enabled"]);
 }
 
 - (IBAction)respondToLoadButtonClick:(id)sender
@@ -111,7 +126,7 @@
     [defaults removeObjectForKey:@"dataofyamada"];
     NSArray *array = [defaults arrayForKey:@"dataofyamada"];
     if (!array) {
-        NSLog(@"%@", @"データが存在しません。");
+        NSLog(@"%@", @"データを削除しました。");
     }
 }
 
