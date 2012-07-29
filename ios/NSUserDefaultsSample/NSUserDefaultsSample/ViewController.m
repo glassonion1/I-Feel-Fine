@@ -64,15 +64,6 @@
      NSData *data3 = [NSKeyedArchiver archivedDataWithRootObject:tanaka];
      NSArray *array = @[data];
      */
-    /*
-     NSArray *array = @[@"http://www.apple.com", @"http://www.9revolution9.com", @"https://twitter.com/"];
-     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-     [defaults setObject:array forKey:@"bookmarks"];
-     BOOL successful = [defaults synchronize];
-     if (successful) {
-     NSLog(@"%@", @"データの保存に成功しました。");
-     }
-     */
     // 初期値の設定
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSDictionary *dict = @{
@@ -86,6 +77,7 @@
     NSLog(@"%@", [defaults objectForKey:@"bookmarks"]);
     NSLog(@"%d", [defaults integerForKey:@"font-size"]);
     NSLog(@"%d", [defaults boolForKey:@"javascript-enabled"]);
+    // データの保存
     NSArray *array = @[@"http://www.apple.com", @"http://www.9revolution9.com", @"https://twitter.com/"];
     [defaults setObject:array forKey:@"bookmarks"];
     BOOL successful = [defaults synchronize];
@@ -115,11 +107,15 @@
     BOOL successful = [defaults synchronize];
     if (successful) {
         NSLog(@"%@", @"データの削除に成功しました。");
+    } else {
+        NSLog(@"%@", @"削除するデータがありません。");
+        return;
     }
+    // データが削除されていることを確認する
     NSArray *array = [defaults arrayForKey:@"bookmarks"];
     NSLog(@"%d:%@", successful, array);
     if (!array) {
-        NSLog(@"%@", @"データが存在しません。");
+        NSLog(@"%@", @"データは削除されました。");
     }
 }
 
