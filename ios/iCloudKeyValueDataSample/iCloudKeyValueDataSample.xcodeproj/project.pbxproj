@@ -309,6 +309,7 @@
 				6E7525AB15C38D15001328C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
