@@ -1,9 +1,9 @@
 //
 //  Person.m
-//  DataManagement
+//  PListSample
 //
 //  Created by 藤田 泰介 on 11/09/02.
-//  Copyright 2011 Commonsense. All rights reserved.
+//  Copyright (c) 2012年 Revolution 9. All rights reserved.
 //
 
 #import "Person.h"
