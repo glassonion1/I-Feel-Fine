@@ -1,47 +1,40 @@
 //
-//  DataManagementViewController.m
-//  DataManagement
+//  ViewController.m
+//  ArchiveSample
 //
-//  Created by Taisuke Fujita on 11/08/29.
-//  Copyright 2011 Commonsense. All rights reserved.
+//  Created by fujita taisuke on 2012/08/03.
+//  Copyright (c) 2012年 Revolution 9. All rights reserved.
 //
 
-#import "DataManagementViewController.h"
+#import "ViewController.h"
 #import "Person.h"
 #import "Address.h"
 
+@interface ViewController ()
 
-@implementation DataManagementViewController
+@end
 
-- (void)didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
-}
+@implementation ViewController
 
-#pragma mark - View lifecycle
-
-/*
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+	// Do any additional setup after loading the view, typically from a nib.
 }
-*/
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
     // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+    } else {
+        return YES;
+    }
 }
 
 - (IBAction)respondToSaveButtonClick:(id)sender {
@@ -75,11 +68,11 @@
         NSLog(@"%@", @"データの保存に成功しました。");
     }
     /*
-    NSArray *array = @[@"山田太郎", @"東京都中央区"];
-    BOOL successful = [NSKeyedArchiver archiveRootObject:array toFile:filePath];
-    if (successful) {
-        NSLog(@"%@", @"データの保存に成功しました。");
-    }
+     NSArray *array = @[@"山田太郎", @"東京都中央区"];
+     BOOL successful = [NSKeyedArchiver archiveRootObject:array toFile:filePath];
+     if (successful) {
+     NSLog(@"%@", @"データの保存に成功しました。");
+     }
      */
 }
 
@@ -99,14 +92,14 @@
         NSLog(@"%@", @"データが存在しません。");
     }
     /*
-    NSArray *array = [NSKeyedUnarchiver unarchiveObjectWithFile:filePath];
-    if (array) {
-        for (NSString *data in array) {
-            NSLog(@"%@", data);
-        }
-    } else {
-        NSLog(@"%@", @"データが存在しません。");
-    }
+     NSArray *array = [NSKeyedUnarchiver unarchiveObjectWithFile:filePath];
+     if (array) {
+     for (NSString *data in array) {
+     NSLog(@"%@", data);
+     }
+     } else {
+     NSLog(@"%@", @"データが存在しません。");
+     }
      */
 }
 
