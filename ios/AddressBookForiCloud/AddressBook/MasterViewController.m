@@ -51,10 +51,6 @@
                                              selector:@selector(reloadFetchedResults:)
                                                  name:@"RefetchAllDatabaseData" 
                                                object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self 
-                                             selector:@selector(reloadFetchedResults:)
-                                                 name:@"RefreshAllViews" 
-                                               object:nil];
 }
 
 - (void)reloadFetchedResults:(NSNotification*)notification {

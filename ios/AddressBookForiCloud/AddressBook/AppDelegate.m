@@ -179,11 +179,6 @@
     __weak NSManagedObjectContext* moc = [self managedObjectContext];
     [moc performBlock:^{
         [moc mergeChangesFromContextDidSaveNotification:notification]; 
-        
-        // TODO: 以下の処理が必要かどうか要検討
-        NSNotification* refreshNotification = [NSNotification notificationWithName:@"RefreshAllViews" object:self  userInfo:[notification userInfo]];
-        
-        [[NSNotificationCenter defaultCenter] postNotification:refreshNotification];
     }];
 }
 
