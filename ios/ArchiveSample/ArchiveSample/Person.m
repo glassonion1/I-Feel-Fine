@@ -11,8 +11,6 @@
 
 @implementation Person
 
-@synthesize name = _name, address = _address;
-
 - (id)initWithCoder:(NSCoder *)decoder
 {
     self = [super init];

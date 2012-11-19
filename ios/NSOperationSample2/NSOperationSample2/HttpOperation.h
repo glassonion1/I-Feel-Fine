@@ -9,10 +9,7 @@
 #import <Foundation/Foundation.h>
 
 
-@interface HttpOperation : NSOperation {
-@private
-    NSURL *url;
-}
+@interface HttpOperation : NSOperation
 
 - (id)initWithURL:(NSURL *)targetUrl;
 

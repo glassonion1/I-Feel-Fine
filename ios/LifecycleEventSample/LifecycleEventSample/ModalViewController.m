@@ -14,19 +14,9 @@
 
 @implementation ModalViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)awakeFromNib
 {
-    NSLog(@"%@", [NSThread callStackSymbols]);
-    NSLog(@"nibName:%@", self.nibName);
+    NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
 }
 
 - (UIStoryboard *)storyboard
@@ -39,6 +29,10 @@
 {
     NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     [super didReceiveMemoryWarning];
+    if ([self.view window] == nil) {
+        NSLog(@"%@ View did unload", NSStringFromClass([self class]));
+        self.view = nil;
+    }
 }
 
 - (void)loadView
@@ -55,45 +49,40 @@
     //NSLog(@"%@", [NSThread callStackSymbols]);
 }
 
-- (void)viewWillUnload
-{
-    NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-    [super viewWillUnload];
-}
-
-- (void)viewDidUnload
-{
-    NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-    [super viewDidUnload];
-}
-
 - (void)viewWillAppear:(BOOL)animated
 {
     NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     [super viewWillAppear:animated];
-    //NSLog(@"%@", [NSThread callStackSymbols]);
+}
+
+- (void)viewWillLayoutSubviews
+{
+    NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    [super viewWillLayoutSubviews];
+}
+
+- (void)viewDidLayoutSubviews
+{
+    NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    [super viewDidLayoutSubviews];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     [super viewDidAppear:animated];
-    //NSLog(@"%@", [NSThread callStackSymbols]);
-    NSLog(@"bbbbb%@", self.view.superview);
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
 	[super viewWillDisappear:animated];
-    NSLog(@"%@", [NSThread callStackSymbols]);
 }
 
 - (void)viewDidDisappear:(BOOL)animated
 {
     NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
 	[super viewDidDisappear:animated];
-    NSLog(@"%@", [NSThread callStackSymbols]);
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -104,7 +93,7 @@
 - (IBAction)buttonClick:(id)sender
 {
     NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-    NSLog(@"%@", [NSThread callStackSymbols]);
+    //NSLog(@"%@", [NSThread callStackSymbols]);
     [self dismissModalViewControllerAnimated:YES];
 }
 

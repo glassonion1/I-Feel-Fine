@@ -9,7 +9,10 @@
 #import "HttpOperation.h"
 
 
-@implementation HttpOperation
+@implementation HttpOperation {
+ @private
+    NSURL *url;
+}
 
 - (id)initWithURL:(NSURL *)targetUrl {
     self = [super init];

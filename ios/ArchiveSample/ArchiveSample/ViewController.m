@@ -38,8 +38,15 @@
 }
 
 - (IBAction)respondToSaveButtonClick:(id)sender {
+    /*
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(
+                                                         NSDocumentDirectory,
+                                                         NSUserDomainMask, YES);
+    NSLog(@"%@", paths[0]);
+    */
+    
     NSString *directory = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
-    NSString *filePath = [NSString stringWithFormat:@"%@/data.dat", directory];
+    NSString *filePath = [directory stringByAppendingPathComponent:@"data.dat"];
     
     Person *tYamada = [[Person alloc] init];
     tYamada.name = @"山田太郎";
@@ -78,7 +85,7 @@
 
 - (IBAction)respondToLoadButtonClick:(id)sender {
     NSString *directory = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
-    NSString *filePath = [NSString stringWithFormat:@"%@/data.dat", directory];
+    NSString *filePath = [directory stringByAppendingPathComponent:@"data.dat"];
     NSArray *array = [NSKeyedUnarchiver unarchiveObjectWithFile:filePath];
     if (array) {
         for (Person *person in array) {

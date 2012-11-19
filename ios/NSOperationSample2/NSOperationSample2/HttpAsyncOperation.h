@@ -9,12 +9,7 @@
 #import <Foundation/Foundation.h>
 
 
-@interface HttpAsyncOperation : NSOperation <NSURLConnectionDataDelegate> {
-@private
-    NSURL *url;
-    NSMutableData *responseData;
-    BOOL _isExecuting, _isFinished;
-}
+@interface HttpAsyncOperation : NSOperation <NSURLConnectionDataDelegate>
 
 @property (nonatomic ,strong)NSString *responseString;
 

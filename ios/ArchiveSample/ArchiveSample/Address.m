@@ -11,8 +11,6 @@
 
 @implementation Address
 
-@synthesize zipCode = _zipCode, state = _state, city = _city, other = _other;
-
 - (id)initWithCoder:(NSCoder *)decoder
 {
     self = [super init];

@@ -17,8 +17,9 @@
 
 - (void)awakeFromNib
 {
-    NSLog(@"nibName:%@", self.nibName);
-    NSLog(@"storyboard:%@", self.storyboard);
+    NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    //NSLog(@"nibName:%@", self.nibName);
+    //NSLog(@"storyboard:%@", self.storyboard);
 }
 
 /*
@@ -33,22 +34,65 @@
 {
     NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     [super didReceiveMemoryWarning];
+    if ([self.view window] == nil) {
+        NSLog(@"%@ View did unload", NSStringFromClass([self class]));
+        // Add code to preserve data stored in the views that might be
+        // needed later.
+        
+        // Add code to clean up other strong references to the view in
+        // the view hierarchy.
+        self.view = nil;
+    }
 }
 
 - (void)loadView
 {
     NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     [super loadView];
-    NSLog(@"%@", [NSThread callStackSymbols]);
-    NSLog(@"%@", self.view.superview);
 }
 
 - (void)viewDidLoad
 {
-    NSLog(@"%@", self.storyboard);
     NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     [super viewDidLoad];
     //NSLog(@"%@", [NSThread callStackSymbols]);
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    [super viewWillAppear:animated];
+}
+
+- (void)viewWillLayoutSubviews
+{
+    NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    [super viewWillLayoutSubviews];
+}
+
+- (void)viewDidLayoutSubviews
+{
+    NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    [super viewDidLayoutSubviews];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    [super viewDidAppear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+	[super viewWillDisappear:animated];
+    //NSLog(@"%@", [NSThread callStackSymbols]);
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+	[super viewDidDisappear:animated];
 }
 
 - (void)viewWillUnload
@@ -63,48 +107,14 @@
     [super viewDidUnload];
 }
 
-- (void)viewWillAppear:(BOOL)animated
+- (void) encodeRestorableStateWithCoder:(NSCoder *)coder
 {
     NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-    [super viewWillAppear:animated];
-    NSLog(@"%@", [NSThread callStackSymbols]);
-    NSLog(@"aaaaa0%@", self.view.superview);
 }
 
-- (void)viewDidAppear:(BOOL)animated
+- (void) decodeRestorableStateWithCoder:(NSCoder *)coder
 {
     NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-    [super viewDidAppear:animated];
-    NSLog(@"aaaaa1%@", self.view.superview);
-    NSLog(@"%@", [NSThread callStackSymbols]);
-    NSLog(@"aaaaa2%@", self.view.superview);
-    NSLog(@"%@", [(UIWindow *)self.view.superview rootViewController]);
-}
-
-- (void)viewWillLayoutSubviews
-{
-    NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-    //NSLog(@"%@", [NSThread callStackSymbols]);
-}
-
-- (void)viewDidLayoutSubviews
-{
-    NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-    //NSLog(@"%@", [NSThread callStackSymbols]);
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-    NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-	[super viewWillDisappear:animated];
-    //NSLog(@"%@", [NSThread callStackSymbols]);
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-    NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-	[super viewDidDisappear:animated];
-    NSLog(@"ccccc%@", self.view.superview);
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

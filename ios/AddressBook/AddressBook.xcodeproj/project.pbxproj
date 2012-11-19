@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E1A72E6160BCB0B005BD7A9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E1A72E5160BCB0B005BD7A9 /* Default-568h@2x.png */; };
 		FF084DE1146E74490092A1A2 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = FF084DE0146E74490092A1A2 /* Person.m */; };
 		FF084DE5146E746D0092A1A2 /* Address.m in Sources */ = {isa = PBXBuildFile; fileRef = FF084DE4146E746D0092A1A2 /* Address.m */; };
 		FFA54098146E6E33005589B6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFA54097146E6E32005589B6 /* UIKit.framework */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6E1A72E5160BCB0B005BD7A9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		FF084DDF146E74490092A1A2 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		FF084DE0146E74490092A1A2 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		FF084DE3146E746D0092A1A2 /* Address.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Address.h; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 		FFA54088146E6E32005589B6 = {
 			isa = PBXGroup;
 			children = (
+				6E1A72E5160BCB0B005BD7A9 /* Default-568h@2x.png */,
 				FFA5409F146E6E33005589B6 /* AddressBook */,
 				FFA54096146E6E32005589B6 /* Frameworks */,
 				FFA54094146E6E32005589B6 /* Products */,
@@ -177,6 +180,7 @@
 				FFA540A4146E6E33005589B6 /* InfoPlist.strings in Resources */,
 				FFA540AD146E6E33005589B6 /* MainStoryboard_iPhone.storyboard in Resources */,
 				FFA540B0146E6E33005589B6 /* MainStoryboard_iPad.storyboard in Resources */,
+				6E1A72E6160BCB0B005BD7A9 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,7 +236,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: taisuke fujita (Y8FAU24X57)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -247,6 +251,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "524D2144-96C2-413D-B62D-0F2CA701792E";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

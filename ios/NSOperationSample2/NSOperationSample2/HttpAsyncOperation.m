@@ -9,7 +9,12 @@
 #import "HttpAsyncOperation.h"
 
 
-@implementation HttpAsyncOperation
+@implementation HttpAsyncOperation {
+ @private
+    NSURL *url;
+    NSMutableData *responseData;
+    BOOL _isExecuting, _isFinished;
+}
 
 + (BOOL)automaticallyNotifiesObserversForKey:(NSString*)key {
 	if ([key isEqualToString:@"isExecuting"] || 
@@ -36,8 +41,6 @@
     if (self) {
         url = targetUrl;
     }
-    _isExecuting = NO;
-	_isFinished = NO;
     return self;
 }
 

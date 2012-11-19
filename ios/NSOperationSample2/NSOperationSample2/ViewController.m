@@ -67,6 +67,17 @@
      [queue addOperation:ope2];
      [queue addOperation:ope3];
      }*/
+    /*
+    UIProgressView *progress = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
+    progress.center = CGPointMake(150, 100);
+    progress.progress = 0.45f;
+    [self.view addSubview:progress];
+    
+    UIActivityIndicatorView *ai = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    ai.frame = CGRectMake(0, 0, 50, 50);
+    ai.center = CGPointMake(160, 50);
+    [self.view addSubview:ai];
+    [ai startAnimating];*/
 }
 
 - (void)observeValueForKeyPath:(NSString*)keyPath ofObject:(id)object
