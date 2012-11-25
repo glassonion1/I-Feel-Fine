@@ -34,20 +34,38 @@
 - (NSInteger)collectionView:(UICollectionView *)collectionView
      numberOfItemsInSection:(NSInteger)section
 {
-    return 32;
+    return 12;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
                   cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"Cell"
-                                                                                forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor whiteColor];
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(5, 5, 40, 40)];
-    label.text = [NSString stringWithFormat:@"Cell %d", indexPath.row];
-    label.font = [UIFont systemFontOfSize:12];
-    [cell addSubview:label];
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell"
+                                                                           forIndexPath:indexPath];
+    UIImage *image = [UIImage imageNamed:@"hedgehog"];
+    UIImageView *view = [[UIImageView alloc] initWithImage:image];
+    view.transform = CGAffineTransformMakeRotation(M_PI/180 * (30 * indexPath.row));
+    [cell addSubview:view];
     return cell;
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
+    if (![kind isEqualToString:UICollectionElementKindSectionHeader]) {
+        return nil;
+    }
+    UICollectionReusableView *view = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader
+                                                                        withReuseIdentifier:@"Header"
+                                                                               forIndexPath:indexPath];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(5, 5, 200, 40)];
+    label.backgroundColor = [UIColor clearColor];
+    label.text = @"画像の角度を変えてみる";
+    [view addSubview:label];
+    return view;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    return CGSizeMake(60, 60);
 }
 
 @end

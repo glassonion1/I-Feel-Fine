@@ -24,6 +24,7 @@
 		6EC415A2165998410095C5AE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EC4157A165998410095C5AE /* Foundation.framework */; };
 		6EC415AA165998410095C5AE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6EC415A8165998410095C5AE /* InfoPlist.strings */; };
 		6EC415AD165998410095C5AE /* CollectionViewSampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC415AC165998410095C5AE /* CollectionViewSampleTests.m */; };
+		6EC41628165F31D30095C5AE /* hedgehog@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EC41627165F31D30095C5AE /* hedgehog@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		6EC415A9165998410095C5AE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6EC415AB165998410095C5AE /* CollectionViewSampleTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewSampleTests.h; sourceTree = "<group>"; };
 		6EC415AC165998410095C5AE /* CollectionViewSampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewSampleTests.m; sourceTree = "<group>"; };
+		6EC41627165F31D30095C5AE /* hedgehog@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hedgehog@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 		6EC4157F165998410095C5AE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6EC41627165F31D30095C5AE /* hedgehog@2x.png */,
 				6EC41580165998410095C5AE /* CollectionViewSample-Info.plist */,
 				6EC41581165998410095C5AE /* InfoPlist.strings */,
 				6EC41584165998410095C5AE /* main.m */,
@@ -240,6 +243,7 @@
 				6EC4158F165998410095C5AE /* Default-568h@2x.png in Resources */,
 				6EC41592165998410095C5AE /* MainStoryboard_iPhone.storyboard in Resources */,
 				6EC41595165998410095C5AE /* MainStoryboard_iPad.storyboard in Resources */,
+				6EC41628165F31D30095C5AE /* hedgehog@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,6 +465,7 @@
 				6EC415B2165998410095C5AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6EC415B3165998410095C5AE /* Build configuration list for PBXNativeTarget "CollectionViewSampleTests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +474,7 @@
 				6EC415B5165998410095C5AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

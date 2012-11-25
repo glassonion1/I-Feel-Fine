@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E143F101660B6B30099DD69 /* ModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E143F0F1660B6B30099DD69 /* ModalViewController.m */; };
 		6E2AC0551571CD3200131494 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E2AC0541571CD3200131494 /* UIKit.framework */; };
 		6E2AC0571571CD3200131494 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E2AC0561571CD3200131494 /* Foundation.framework */; };
 		6E2AC0591571CD3200131494 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E2AC0581571CD3200131494 /* CoreGraphics.framework */; };
@@ -16,10 +17,11 @@
 		6E2AC0681571CD3200131494 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E2AC0661571CD3200131494 /* MainStoryboard_iPhone.storyboard */; };
 		6E2AC06B1571CD3200131494 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E2AC0691571CD3200131494 /* MainStoryboard_iPad.storyboard */; };
 		6E2AC06E1571CD3200131494 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2AC06D1571CD3200131494 /* ViewController.m */; };
-		6EDE6BDE157A42F4001F82C7 /* ModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDE6BDD157A42F4001F82C7 /* ModalViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6E143F0E1660B6B30099DD69 /* ModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModalViewController.h; sourceTree = "<group>"; };
+		6E143F0F1660B6B30099DD69 /* ModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModalViewController.m; sourceTree = "<group>"; };
 		6E2AC0501571CD3200131494 /* MyFirstApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyFirstApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E2AC0541571CD3200131494 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6E2AC0561571CD3200131494 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -34,8 +36,6 @@
 		6E2AC06A1571CD3200131494 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		6E2AC06C1571CD3200131494 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		6E2AC06D1571CD3200131494 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		6EDE6BDC157A42F4001F82C7 /* ModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModalViewController.h; sourceTree = "<group>"; };
-		6EDE6BDD157A42F4001F82C7 /* ModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModalViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,8 +88,8 @@
 				6E2AC0691571CD3200131494 /* MainStoryboard_iPad.storyboard */,
 				6E2AC06C1571CD3200131494 /* ViewController.h */,
 				6E2AC06D1571CD3200131494 /* ViewController.m */,
-				6EDE6BDC157A42F4001F82C7 /* ModalViewController.h */,
-				6EDE6BDD157A42F4001F82C7 /* ModalViewController.m */,
+				6E143F0E1660B6B30099DD69 /* ModalViewController.h */,
+				6E143F0F1660B6B30099DD69 /* ModalViewController.m */,
 				6E2AC05B1571CD3200131494 /* Supporting Files */,
 			);
 			path = MyFirstApp;
@@ -173,7 +173,7 @@
 				6E2AC0611571CD3200131494 /* main.m in Sources */,
 				6E2AC0651571CD3200131494 /* AppDelegate.m in Sources */,
 				6E2AC06E1571CD3200131494 /* ViewController.m in Sources */,
-				6EDE6BDE157A42F4001F82C7 /* ModalViewController.m in Sources */,
+				6E143F101660B6B30099DD69 /* ModalViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
