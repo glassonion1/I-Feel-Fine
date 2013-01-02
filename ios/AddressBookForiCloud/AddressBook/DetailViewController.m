@@ -10,13 +10,28 @@
 #import "MasterViewController.h"
 
 @interface DetailViewController ()
+
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
 - (void)configureView;
+
 @end
 
 @implementation DetailViewController
 
+@synthesize detailItem = _detailItem;
+
 #pragma mark - Managing the detail item
+
+- (Person *)detailItem
+{
+    if (!_detailItem) {
+        _detailItem = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([Person class]) 
+                                                    inManagedObjectContext:self.managedObjectContext];
+        _detailItem.address = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([Address class]) 
+                                                            inManagedObjectContext:self.managedObjectContext];
+    }
+    return _detailItem;
+}
 
 - (void)setDetailItem:(id)newDetailItem
 {
@@ -42,23 +57,11 @@
         self.stateField.text = self.detailItem.address.state;
         self.cityField.text = self.detailItem.address.city;
         self.otherField.text = self.detailItem.address.other;
-    } else {
-        self.nameField.text = nil;
-        self.zipCodeField.text = nil;
-        self.stateField.text = nil;
-        self.cityField.text = nil;
-        self.otherField.text = nil;
     }
 }
 
 - (void)done
 {
-    if (!self.detailItem) {
-        _detailItem = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([Person class]) 
-                                                    inManagedObjectContext:self.managedObjectContext];
-        _detailItem.address = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([Address class]) 
-                                                            inManagedObjectContext:self.managedObjectContext];
-    }
     self.detailItem.name = self.nameField.text;
     self.detailItem.address.zipCode = self.zipCodeField.text;
     self.detailItem.address.state = self.stateField.text;
@@ -92,17 +95,6 @@
                                                                                             action:@selector(done)];
     self.scrollView.contentSize = CGSizeMake(320, 800);
     [self configureView];
-}
-
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    self.scrollView = nil;
-    self.nameField = nil;
-    self.zipCodeField = nil;
-    self.stateField = nil;
-    self.cityField = nil;
-    self.otherField = nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated

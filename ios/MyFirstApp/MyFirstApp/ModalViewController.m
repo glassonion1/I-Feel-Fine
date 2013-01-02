@@ -2,8 +2,8 @@
 //  ModalViewController.m
 //  MyFirstApp
 //
-//  Created by taisuke fujita on 12/06/02.
-//  Copyright (c) 2012年 Revolution 9. All rights reserved.
+//  Created by fujita taisuke on 2012/12/24.
+//  Copyright (c) 2012年 9revolution9.com All rights reserved.
 //
 
 #import "ModalViewController.h"
@@ -29,15 +29,10 @@
 	// Do any additional setup after loading the view.
 }
 
-- (void)viewDidUnload
+- (void)didReceiveMemoryWarning
 {
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 - (IBAction)respondToButtonClick:(id)sender

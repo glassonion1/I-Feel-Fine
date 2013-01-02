@@ -62,12 +62,6 @@
     [self.tableView reloadData];
 }
 
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
-
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -87,6 +81,7 @@
 - (void)viewDidDisappear:(BOOL)animated
 {
 	[super viewDidDisappear:animated];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -113,10 +108,8 @@
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier = @"Cell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+{    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     [self configureCell:cell atIndexPath:indexPath];
     return cell;
 }
@@ -223,20 +216,6 @@
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
 {
     [self.tableView beginUpdates];
-}
-
-- (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo
-           atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type
-{
-    switch(type) {
-        case NSFetchedResultsChangeInsert:
-            [self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
-            break;
-            
-        case NSFetchedResultsChangeDelete:
-            [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
-            break;
-    }
 }
 
 - (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject

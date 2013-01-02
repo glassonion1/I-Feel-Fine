@@ -2,14 +2,14 @@
 //  ModalViewController.h
 //  MyFirstApp
 //
-//  Created by taisuke fujita on 12/06/02.
-//  Copyright (c) 2012年 Revolution 9. All rights reserved.
+//  Created by fujita taisuke on 2012/12/24.
+//  Copyright (c) 2012年 9revolution9.com All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
 @interface ModalViewController : UIViewController
-
+// ボタンが押されたときに呼ばれるメソッド
 - (IBAction)respondToButtonClick:(id)sender;
 
 @end

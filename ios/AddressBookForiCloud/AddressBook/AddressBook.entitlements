@@ -6,8 +6,6 @@
 	<array>
 		<string>$(TeamIdentifierPrefix)com.9revolution9.AddressBook</string>
 	</array>
-	<key>com.apple.developer.ubiquity-kvstore-identifier</key>
-	<string>$(TeamIdentifierPrefix)com.9revolution9.AddressBook</string>
 	<key>keychain-access-groups</key>
 	<array>
 		<string>$(AppIdentifierPrefix)com.9revolution9.AddressBook</string>

@@ -36,16 +36,20 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    NSLog(@"%@", [NSThread callStackSymbols]);
+    NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     return [groups[section] count ];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+    NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     return [groupNames count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     NSArray *members = groups[indexPath.section];
     cell.textLabel.text = members[indexPath.row];
@@ -66,6 +70,7 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
+    NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     UITableViewHeaderFooterView *view = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"Header"];
     if (!view) {
         view = [[UITableViewHeaderFooterView alloc] initWithReuseIdentifier:@"Header"];
@@ -76,6 +81,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
+    NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     return 44;
 }
 

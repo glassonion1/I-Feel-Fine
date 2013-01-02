@@ -28,18 +28,21 @@
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
+    NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     return 1;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView
      numberOfItemsInSection:(NSInteger)section
 {
+    NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     return 12;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
                   cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell"
                                                                            forIndexPath:indexPath];
     UIImage *image = [UIImage imageNamed:@"hedgehog"];
@@ -51,6 +54,7 @@
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
 {
+    NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     if (![kind isEqualToString:UICollectionElementKindSectionHeader]) {
         return nil;
     }
@@ -65,6 +69,7 @@
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     return CGSizeMake(60, 60);
 }
 

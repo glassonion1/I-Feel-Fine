@@ -2,12 +2,11 @@
 //  ViewController.m
 //  MyFirstApp
 //
-//  Created by taisuke fujita on 12/05/27.
-//  Copyright (c) 2012年 Revolution 9. All rights reserved.
+//  Created by fujita taisuke on 2012/12/24.
+//  Copyright (c) 2012年 9revolution9.com All rights reserved.
 //
 
 #import "ViewController.h"
-#import "ModalViewController.h"
 
 @interface ViewController ()
 
@@ -18,38 +17,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    /*
+    // xy座標(0, 0)、幅100、高さ100のUIViewクラスのインスタンスを生成する
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+    // UIViewオブジェクトの背景色のデフォルト値は透明なため背景色を別の色に設定
     view.backgroundColor = [UIColor redColor];
+    // viewプロパティにサブビューを追加する
     [self.view addSubview:view];
-     */
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    button.frame = CGRectMake(0, 0, 100, 44);
-    [button setTitle:@"button" forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(respondToButtonClick:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:button];
 }
 
-- (void)viewDidUnload
+- (void)didReceiveMemoryWarning
 {
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
-    } else {
-        return YES;
-    }
-}
-
-- (void)respondToButtonClick:(id)sender
-{
-    ModalViewController *controller = [[ModalViewController alloc] init];
-    controller.view.backgroundColor = [UIColor whiteColor];
-    [self presentViewController:controller animated:YES completion:nil];
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 @end

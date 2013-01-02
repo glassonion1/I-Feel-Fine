@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="872" systemVersion="10K549" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1811" systemVersion="12C60" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Address" representedClassName="Address" syncable="YES">
         <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="other" optional="YES" attributeType="String" syncable="YES"/>

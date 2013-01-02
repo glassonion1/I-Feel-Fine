@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E132B4B1666DB0E00107A75 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E132B4A1666DB0E00107A75 /* Default-568h@2x.png */; };
 		FF084DE1146E74490092A1A2 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = FF084DE0146E74490092A1A2 /* Person.m */; };
 		FF084DE5146E746D0092A1A2 /* Address.m in Sources */ = {isa = PBXBuildFile; fileRef = FF084DE4146E746D0092A1A2 /* Address.m */; };
 		FFA54098146E6E33005589B6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFA54097146E6E32005589B6 /* UIKit.framework */; };
@@ -24,7 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6EC5D7A015BBF227004C1F17 /* AddressBook.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = AddressBook.entitlements; sourceTree = "<group>"; };
+		6E132B441666CC9C00107A75 /* AddressBook.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = AddressBook.entitlements; sourceTree = "<group>"; };
+		6E132B4A1666DB0E00107A75 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = SOURCE_ROOT; };
 		FF084DDF146E74490092A1A2 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		FF084DE0146E74490092A1A2 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		FF084DE3146E746D0092A1A2 /* Address.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Address.h; sourceTree = "<group>"; };
@@ -95,7 +97,7 @@
 		FFA5409F146E6E33005589B6 /* AddressBook */ = {
 			isa = PBXGroup;
 			children = (
-				6EC5D7A015BBF227004C1F17 /* AddressBook.entitlements */,
+				6E132B441666CC9C00107A75 /* AddressBook.entitlements */,
 				FFA540A8146E6E33005589B6 /* AppDelegate.h */,
 				FFA540A9146E6E33005589B6 /* AppDelegate.m */,
 				FFA540AB146E6E33005589B6 /* MainStoryboard_iPhone.storyboard */,
@@ -117,6 +119,7 @@
 		FFA540A0146E6E33005589B6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6E132B4A1666DB0E00107A75 /* Default-568h@2x.png */,
 				FFA540A1146E6E33005589B6 /* AddressBook-Info.plist */,
 				FFA540A2146E6E33005589B6 /* InfoPlist.strings */,
 				FFA540A5146E6E33005589B6 /* main.m */,
@@ -179,6 +182,7 @@
 				FFA540A4146E6E33005589B6 /* InfoPlist.strings in Resources */,
 				FFA540AD146E6E33005589B6 /* MainStoryboard_iPhone.storyboard in Resources */,
 				FFA540B0146E6E33005589B6 /* MainStoryboard_iPad.storyboard in Resources */,
+				6E132B4B1666DB0E00107A75 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,7 +253,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "9BDB8DA2-AE0B-4F36-B7FF-6F666E32A620";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "09A0F54D-3619-4A7B-96EF-EB93712A9EB0";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -280,12 +284,12 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = AddressBook/AddressBook.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: taisuke fujita (Y8FAU24X57)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AddressBook/AddressBook-Prefix.pch";
 				INFOPLIST_FILE = "AddressBook/AddressBook-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "09A0F54D-3619-4A7B-96EF-EB93712A9EB0";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
