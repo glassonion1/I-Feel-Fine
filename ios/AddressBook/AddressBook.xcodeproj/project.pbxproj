@@ -25,7 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6E1A72E5160BCB0B005BD7A9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		6E1A72E5160BCB0B005BD7A9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		FF084DDF146E74490092A1A2 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		FF084DE0146E74490092A1A2 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		FF084DE3146E746D0092A1A2 /* Address.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Address.h; sourceTree = "<group>"; };
@@ -68,7 +68,6 @@
 		FFA54088146E6E32005589B6 = {
 			isa = PBXGroup;
 			children = (
-				6E1A72E5160BCB0B005BD7A9 /* Default-568h@2x.png */,
 				FFA5409F146E6E33005589B6 /* AddressBook */,
 				FFA54096146E6E32005589B6 /* Frameworks */,
 				FFA54094146E6E32005589B6 /* Products */,
@@ -118,6 +117,7 @@
 		FFA540A0146E6E33005589B6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6E1A72E5160BCB0B005BD7A9 /* Default-568h@2x.png */,
 				FFA540A1146E6E33005589B6 /* AddressBook-Info.plist */,
 				FFA540A2146E6E33005589B6 /* InfoPlist.strings */,
 				FFA540A5146E6E33005589B6 /* main.m */,
@@ -250,7 +250,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "09A0F54D-3619-4A7B-96EF-EB93712A9EB0";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -269,7 +269,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
