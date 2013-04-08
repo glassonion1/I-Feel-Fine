@@ -105,14 +105,16 @@
     
     NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
     if (coordinator != nil) {
-        NSManagedObjectContext *moc = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
+        NSManagedObjectContext *moc = [[NSManagedObjectContext alloc]
+                                       initWithConcurrencyType:NSMainQueueConcurrencyType];
         [moc performBlockAndWait:^{
             [moc setPersistentStoreCoordinator:coordinator];
             // iCloud からデータの変更通知を受ける設定
-            [[NSNotificationCenter defaultCenter]addObserver:self
-                                                    selector:@selector(mergeChangesFrom_iCloud:)
-                                                        name:NSPersistentStoreDidImportUbiquitousContentChangesNotification
-                                                      object:coordinator];
+            NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+            [center addObserver:self
+                       selector:@selector(mergeChangesFrom_iCloud:)
+                           name:NSPersistentStoreDidImportUbiquitousContentChangesNotification
+                         object:coordinator];
         }];
         _managedObjectContext = moc;
     }
@@ -144,24 +146,33 @@
         return _persistentStoreCoordinator;
     }
     
-    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"AddressBook.sqlite"];
+    NSURL *storeURL = [[self applicationDocumentsDirectory]
+                       URLByAppendingPathComponent:@"AddressBook.sqlite"];
     
-    _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
+    _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc]
+                                   initWithManagedObjectModel:[self managedObjectModel]];
     
     __weak NSPersistentStoreCoordinator *psc = _persistentStoreCoordinator;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSMutableDictionary *options =  [@{NSMigratePersistentStoresAutomaticallyOption : @(YES),
                                            NSInferMappingModelAutomaticallyOption : @(YES)} mutableCopy];
-        NSURL *cloudURL = [[NSFileManager defaultManager] URLForUbiquityContainerIdentifier:nil];
+        NSURL *cloudURL = [[NSFileManager defaultManager]
+                           URLForUbiquityContainerIdentifier:nil];
         if (cloudURL) {
             // iCloud 用の設定
             cloudURL = [cloudURL URLByAppendingPathComponent:@"data"];
-            [options setValue:@"AddressBook.store" forKey:NSPersistentStoreUbiquitousContentNameKey];
-            [options setValue:cloudURL forKey:NSPersistentStoreUbiquitousContentURLKey];
+            [options setValue:@"AddressBook.store"
+                       forKey:NSPersistentStoreUbiquitousContentNameKey];
+            [options setValue:cloudURL
+                       forKey:NSPersistentStoreUbiquitousContentURLKey];
         }
         NSError *error = nil;
         [psc lock];
-        if (![psc addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:options error:&error]) {
+        if (![psc addPersistentStoreWithType:NSSQLiteStoreType
+                               configuration:nil
+                                         URL:storeURL
+                                     options:options
+                                       error:&error]) {
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
             abort();
         }
@@ -169,7 +180,9 @@
         
         dispatch_async(dispatch_get_main_queue(), ^{
             // Core Data のセットアップが終わったことを通知する
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"RefetchAllDatabaseData" object:self userInfo:nil];
+            NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+            [center postNotificationName:@"RefetchAllDatabaseData"
+                                  object:self userInfo:nil];
         });
     });
     return _persistentStoreCoordinator;

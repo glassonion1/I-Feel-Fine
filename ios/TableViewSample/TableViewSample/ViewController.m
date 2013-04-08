@@ -36,7 +36,6 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSLog(@"%@", [NSThread callStackSymbols]);
     NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     return [groups[section] count ];
 }

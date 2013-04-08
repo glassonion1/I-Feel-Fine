@@ -158,10 +158,12 @@
 {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        Person *selectedObject = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+        Person *selectedObject =
+            [[self fetchedResultsController] objectAtIndexPath:indexPath];
         [[segue destinationViewController] setDetailItem:selectedObject];
     }
-    [[segue destinationViewController] setManagedObjectContext:self.fetchedResultsController.managedObjectContext];
+    [[segue destinationViewController]
+         setManagedObjectContext:self.fetchedResultsController.managedObjectContext];
 }
 
 #pragma mark - Fetched results controller
@@ -176,21 +178,27 @@
     // Create the fetch request for the entity.
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     // Edit the entity name as appropriate.
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Person" inManagedObjectContext:self.managedObjectContext];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Person"
+                                              inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:entity];
     
     // Set the batch size to a suitable number.
     [fetchRequest setFetchBatchSize:20];
     
     // Edit the sort key as appropriate.
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:NO];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name"
+                                                                   ascending:NO];
     NSArray *sortDescriptors = @[sortDescriptor];
     
     [fetchRequest setSortDescriptors:sortDescriptors];
     
     // Edit the section name key path and cache name if appropriate.
     // nil for section name key path means "no sections".
-    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:@"Master"];
+    NSFetchedResultsController *aFetchedResultsController =
+    [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
+                                        managedObjectContext:self.managedObjectContext
+                                          sectionNameKeyPath:nil
+                                                   cacheName:@"Master"];
     aFetchedResultsController.delegate = self;
     self.fetchedResultsController = aFetchedResultsController;
     
@@ -199,7 +207,9 @@
 	    /*
 	     Replace this implementation with code to handle the error appropriately.
 
-	     abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
+	     abort() causes the application to generate a crash log and terminate.
+         You should not use this function in a shipping application,
+         although it may be useful during development.
 	     */
 	    NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
 	    abort();
@@ -210,6 +220,7 @@
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
 {
+    // テーブルデータの変更が開始されることを通知する
     [self.tableView beginUpdates];
 }
 
@@ -218,7 +229,7 @@
       newIndexPath:(NSIndexPath *)newIndexPath
 {
     UITableView *tableView = self.tableView;
-    
+    // テーブルの表示を更新する
     switch(type) {
         case NSFetchedResultsChangeInsert:
             [tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
@@ -241,6 +252,7 @@
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
 {
+    // テーブルデータの変更が終了したことを通知する
     [self.tableView endUpdates];
 }
 
@@ -262,10 +274,13 @@
 
 - (void)insertNewObject
 {
-    [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    [self.tableView deselectRowAtIndexPath:indexPath
+                                  animated:YES];
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         self.detailViewController.detailItem = nil;
-        self.detailViewController.managedObjectContext = self.fetchedResultsController.managedObjectContext;
+        self.detailViewController.managedObjectContext =
+            self.fetchedResultsController.managedObjectContext;
     } else {
         [self performSegueWithIdentifier:@"createDetail" sender:self];
     }

@@ -25,10 +25,12 @@
 - (Person *)detailItem
 {
     if (!_detailItem) {
-        _detailItem = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([Person class]) 
-                                                    inManagedObjectContext:self.managedObjectContext];
-        _detailItem.address = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([Address class]) 
-                                                            inManagedObjectContext:self.managedObjectContext];
+        _detailItem = [NSEntityDescription
+                       insertNewObjectForEntityForName:NSStringFromClass([Person class])
+                                inManagedObjectContext:self.managedObjectContext];
+        _detailItem.address = [NSEntityDescription
+                               insertNewObjectForEntityForName:NSStringFromClass([Address class])
+                                        inManagedObjectContext:self.managedObjectContext];
     }
     return _detailItem;
 }

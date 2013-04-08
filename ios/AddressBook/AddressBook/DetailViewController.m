@@ -90,9 +90,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
-                                                                                            target:self 
-                                                                                            action:@selector(done)];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                                                                          target:self
+                                                                          action:@selector(done)];
+    self.navigationItem.rightBarButtonItem = item;
     self.scrollView.contentSize = CGSizeMake(320, 800);
     [self configureView];
 }

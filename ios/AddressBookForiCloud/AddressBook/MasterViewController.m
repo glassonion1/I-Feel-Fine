@@ -47,10 +47,11 @@
                                                                                 target:self 
                                                                                 action:@selector(insertNewObject)];
     self.navigationItem.rightBarButtonItem = addButton;
-    [[NSNotificationCenter defaultCenter] addObserver:self 
-                                             selector:@selector(reloadFetchedResults:)
-                                                 name:@"RefetchAllDatabaseData" 
-                                               object:nil];
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    [center addObserver:self
+               selector:@selector(reloadFetchedResults:)
+                   name:@"RefetchAllDatabaseData" 
+                 object:nil];
 }
 
 - (void)reloadFetchedResults:(NSNotification*)notification {
