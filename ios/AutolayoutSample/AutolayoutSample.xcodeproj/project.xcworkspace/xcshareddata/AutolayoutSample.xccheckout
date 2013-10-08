@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>892B8D4A-53EB-4D3C-BB48-4A7C0ABFD9CC</string>
+	<key>IDESourceControlProjectName</key>
+	<string>AutolayoutSample</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>66AD7803-0486-43B9-B828-B6E938A8C162</key>
+		<string>ssh://github.com/glassonion1/I-Feel-Fine.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ios/AutolayoutSample/AutolayoutSample.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>66AD7803-0486-43B9-B828-B6E938A8C162</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/glassonion1/I-Feel-Fine.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>66AD7803-0486-43B9-B828-B6E938A8C162</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>66AD7803-0486-43B9-B828-B6E938A8C162</string>
+			<key>IDESourceControlWCCName</key>
+			<string>I-Feel-Fine</string>
+		</dict>
+	</array>
+</dict>
+</plist>
