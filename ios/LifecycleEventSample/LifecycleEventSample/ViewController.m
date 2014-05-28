@@ -95,6 +95,7 @@
 	[super viewDidDisappear:animated];
 }
 
+/*
 - (void)viewWillUnload
 {
     NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
@@ -106,6 +107,7 @@
     NSLog(@"%@#%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     [super viewDidUnload];
 }
+*/
 
 - (void) encodeRestorableStateWithCoder:(NSCoder *)coder
 {
