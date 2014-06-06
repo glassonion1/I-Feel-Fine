@@ -6,8 +6,8 @@
 //  Copyright (c) 2012年 Revolution 9. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
-@interface TableViewSampleTests : SenTestCase
+@interface TableViewSampleTests : XCTestCase
 
 @end
