@@ -14,6 +14,8 @@
 
 @interface MasterViewController : UITableViewController <NSFetchedResultsControllerDelegate>
 
+@property (strong, nonatomic) UIViewController *UIViewController;
+
 @property (strong, nonatomic) DetailViewController *detailViewController;
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
