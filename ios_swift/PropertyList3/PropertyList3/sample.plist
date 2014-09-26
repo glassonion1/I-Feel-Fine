@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<string>北海道</string>
+	<string>青森県</string>
+	<string>秋田県</string>
+	<string>岩手県</string>
+	<string>山形県</string>
+	<string>宮城県</string>
+</array>
+</plist>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6205" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6198"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="iCloudKeyValueStore" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="M0A-hh-ofP">
+                                <rect key="frame" x="253" y="285" width="94" height="29"/>
+                                <connections>
+                                    <action selector="stepValueChanged:" destination="vXZ-lx-hvc" eventType="valueChanged" id="iHm-VU-XJG"/>
+                                </connections>
+                            </stepper>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bvm-rY-Fo7">
+                                <rect key="frame" x="279" y="239" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="42" id="1AG-hq-nZM"/>
+                                    <constraint firstAttribute="height" constant="21" id="7OW-Gd-T1r"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="M0A-hh-ofP" firstAttribute="top" secondItem="Bvm-rY-Fo7" secondAttribute="bottom" constant="25" id="3zv-Tn-60G"/>
+                            <constraint firstAttribute="centerY" secondItem="M0A-hh-ofP" secondAttribute="centerY" id="9Sg-lg-BKB"/>
+                            <constraint firstAttribute="centerX" secondItem="Bvm-rY-Fo7" secondAttribute="centerX" id="Aoc-no-h6C"/>
+                            <constraint firstAttribute="centerX" secondItem="M0A-hh-ofP" secondAttribute="centerX" id="HMd-BR-oAj"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="label" destination="Bvm-rY-Fo7" id="YOn-n4-Ci9"/>
+                        <outlet property="stepper" destination="M0A-hh-ofP" id="YTU-oa-j2r"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
