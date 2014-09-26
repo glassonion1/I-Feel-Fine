@@ -1,6 +1,6 @@
 I-Feel-Fine
 ===========
 
-Examples of iOS Apps.
+Examples of iOS App.
 
 Swift and Objective-C
