@@ -40,7 +40,7 @@ class ViewController: UITableViewController {
     override func tableView(tableView: UITableView,
         cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath:indexPath) as UITableViewCell
-            cell.textLabel?.text = self.groups[indexPath.section][indexPath.row]
+            cell.textLabel.text = self.groups[indexPath.section][indexPath.row]
             return cell
     }
     
@@ -52,7 +52,20 @@ class ViewController: UITableViewController {
         view!.textLabel.text = self.groupNames[section]
         return view!
     }
+    /*
+    override func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView {
+        var view = tableView.dequeueReusableHeaderFooterViewWithIdentifier("Footer") as? UITableViewHeaderFooterView
+        if view == nil {
+            view = UITableViewHeaderFooterView(reuseIdentifier: "Footer")
+        }
+        view!.textLabel.text = "フッター"
+        return view!
+    }
     
+    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 44
+    }
+    */
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 44
     }

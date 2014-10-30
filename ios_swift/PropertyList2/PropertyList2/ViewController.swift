@@ -53,7 +53,7 @@ class ViewController: UIViewController {
             .UserDomainMask, true) as [String]
         let filePath = String(paths[0]) + "data.plist"
         // データをプロパティリストから読み込む
-        let array = NSArray(contentsOfFile: filePath)
+        let array = NSArray(contentsOfFile: filePath)!
         for data in array {
             // 読み込んだオブジェクトをアンアーカイブする
             let person = NSKeyedUnarchiver.unarchiveObjectWithData(data as NSData) as Person

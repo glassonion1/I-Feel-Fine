@@ -32,7 +32,7 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
         cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath)
                 as UICollectionViewCell
-            let image = UIImage(named: "hedgehog") as UIImage
+            let image = UIImage(named: "hedgehog")
             let imageView = UIImageView(image: image) as UIImageView
             let radian = CGFloat(M_PI / 180) * CGFloat(30 * indexPath.row)
             imageView.transform = CGAffineTransformMakeRotation(radian)
@@ -49,9 +49,9 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
                     atIndexPath: indexPath);
             }
             let header = collectionView.dequeueReusableSupplementaryViewOfKind(
-                    kind,
-                    withReuseIdentifier: "Header",
-                    forIndexPath: indexPath) as UICollectionReusableView
+                kind,
+                withReuseIdentifier: "Header",
+                forIndexPath: indexPath) as UICollectionReusableView
             let label = UILabel(frame: CGRect(x: 5, y: 5, width: 200, height: 40))
             label.backgroundColor = UIColor.clearColor()
             label.text = "画像の角度を変えてみる"

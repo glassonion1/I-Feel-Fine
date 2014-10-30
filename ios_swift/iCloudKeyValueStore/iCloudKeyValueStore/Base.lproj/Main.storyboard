@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6205" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6198"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -27,6 +27,8 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="42" id="1AG-hq-nZM"/>
                                     <constraint firstAttribute="height" constant="21" id="7OW-Gd-T1r"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="Gfk-OW-Mz1"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="XA3-Kw-dtj"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -35,10 +37,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="M0A-hh-ofP" firstAttribute="top" secondItem="Bvm-rY-Fo7" secondAttribute="bottom" constant="25" id="3zv-Tn-60G"/>
-                            <constraint firstAttribute="centerY" secondItem="M0A-hh-ofP" secondAttribute="centerY" id="9Sg-lg-BKB"/>
-                            <constraint firstAttribute="centerX" secondItem="Bvm-rY-Fo7" secondAttribute="centerX" id="Aoc-no-h6C"/>
-                            <constraint firstAttribute="centerX" secondItem="M0A-hh-ofP" secondAttribute="centerX" id="HMd-BR-oAj"/>
+                            <constraint firstItem="M0A-hh-ofP" firstAttribute="top" secondItem="Bvm-rY-Fo7" secondAttribute="bottom" constant="25" id="Me9-Xs-HMj"/>
+                            <constraint firstAttribute="centerX" secondItem="M0A-hh-ofP" secondAttribute="centerX" id="S40-Yu-Ue7"/>
+                            <constraint firstAttribute="centerY" secondItem="M0A-hh-ofP" secondAttribute="centerY" id="n4o-pN-gze"/>
+                            <constraint firstAttribute="centerX" secondItem="Bvm-rY-Fo7" secondAttribute="centerX" id="sdB-wn-pdJ"/>
                         </constraints>
                     </view>
                     <connections>

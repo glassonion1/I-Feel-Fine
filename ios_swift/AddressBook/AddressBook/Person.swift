@@ -1,8 +1,8 @@
 //
-//  Person.swift
+//  AddressBook.swift
 //  AddressBook
 //
-//  Created by taisuke fujita on 2014/08/11.
+//  Created by taisuke fujita on 2014/10/22.
 //  Copyright (c) 2014年 taisuke fujita. All rights reserved.
 //
 

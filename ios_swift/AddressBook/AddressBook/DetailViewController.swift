@@ -28,14 +28,18 @@ class DetailViewController: UITableViewController {
         super.viewDidDisappear(animated)
         for (i, label) in enumerate(self.labels) {
             let indexPath = NSIndexPath(forRow: i, inSection: 0)
+            // テーブルセルのオブジェクトを取得する
             if let cell = self.tableView.cellForRowAtIndexPath(indexPath) {
                 let key = label["id"]
+                // テキストフィールドオブジェクトを取得する
                 if let editView = cell.contentView.viewWithTag(2) as? UITextField {
-                    self.detailItem?.setValue(editView.text, forKeyPath: key)
+                    // テキストフィールドオブジェクトの内容をPersonオブジェクトに設定する
+                    self.detailItem?.setValue(editView.text, forKeyPath: key!)
                 }
             }
         }
-        self.detailItem?.managedObjectContext.save(nil)
+        // データの変更を保存する
+        self.detailItem!.managedObjectContext!.save(nil)
     }
     
     override func didReceiveMemoryWarning() {
@@ -49,14 +53,19 @@ class DetailViewController: UITableViewController {
     
     override func tableView(tableView: UITableView,
         cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+            // テーブルセルオブジェクトの取得
             let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
+            // ラベル
             let label = labels[indexPath.row] as Dictionary;
+            // ストーリーボード上で設置したラベルオブジェクトをタグを使って取得する
             if let titleView = cell.contentView.viewWithTag(1) as? UILabel {
                 titleView.text = label["title"];
             }
+            // ストーリーボード上で設置したテキストフィールドオブジェクトをタグを使って取得する
             if let editView = cell.contentView.viewWithTag(2) as? UITextField {
                 let key = label["id"];
-                if let obj: AnyObject = self.detailItem?.valueForKeyPath(key) {
+                // Personオブジェクトに格納されているデータをテキストフィールドに表示する
+                if let obj: AnyObject = self.detailItem!.valueForKeyPath(key!) {
                     editView.text = obj.description;
                 }
             }

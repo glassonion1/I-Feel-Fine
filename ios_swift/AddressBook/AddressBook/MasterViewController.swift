@@ -25,9 +25,8 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         self.navigationItem.leftBarButtonItem = self.editButtonItem()
-
+        // ボタンが押された時に呼び出されるメソッドをshowAlert:に変更する
         let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "showAlert")
         self.navigationItem.rightBarButtonItem = addButton
         if let split = self.splitViewController {
@@ -42,13 +41,16 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     }
 
     func showAlert() {
-        let alertController: UIAlertController = UIAlertController(title: "新規連絡先を作成する",
+        let alertController = UIAlertController(title: "新規連絡先を作成する",
             message: "名前を入力してください。",
             preferredStyle: .Alert)
+        // アラートビューにテキストフィールドを追加
         alertController.addTextFieldWithConfigurationHandler(nil)
-        
+        // やめるボタン
         let cancelAction = UIAlertAction(title: "やめる", style: .Cancel, handler: nil)
-        let otherAction = UIAlertAction(title: "作成する", style: .Default) { action in
+        // 作成するボタン
+        let otherAction = UIAlertAction(title: "作成する", style: .Default) {
+            [unowned self] action in
             if let textFields = alertController.textFields {
                 let textField = textFields[0] as UITextField
                 self.insertNewObject(textField.text)
@@ -56,26 +58,23 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         }
         alertController.addAction(cancelAction)
         alertController.addAction(otherAction)
+        // アラートビューの表示
         self.presentViewController(alertController, animated: true, completion: nil)
     }
     
     func insertNewObject(name: String) {
         let context = self.fetchedResultsController.managedObjectContext
-        let entity = self.fetchedResultsController.fetchRequest.entity
-        let person = NSEntityDescription.insertNewObjectForEntityForName(entity.name, inManagedObjectContext: context) as NSManagedObject
+        let entity = self.fetchedResultsController.fetchRequest.entity!
+        // Personオブジェクトを生成する
+        let person = NSEntityDescription.insertNewObjectForEntityForName(entity.name!, inManagedObjectContext: context) as NSManagedObject
+        // Addressオブジェクトを生成する
         let address = NSEntityDescription.insertNewObjectForEntityForName("Address", inManagedObjectContext: context) as NSManagedObject
-             
-        // If appropriate, configure the new managed object.
-        // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
+        // personオブジェクトに名前とAddressオブジェクトをセットする
         person.setValue(name, forKey: "name")
         person.setValue(address, forKey: "address")
-        
-        // Save the context.
+        // データの保存
         var error: NSError? = nil
         if !context.save(&error) {
-            // Replace this implementation with code to handle the error appropriately.
-            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            //println("Unresolved error \(error), \(error.userInfo)")
             abort()
         }
     }
@@ -83,6 +82,8 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     // MARK: - Segues
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        println("遷移元ビューコントローラー\(segue.sourceViewController)")
+        println("遷移先ビューコントローラー\(segue.destinationViewController)")
         if segue.identifier == "showDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow() {
                 let object = self.fetchedResultsController.objectAtIndexPath(indexPath) as Person
@@ -133,7 +134,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
     func configureCell(cell: UITableViewCell, atIndexPath indexPath: NSIndexPath) {
         let object = self.fetchedResultsController.objectAtIndexPath(indexPath) as NSManagedObject
-        cell.textLabel?.text = object.valueForKey("name")!.description
+        cell.textLabel.text = object.valueForKey("name")!.description
     }
 
     // MARK: - Fetched results controller

@@ -20,6 +20,7 @@ class ViewController: UIViewController {
             selector: "ubiquitousDataDidChange:",
             name: NSUbiquitousKeyValueStoreDidChangeExternallyNotification,
             object: nil)
+        // iCloudに保存されているデータをラベルとステッパーにセット
         let store = NSUbiquitousKeyValueStore.defaultStore()
         let num = store.doubleForKey("stepper")
         self.label.text = "\(num)"
@@ -28,6 +29,7 @@ class ViewController: UIViewController {
 
     func ubiquitousDataDidChange(notification: NSNotification) {
         let store = NSUbiquitousKeyValueStore.defaultStore()
+        // 通知オブジェクトから渡ってくるデータを取得
         if let info = notification.userInfo as? [String: [String]] {
             if let keys = info[NSUbiquitousKeyValueStoreChangedKeysKey] {
                 for key in keys {

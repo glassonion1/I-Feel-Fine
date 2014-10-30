@@ -24,7 +24,7 @@ class ViewController: UIViewController {
         // プロジェクトに保存されたプロパティリストのパスを取得する
         let filePath = NSBundle.mainBundle().pathForResource("sample", ofType: "plist")
         // データをプロパティリストから読み込む
-        let array = NSArray(contentsOfFile: filePath!)
+        let array = NSArray(contentsOfFile: filePath!)!
         for data in array {
             println(data)
         }

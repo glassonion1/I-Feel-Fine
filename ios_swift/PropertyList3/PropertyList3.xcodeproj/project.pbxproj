@@ -399,6 +399,7 @@
 				6E4F67BC19821D8C001E7D5C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6E4F67BD19821D8C001E7D5C /* Build configuration list for PBXNativeTarget "PropertyList3Tests" */ = {
 			isa = XCConfigurationList;
@@ -407,6 +408,7 @@
 				6E4F67BF19821D8C001E7D5C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

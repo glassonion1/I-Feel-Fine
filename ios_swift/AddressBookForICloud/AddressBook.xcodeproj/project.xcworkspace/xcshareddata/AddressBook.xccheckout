@@ -14,7 +14,7 @@
 		<string>github.com:glassonion1/I-Feel-Fine.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>ios_swift/AddressBook/AddressBook.xcodeproj</string>
+	<string>ios_swift/AddressBookForICloud/AddressBook.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>3ED3C44A4526410D66BC0DC102125AC8A9C1E73E</key>

@@ -10,6 +10,12 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var button: UIButton!
+    
+    
+    @IBAction func respondToButtonClick(sender: UIButton) {
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // ビューの位置と大きさを決める
@@ -60,7 +66,7 @@ class ViewController: UIViewController {
         button.addTarget(self,
             action: "respondToButtonClick:",
             forControlEvents: UIControlEvents.TouchUpInside)
-        view.addSubview(button)
+        //view.addSubview(button)
     }
 
     override func viewDidLayoutSubviews() {

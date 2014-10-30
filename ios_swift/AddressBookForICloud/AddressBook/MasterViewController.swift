@@ -69,8 +69,8 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     
     func insertNewObject(name: String) {
         let context = self.fetchedResultsController.managedObjectContext
-        let entity = self.fetchedResultsController.fetchRequest.entity
-        let person = NSEntityDescription.insertNewObjectForEntityForName(entity.name, inManagedObjectContext: context) as NSManagedObject
+        let entity = self.fetchedResultsController.fetchRequest.entity!
+        let person = NSEntityDescription.insertNewObjectForEntityForName(entity.name!, inManagedObjectContext: context) as NSManagedObject
         let address = NSEntityDescription.insertNewObjectForEntityForName("Address", inManagedObjectContext: context) as NSManagedObject
              
         // If appropriate, configure the new managed object.
@@ -140,7 +140,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
     func configureCell(cell: UITableViewCell, atIndexPath indexPath: NSIndexPath) {
         let object = self.fetchedResultsController.objectAtIndexPath(indexPath) as NSManagedObject
-        cell.textLabel?.text = object.valueForKey("name")!.description
+        cell.textLabel.text = object.valueForKey("name")!.description
     }
 
     // MARK: - Fetched results controller

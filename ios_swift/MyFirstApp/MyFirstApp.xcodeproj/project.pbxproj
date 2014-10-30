@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E636FED19F428120022728E /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E636FEC19F428120022728E /* ModalViewController.swift */; };
 		6EE7241019417596001BE60B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE7240F19417596001BE60B /* AppDelegate.swift */; };
 		6EE7241219417596001BE60B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE7241119417596001BE60B /* ViewController.swift */; };
 		6EE7241519417596001BE60B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EE7241319417596001BE60B /* Main.storyboard */; };
 		6EE7241719417596001BE60B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EE7241619417596001BE60B /* Images.xcassets */; };
 		6EE7242319417596001BE60B /* MyFirstAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE7242219417596001BE60B /* MyFirstAppTests.swift */; };
-		6EEC6892194FFA1200F89066 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEC6891194FFA1200F89066 /* ModalViewController.swift */; };
 		6EEC68951951554000F89066 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EEC68941951554000F89066 /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6E636FEC19F428120022728E /* ModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		6EE7240A19417596001BE60B /* MyFirstApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyFirstApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EE7240E19417596001BE60B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6EE7240F19417596001BE60B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,7 +37,6 @@
 		6EE7241C19417596001BE60B /* MyFirstAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyFirstAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EE7242119417596001BE60B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6EE7242219417596001BE60B /* MyFirstAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFirstAppTests.swift; sourceTree = "<group>"; };
-		6EEC6891194FFA1200F89066 /* ModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		6EEC6893194FFC2B00F89066 /* MyFirstApp-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MyFirstApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		6EEC68941951554000F89066 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -81,11 +81,11 @@
 		6EE7240C19417596001BE60B /* MyFirstApp */ = {
 			isa = PBXGroup;
 			children = (
+				6E636FEC19F428120022728E /* ModalViewController.swift */,
 				6EEC68941951554000F89066 /* UIKit.framework */,
 				6EEC6893194FFC2B00F89066 /* MyFirstApp-Bridging-Header.h */,
 				6EE7240F19417596001BE60B /* AppDelegate.swift */,
 				6EE7241119417596001BE60B /* ViewController.swift */,
-				6EEC6891194FFA1200F89066 /* ModalViewController.swift */,
 				6EE7241319417596001BE60B /* Main.storyboard */,
 				6EE7241619417596001BE60B /* Images.xcassets */,
 				6EE7240D19417596001BE60B /* Supporting Files */,
@@ -217,7 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6EE7241219417596001BE60B /* ViewController.swift in Sources */,
-				6EEC6892194FFA1200F89066 /* ModalViewController.swift in Sources */,
+				6E636FED19F428120022728E /* ModalViewController.swift in Sources */,
 				6EE7241019417596001BE60B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
