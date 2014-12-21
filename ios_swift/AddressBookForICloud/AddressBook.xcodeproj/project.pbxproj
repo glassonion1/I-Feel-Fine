@@ -16,6 +16,7 @@
 		6EDA83AF1997D96A002B4F97 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EDA83AE1997D96A002B4F97 /* Address.swift */; };
 		6EDA83B11997D96A002B4F97 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EDA83B01997D96A002B4F97 /* Person.swift */; };
 		6EDA83B61997DCE6002B4F97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EDA83B51997DCE6002B4F97 /* Main.storyboard */; };
+		6EF903E01A0932F800D707A3 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EF903DF1A0932F800D707A3 /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,7 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6E7968F519F8251100F22D5F /* AddressBook.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = AddressBook.entitlements; sourceTree = "<group>"; };
+		6ED3BDAB1A089AC90009FE19 /* AddressBook.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = AddressBook.entitlements; sourceTree = "<group>"; };
 		6EDA83821997B418002B4F97 /* AddressBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AddressBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EDA83861997B418002B4F97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6EDA83871997B418002B4F97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +44,7 @@
 		6EDA83AE1997D96A002B4F97 /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		6EDA83B01997D96A002B4F97 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		6EDA83B51997DCE6002B4F97 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		6EF903DF1A0932F800D707A3 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EF903E01A0932F800D707A3 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +69,7 @@
 		6EDA83791997B417002B4F97 = {
 			isa = PBXGroup;
 			children = (
+				6EF903DF1A0932F800D707A3 /* CloudKit.framework */,
 				6EDA83841997B418002B4F97 /* AddressBook */,
 				6EDA839C1997B418002B4F97 /* AddressBookTests */,
 				6EDA83831997B418002B4F97 /* Products */,
@@ -84,7 +88,7 @@
 		6EDA83841997B418002B4F97 /* AddressBook */ = {
 			isa = PBXGroup;
 			children = (
-				6E7968F519F8251100F22D5F /* AddressBook.entitlements */,
+				6ED3BDAB1A089AC90009FE19 /* AddressBook.entitlements */,
 				6EDA83871997B418002B4F97 /* AppDelegate.swift */,
 				6EDA838C1997B418002B4F97 /* MasterViewController.swift */,
 				6EDA838E1997B418002B4F97 /* DetailViewController.swift */,
@@ -342,7 +346,9 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = AddressBook/AddressBook.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = AddressBook/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -357,6 +363,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = AddressBook/AddressBook.entitlements;
 				INFOPLIST_FILE = AddressBook/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

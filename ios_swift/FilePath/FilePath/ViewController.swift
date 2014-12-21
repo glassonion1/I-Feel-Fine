@@ -13,20 +13,25 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Home
         println(NSHomeDirectory())
         
+        // /アプリ名.app
         println(NSBundle.mainBundle().bundlePath)
         
+        // /Documents
         let paths = NSSearchPathForDirectoriesInDomains(
             .DocumentDirectory,
             .UserDomainMask, true)
         println(paths[0])
     
+        // /Library/Caches
         let paths2 = NSSearchPathForDirectoriesInDomains(
             .CachesDirectory,
             .UserDomainMask, true)
         println(paths2[0])
     
+        // /tmp
         println(NSTemporaryDirectory())
     }
 

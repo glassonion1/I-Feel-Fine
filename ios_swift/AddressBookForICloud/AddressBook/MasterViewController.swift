@@ -43,6 +43,12 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     }
     
     func reloadFetchedResults(notification: NSNotification) {
+        // データを再検索
+        var error: NSError? = nil
+        if !self.fetchedResultsController.performFetch(&error) {
+            abort()
+        }
+        // テーブルビューの表示内容を更新
         self.tableView.reloadData()
     }
     
@@ -70,20 +76,16 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     func insertNewObject(name: String) {
         let context = self.fetchedResultsController.managedObjectContext
         let entity = self.fetchedResultsController.fetchRequest.entity!
+        // Personオブジェクトを生成する
         let person = NSEntityDescription.insertNewObjectForEntityForName(entity.name!, inManagedObjectContext: context) as NSManagedObject
+        // Addressオブジェクトを生成する
         let address = NSEntityDescription.insertNewObjectForEntityForName("Address", inManagedObjectContext: context) as NSManagedObject
-             
-        // If appropriate, configure the new managed object.
-        // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
+        // personオブジェクトに名前とAddressオブジェクトをセットする
         person.setValue(name, forKey: "name")
         person.setValue(address, forKey: "address")
-        
-        // Save the context.
+        // データの保存
         var error: NSError? = nil
         if !context.save(&error) {
-            // Replace this implementation with code to handle the error appropriately.
-            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            //println("Unresolved error \(error), \(error.userInfo)")
             abort()
         }
     }
@@ -127,7 +129,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         if editingStyle == .Delete {
             let context = self.fetchedResultsController.managedObjectContext
             context.deleteObject(self.fetchedResultsController.objectAtIndexPath(indexPath) as NSManagedObject)
-                
+            
             var error: NSError? = nil
             if !context.save(&error) {
                 // Replace this implementation with code to handle the error appropriately.
@@ -140,7 +142,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
     func configureCell(cell: UITableViewCell, atIndexPath indexPath: NSIndexPath) {
         let object = self.fetchedResultsController.objectAtIndexPath(indexPath) as NSManagedObject
-        cell.textLabel.text = object.valueForKey("name")!.description
+        cell.textLabel!.text = object.valueForKey("name")!.description
     }
 
     // MARK: - Fetched results controller
@@ -151,11 +153,11 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
             return _fetchedResultsController!
         }
         /*
-         * 以下このプロパティに初めてアクセスされた時の記述
-         */
+        * 以下このプロパティに初めてアクセスされた時の記述
+        */
         // フェッチリクエストオブジェクトの生成
         let fetchRequest = NSFetchRequest()
-            
+        
         // エンティティ記述を取得
         let entity = NSEntityDescription.entityForName("Person",
             inManagedObjectContext: self.managedObjectContext!)
@@ -176,46 +178,48 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         _fetchedResultsController = aFetchedResultsController
         
         // データの読み込みを実行
-    	var error: NSError? = nil
-    	if !_fetchedResultsController!.performFetch(&error) {
-    	     // Replace this implementation with code to handle the error appropriately.
-    	     // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
-             //println("Unresolved error \(error), \(error.userInfo)")
-    	     abort()
-    	}
+        var error: NSError? = nil
+        if !_fetchedResultsController!.performFetch(&error) {
+            // Replace this implementation with code to handle the error appropriately.
+            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            //println("Unresolved error \(error), \(error.userInfo)")
+            abort()
+        }
         
         return _fetchedResultsController!
     }    
     var _fetchedResultsController: NSFetchedResultsController? = nil
-
+    
     func controllerWillChangeContent(controller: NSFetchedResultsController) {
         self.tableView.beginUpdates()
     }
 
     func controller(controller: NSFetchedResultsController, didChangeSection sectionInfo: NSFetchedResultsSectionInfo, atIndex sectionIndex: Int, forChangeType type: NSFetchedResultsChangeType) {
         switch type {
-            case .Insert:
-                self.tableView.insertSections(NSIndexSet(index: sectionIndex), withRowAnimation: .Fade)
-            case .Delete:
-                self.tableView.deleteSections(NSIndexSet(index: sectionIndex), withRowAnimation: .Fade)
-            default:
-                return
+        case .Insert:
+            self.tableView.insertSections(NSIndexSet(index: sectionIndex), withRowAnimation: .Fade)
+        case .Update:
+            self.tableView.reloadData()
+        case .Delete:
+            self.tableView.deleteSections(NSIndexSet(index: sectionIndex), withRowAnimation: .Fade)
+        default:
+            return
         }
     }
 
     func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath) {
         switch type {
-            case .Insert:
-                tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Fade)
-            case .Delete:
-                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-            case .Update:
-                self.configureCell(tableView.cellForRowAtIndexPath(indexPath)!, atIndexPath: indexPath)
-            case .Move:
-                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-                tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Fade)
-            default:
-                return
+        case .Insert:
+            tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Fade)
+        case .Delete:
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        case .Update:
+            self.configureCell(tableView.cellForRowAtIndexPath(indexPath)!, atIndexPath: indexPath)
+        case .Move:
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Fade)
+        default:
+            return
         }
     }
 

@@ -12,7 +12,7 @@ class ViewController: UITableViewController {
     
     let groupNames = ["ビートルズ", "レッド・ツェッペリン"]
     let groups = [
-        ["ジョン・レノン", "ポール・マッカートニー", "ジョージ・ハリスン", "リチャード・スターキー"],
+        ["ジョン・レノン", "ポール・マッカートニー", "ジョージ・ハリスン", "リンゴ・スター"],
         ["ジミー・ペイジ", "ロバート・プラント", "ジョン・ポール・ジョーンズ", "ジョン・ボーナム"]
     ]
     
@@ -21,6 +21,8 @@ class ViewController: UITableViewController {
         // ペーストボードを使うサンプル
         let p = UIPasteboard.generalPasteboard();
         p.string = "Hello Pasteboard";
+        
+        self.tableView.contentInset = UIEdgeInsetsMake(20.0, 0.0, 0.0, 0.0)
     }
 
     override func didReceiveMemoryWarning() {

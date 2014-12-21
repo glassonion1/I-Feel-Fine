@@ -14,9 +14,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 
     var window: UIWindow?
 
-
-    
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         let splitViewController = self.window!.rootViewController as UISplitViewController
@@ -87,19 +84,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         var coordinator: NSPersistentStoreCoordinator? = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
         weak var psc = coordinator
         let url = self.applicationDocumentsDirectory.URLByAppendingPathComponent("AddressBook.sqlite")
-        // サブスレッドで実行
+        // サブスレッドで実行(メインスレッドで実行するとiCloudのデータ同期でエラーが発生する)
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
-            var options: [String: AnyObject] = [:]
-            // iCloud上のファイルパスを取得する
-            if let ubiquitousURL = NSFileManager.defaultManager().URLForUbiquityContainerIdentifier(nil) {
-                let dataURL = ubiquitousURL.URLByAppendingPathComponent("data")
-                options[NSPersistentStoreUbiquitousContentNameKey] = "AddressBook.store"
-                options[NSPersistentStoreUbiquitousContentURLKey] = dataURL
-            }
-            psc?.lock()
+            var options: [String: AnyObject] = [NSPersistentStoreUbiquitousContentNameKey: "AddressBook"]
             var error: NSError? = nil
             var failureReason = "There was an error creating or loading the application's saved data."
-            if coordinator!.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: nil, error: &error) == nil {
+            if coordinator!.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: options, error: &error) == nil {
                 coordinator = nil
                 // Report any error we got.
                 let dict = NSMutableDictionary()
@@ -112,12 +102,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
                 NSLog("Unresolved error \(error), \(error!.userInfo)")
                 abort()
             }
-            psc?.unlock()
-            // メインスレッドで実行
-            dispatch_async(dispatch_get_main_queue()) {
-                let center = NSNotificationCenter.defaultCenter()
-                center.postNotificationName("RefetchAllDatabaseData", object: self)
-            }
         }
         
         return coordinator
@@ -129,19 +113,54 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         if coordinator == nil {
             return nil
         }
+        
         var moc = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
-        moc.performBlockAndWait {
-            moc.persistentStoreCoordinator = coordinator
-            let center = NSNotificationCenter.defaultCenter()
-            center.addObserver(self,
-                selector: "ubiquitousDataDidChange:",
-                name: NSPersistentStoreDidImportUbiquitousContentChangesNotification,
-                object: coordinator)
-        }
+        moc.persistentStoreCoordinator = coordinator
+        // 通知の設定
+        let center = NSNotificationCenter.defaultCenter()
+        center.addObserver(self,
+            selector: "storesWillChange:",
+            name: NSPersistentStoreCoordinatorStoresWillChangeNotification,
+            object: coordinator)
+        center.addObserver(self,
+            selector: "storesDidChange:",
+            name: NSPersistentStoreCoordinatorStoresDidChangeNotification,
+            object: coordinator)
+        center.addObserver(self,
+            selector: "persistentStoreDidImportUbiquitousContentChanges:",
+            name: NSPersistentStoreDidImportUbiquitousContentChangesNotification,
+            object: coordinator)
         return moc
     }()
 
-    func ubiquitousDataDidChange(notification: NSNotification!) {
+    func storesWillChange(notification: NSNotification!) {
+        NSLog("storesWillChange:\(NSThread.isMainThread())")
+        weak var moc = self.managedObjectContext
+        moc!.performBlock {
+            if moc!.hasChanges {
+                var error: NSError? = nil
+                if !moc!.save(&error) {
+                    NSLog("Unresolved error \(error), \(error!.userInfo)")
+                    abort()
+                }
+            }
+            moc!.reset()
+        }
+    }
+    
+    func storesDidChange(notification: NSNotification!) {
+        NSLog("storesDidChange:\(NSThread.isMainThread())")
+        // メインスレッドで実行
+        let queue = NSOperationQueue.mainQueue()
+        queue.addOperationWithBlock({
+            // UIの更新用の通知
+            let center = NSNotificationCenter.defaultCenter()
+            center.postNotificationName("RefetchAllDatabaseData", object: self)
+        })
+    }
+    
+    func persistentStoreDidImportUbiquitousContentChanges(notification: NSNotification!) {
+        NSLog("persistentStoreDidImportUbiquitousContentChanges:\(NSThread.isMainThread())")
         weak var moc = self.managedObjectContext
         moc!.performBlock {
             moc!.mergeChangesFromContextDidSaveNotification(notification)
@@ -150,7 +169,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 
     // MARK: - Core Data Saving support
 
-    func saveContext () {
+    func saveContext() {
         if let moc = self.managedObjectContext {
             var error: NSError? = nil
             if moc.hasChanges && !moc.save(&error) {

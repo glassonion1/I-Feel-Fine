@@ -39,7 +39,9 @@ class DetailViewController: UITableViewController {
             }
         }
         // データの変更を保存する
-        self.detailItem!.managedObjectContext!.save(nil)
+        if let item = self.detailItem {
+           item.managedObjectContext!.save(nil)
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -65,9 +67,12 @@ class DetailViewController: UITableViewController {
             if let editView = cell.contentView.viewWithTag(2) as? UITextField {
                 let key = label["id"];
                 // Personオブジェクトに格納されているデータをテキストフィールドに表示する
-                if let obj: AnyObject = self.detailItem!.valueForKeyPath(key!) {
-                    editView.text = obj.description;
+                if let item = self.detailItem {
+                    if let obj: AnyObject = item.valueForKeyPath(key!) {
+                        editView.text = obj.description;
+                    }
                 }
+
             }
             return cell
     }

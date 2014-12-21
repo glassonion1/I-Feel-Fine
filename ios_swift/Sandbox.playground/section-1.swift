@@ -42,3 +42,14 @@ enum Compass {
 Compass.basis()
 
 let direction: Compass = .North
+
+let newView = UIView()
+// 表示位置と大きさを設定する
+newView.frame = CGRect(x:76, y:60, width:88, height:88)
+// 内容を出力
+println("\(newView.frame.origin.x)")
+println("\(newView.frame.origin.y)")
+println("\(newView.frame.size.width)")
+println("\(newView.frame.size.height)")
+
+
