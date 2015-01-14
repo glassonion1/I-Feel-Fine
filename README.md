@@ -93,6 +93,6 @@ ios_swiftフォルダにこの本のサンプルコードが入っています(i
 
 * HttpRequest
 
-【サンプル21】In-App Purchaseを使ったアプリ
----------------------------------
+### 【サンプル21】In-App Purchaseを使ったアプリ
+
 * InAppPurchase
