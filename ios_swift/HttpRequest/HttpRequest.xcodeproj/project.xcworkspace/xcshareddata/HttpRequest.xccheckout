@@ -5,16 +5,16 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>D9CB630F-FBCC-4F4F-80EB-0A87CB42E3B5</string>
+	<string>8D7F1DC6-C995-4888-B144-D74F0A694D3A</string>
 	<key>IDESourceControlProjectName</key>
-	<string>NSOperation2</string>
+	<string>HttpRequest</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>3ED3C44A4526410D66BC0DC102125AC8A9C1E73E</key>
 		<string>github.com:glassonion1/I-Feel-Fine.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>ios_swift/NSOperation2/NSOperation2.xcodeproj</string>
+	<string>ios_swift/HttpRequest/HttpRequest.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>3ED3C44A4526410D66BC0DC102125AC8A9C1E73E</key>

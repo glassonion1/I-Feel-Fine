@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  NSOperation2
+//  HttpRequest
 //
-//  Created by taisuke fujita on 2014/10/05.
-//  Copyright (c) 2014年 taisuke fujita. All rights reserved.
+//  Created by taisuke fujita on 2015/01/14.
+//  Copyright (c) 2015年 taisuke fujita. All rights reserved.
 //
 
 import UIKit
