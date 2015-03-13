@@ -13,7 +13,7 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.collectionView.contentInset = UIEdgeInsetsMake(20.0, 0.0, 0.0, 0.0)
+        self.collectionView?.contentInset = UIEdgeInsetsMake(20.0, 0.0, 0.0, 0.0)
     }
 
     override func didReceiveMemoryWarning() {
