@@ -36,7 +36,8 @@ class ViewController: UIViewController {
         let paths = NSSearchPathForDirectoriesInDomains(
             .DocumentDirectory,
             .UserDomainMask, true) as [String]
-        let filePath = String(paths[0]) + "data.dat"
+        //let filePath = String(paths[0]) + "data.dat"
+        let filePath = String(paths[0]).stringByAppendingPathComponent("data.plist")
         // アーカイブしてファイルに保存
         let successful = NSKeyedArchiver.archiveRootObject(people, toFile: filePath)
         if successful {
@@ -49,7 +50,8 @@ class ViewController: UIViewController {
         let paths = NSSearchPathForDirectoriesInDomains(
             .DocumentDirectory,
             .UserDomainMask, true) as [String]
-        let filePath = String(paths[0]) + "data.dat"
+        //let filePath = String(paths[0]) + "data.dat"
+        let filePath = String(paths[0]).stringByAppendingPathComponent("data.plist")
         // アンアーカイブする
         let array = NSKeyedUnarchiver.unarchiveObjectWithFile(filePath) as Array<Person>
         for person in array {

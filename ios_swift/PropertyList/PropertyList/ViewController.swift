@@ -25,7 +25,8 @@ class ViewController: UIViewController {
         let paths = NSSearchPathForDirectoriesInDomains(
             .DocumentDirectory,
             .UserDomainMask, true) as [String]
-        let filePath = String(paths[0]) + "data.plist"
+        //let filePath = String(paths[0]) + "data.plist"
+        let filePath = String(paths[0]).stringByAppendingPathComponent("data.plist")
         // 都道府県データ(NSArray型にキャストする)
         let array = ["北海道", "青森県", "岩手県", "秋田県", "宮城県", "山形県"] as NSArray
         let successful = array.writeToFile(filePath, atomically: false)
@@ -39,7 +40,8 @@ class ViewController: UIViewController {
         let paths = NSSearchPathForDirectoriesInDomains(
             .DocumentDirectory,
             .UserDomainMask, true) as [String]
-        let filePath = String(paths[0]) + "data.plist"
+        //let filePath = String(paths[0]) + "data.plist"
+        let filePath = String(paths[0]).stringByAppendingPathComponent("data.plist")
         // データをプロパティリストから読み込む
         let array = NSArray(contentsOfFile: filePath)!
         for data in array {

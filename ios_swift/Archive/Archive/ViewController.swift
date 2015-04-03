@@ -21,12 +21,16 @@ class ViewController: UIViewController {
     }
 
     @IBAction func respondToArchiveButton() {
-        let arr = ["aaa", "bbb"] as Array
+        // ファイルパスの取得
         let paths = NSSearchPathForDirectoriesInDomains(
             .DocumentDirectory,
             .UserDomainMask, true) as [String]
-        let filePath = String(paths[0]) + "data.dat"
+        // 保存するファイルの名前
+        //let filePath = String(paths[0]) + "data.dat"
+        let filePath = String(paths[0]).stringByAppendingPathComponent("data.plist")
+        // 保存するデータ、氏名と住所
         let array = ["山田太郎", "104-0061", "東京都", "中央区", "銀座1丁目"]
+        // アーカイブしてdata.datというファイル名で保存する
         let successful = NSKeyedArchiver.archiveRootObject(array, toFile: filePath)
         if successful {
             println("データの保存に成功しました。")
@@ -37,7 +41,8 @@ class ViewController: UIViewController {
         let paths = NSSearchPathForDirectoriesInDomains(
             .DocumentDirectory,
             .UserDomainMask, true) as Array<String>
-        let filePath = String(paths[0]) + "data.dat"
+        //let filePath = String(paths[0]) + "data.dat"
+        let filePath = String(paths[0]).stringByAppendingPathComponent("data.plist")
         if let array = NSKeyedUnarchiver.unarchiveObjectWithFile(filePath) as? Array<String> {
             for str in array {
                 println(str)

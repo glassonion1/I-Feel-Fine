@@ -25,7 +25,8 @@ class ViewController: UIViewController {
         let paths = NSSearchPathForDirectoriesInDomains(
             .DocumentDirectory,
             .UserDomainMask, true) as [String]
-        let filePath = String(paths[0]) + "data.plist"
+        //let filePath = String(paths[0]) + "data.plist"
+        let filePath = String(paths[0]).stringByAppendingPathComponent("data.plist")
         // 山田太郎、花子オブジェクト(住所が同じ夫婦という設定)
         let address1 = Address(zipCode: "104-0061",
             state: "東京都", city: "中央区", other: "銀座1丁目")
@@ -51,7 +52,8 @@ class ViewController: UIViewController {
         let paths = NSSearchPathForDirectoriesInDomains(
             .DocumentDirectory,
             .UserDomainMask, true) as [String]
-        let filePath = String(paths[0]) + "data.plist"
+        //let filePath = String(paths[0]) + "data.plist"
+        let filePath = String(paths[0]).stringByAppendingPathComponent("data.plist")
         // データをプロパティリストから読み込む
         let array = NSArray(contentsOfFile: filePath)!
         for data in array {
