@@ -35,7 +35,7 @@ class ViewController: UIViewController {
         // 保存するファイルの設定
         let paths = NSSearchPathForDirectoriesInDomains(
             .DocumentDirectory,
-            .UserDomainMask, true) as [String]
+            .UserDomainMask, true) as! [String]
         //let filePath = String(paths[0]) + "data.dat"
         let filePath = String(paths[0]).stringByAppendingPathComponent("data.plist")
         // アーカイブしてファイルに保存
@@ -49,11 +49,11 @@ class ViewController: UIViewController {
         // 保存するファイルの設定
         let paths = NSSearchPathForDirectoriesInDomains(
             .DocumentDirectory,
-            .UserDomainMask, true) as [String]
+            .UserDomainMask, true) as! [String]
         //let filePath = String(paths[0]) + "data.dat"
         let filePath = String(paths[0]).stringByAppendingPathComponent("data.plist")
         // アンアーカイブする
-        let array = NSKeyedUnarchiver.unarchiveObjectWithFile(filePath) as Array<Person>
+        let array = NSKeyedUnarchiver.unarchiveObjectWithFile(filePath) as! Array<Person>
         for person in array {
             println(person.name)
             println(person.address.zipCode)
