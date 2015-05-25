@@ -24,7 +24,7 @@ class ViewController: UIViewController {
         // ファイルパスの取得
         let paths = NSSearchPathForDirectoriesInDomains(
             .DocumentDirectory,
-            .UserDomainMask, true) as [String]
+            .UserDomainMask, true) as! [String]
         // 保存するファイルの名前
         //let filePath = String(paths[0]) + "data.dat"
         let filePath = String(paths[0]).stringByAppendingPathComponent("data.plist")
@@ -40,7 +40,7 @@ class ViewController: UIViewController {
     @IBAction func respondToUnarchiveButton() {
         let paths = NSSearchPathForDirectoriesInDomains(
             .DocumentDirectory,
-            .UserDomainMask, true) as Array<String>
+            .UserDomainMask, true) as! Array<String>
         //let filePath = String(paths[0]) + "data.dat"
         let filePath = String(paths[0]).stringByAppendingPathComponent("data.plist")
         if let array = NSKeyedUnarchiver.unarchiveObjectWithFile(filePath) as? Array<String> {
