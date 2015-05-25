@@ -12,7 +12,7 @@ class ModalViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let app = UIApplication.sharedApplication().delegate as AppDelegate
+        let app = UIApplication.sharedApplication().delegate as! AppDelegate
         let item1 : AnyObject? = app.sharedData["item1"]
         println(item1)
     }
