@@ -37,13 +37,13 @@ class ViewController: UITableViewController {
     
     override func tableView(tableView: UITableView,
         cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath:indexPath) as UITableViewCell
+            let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath:indexPath) as! UITableViewCell
             cell.textLabel?.text = self.groups[indexPath.section][indexPath.row]
             return cell
     }
     
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView {
-        var view = tableView.dequeueReusableHeaderFooterViewWithIdentifier("Header") as UITableViewHeaderFooterView?
+        var view = tableView.dequeueReusableHeaderFooterViewWithIdentifier("Header") as! UITableViewHeaderFooterView?
         if view == nil {
             view = UITableViewHeaderFooterView(reuseIdentifier: "Header") as UITableViewHeaderFooterView
         }
