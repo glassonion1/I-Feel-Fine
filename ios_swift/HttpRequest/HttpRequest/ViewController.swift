@@ -31,8 +31,8 @@ class ViewController: UIViewController {
         ofObject object: AnyObject,
         change: [NSObject : AnyObject],
         context: UnsafeMutablePointer<Void>) {
-            let ope = object as HttpOperation
-            let responseString: String = NSString(data: ope.responseData, encoding:NSUTF8StringEncoding)!
+            let ope = object as! HttpOperation
+            let responseString: String = NSString(data: ope.responseData, encoding:NSUTF8StringEncoding) as String!
             println(responseString)
             object.removeObserver(self, forKeyPath: keyPath)
     }
