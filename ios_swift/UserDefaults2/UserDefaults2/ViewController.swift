@@ -45,9 +45,9 @@ class ViewController: UIViewController {
     
     @IBAction func respondToLoadButtonClick() {
         let defaults = NSUserDefaults.standardUserDefaults()
-        let addressList = defaults.arrayForKey("address-list") as [NSData]
+        let addressList = defaults.arrayForKey("address-list") as! [NSData]
         for data in addressList {
-            let person = NSKeyedUnarchiver.unarchiveObjectWithData(data as NSData) as Person
+            let person = NSKeyedUnarchiver.unarchiveObjectWithData(data as NSData) as! Person
             println(person.name)
             println(person.address.zipCode)
             println(person.address.state)

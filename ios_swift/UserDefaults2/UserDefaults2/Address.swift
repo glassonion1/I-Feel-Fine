@@ -26,10 +26,10 @@ class Address: NSObject, NSCoding {
     }
     // 復元用コンストラクタ
     required init(coder aDecoder: NSCoder) {
-        self.zipCode = aDecoder.decodeObjectForKey("zipCode") as String
-        self.state = aDecoder.decodeObjectForKey("state") as String
-        self.city = aDecoder.decodeObjectForKey("city") as String
-        self.other = aDecoder.decodeObjectForKey("other") as String
+        self.zipCode = aDecoder.decodeObjectForKey("zipCode") as! String
+        self.state = aDecoder.decodeObjectForKey("state") as! String
+        self.city = aDecoder.decodeObjectForKey("city") as! String
+        self.other = aDecoder.decodeObjectForKey("other") as! String
     }
     // エンコード
     func encodeWithCoder(aCoder: NSCoder) {
