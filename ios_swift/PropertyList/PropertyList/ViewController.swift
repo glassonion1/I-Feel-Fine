@@ -24,7 +24,7 @@ class ViewController: UIViewController {
         // 保存するファイルの設定(拡張子はplist)
         let paths = NSSearchPathForDirectoriesInDomains(
             .DocumentDirectory,
-            .UserDomainMask, true) as [String]
+            .UserDomainMask, true) as! [String]
         //let filePath = String(paths[0]) + "data.plist"
         let filePath = String(paths[0]).stringByAppendingPathComponent("data.plist")
         // 都道府県データ(NSArray型にキャストする)
@@ -39,7 +39,7 @@ class ViewController: UIViewController {
         // 保存するファイルの設定(拡張子はplist)
         let paths = NSSearchPathForDirectoriesInDomains(
             .DocumentDirectory,
-            .UserDomainMask, true) as [String]
+            .UserDomainMask, true) as! [String]
         //let filePath = String(paths[0]) + "data.plist"
         let filePath = String(paths[0]).stringByAppendingPathComponent("data.plist")
         // データをプロパティリストから読み込む
