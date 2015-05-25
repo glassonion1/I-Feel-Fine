@@ -24,7 +24,7 @@ class ViewController: UIViewController {
         // 保存するファイルの設定(拡張子はplist)
         let paths = NSSearchPathForDirectoriesInDomains(
             .DocumentDirectory,
-            .UserDomainMask, true) as [String]
+            .UserDomainMask, true) as! [String]
         //let filePath = String(paths[0]) + "data.plist"
         let filePath = String(paths[0]).stringByAppendingPathComponent("data.plist")
         // 山田太郎、花子オブジェクト(住所が同じ夫婦という設定)
@@ -51,14 +51,14 @@ class ViewController: UIViewController {
         // 保存するファイルの設定(拡張子はplist)
         let paths = NSSearchPathForDirectoriesInDomains(
             .DocumentDirectory,
-            .UserDomainMask, true) as [String]
+            .UserDomainMask, true) as! [String]
         //let filePath = String(paths[0]) + "data.plist"
         let filePath = String(paths[0]).stringByAppendingPathComponent("data.plist")
         // データをプロパティリストから読み込む
         let array = NSArray(contentsOfFile: filePath)!
         for data in array {
             // 読み込んだオブジェクトをアンアーカイブする
-            let person = NSKeyedUnarchiver.unarchiveObjectWithData(data as NSData) as Person
+            let person = NSKeyedUnarchiver.unarchiveObjectWithData(data as! NSData) as! Person
             println(person.name)
             println(person.address.zipCode)
             println(person.address.state)

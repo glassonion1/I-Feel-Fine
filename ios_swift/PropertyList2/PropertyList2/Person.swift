@@ -20,8 +20,8 @@ class Person: NSObject, NSCoding {
     }
     // 復元用コンストラクタ
     required init(coder aDecoder: NSCoder) {
-        self.name = aDecoder.decodeObjectForKey("name") as String
-        self.address = aDecoder.decodeObjectForKey("address") as Address
+        self.name = aDecoder.decodeObjectForKey("name") as! String
+        self.address = aDecoder.decodeObjectForKey("address") as! Address
     }
     // エンコード
     func encodeWithCoder(aCoder: NSCoder) {
