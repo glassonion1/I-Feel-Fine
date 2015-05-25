@@ -33,7 +33,7 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
     override func collectionView(collectionView: UICollectionView,
         cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath)
-                as UICollectionViewCell
+                as! UICollectionViewCell
             let image = UIImage(named: "hedgehog")
             let imageView = UIImageView(image: image) as UIImageView
             let radian = CGFloat(M_PI / 180) * CGFloat(30 * indexPath.row)
@@ -53,7 +53,7 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
             let header = collectionView.dequeueReusableSupplementaryViewOfKind(
                 kind,
                 withReuseIdentifier: "Header",
-                forIndexPath: indexPath) as UICollectionReusableView
+                forIndexPath: indexPath) as! UICollectionReusableView
             let label = UILabel(frame: CGRect(x: 5, y: 5, width: 200, height: 40))
             label.backgroundColor = UIColor.clearColor()
             label.text = "画像の角度を変えてみる"
@@ -61,9 +61,9 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
             return header;
     }
     
-    func collectionView(collectionView: UICollectionView!,
-        layout collectionViewLayout: UICollectionViewLayout!,
-        sizeForItemAtIndexPath indexPath: NSIndexPath!) -> CGSize {
+    func collectionView(collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
             return CGSize(width: 60, height: 60)
     }
 }
