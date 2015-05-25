@@ -12,10 +12,6 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var button: UIButton!
     
-    
-    @IBAction func respondToButtonClick(sender: UIButton) {
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // ビューの位置と大きさを決める
@@ -60,7 +56,7 @@ class ViewController: UIViewController {
         // 制約の追加
         self.view.addConstraints([width, height, centerX, y30])
         
-        let button = UIButton.buttonWithType(UIButtonType.System) as UIButton
+        let button = UIButton.buttonWithType(UIButtonType.System) as! UIButton
         button.frame = CGRect(x: 0, y: 0, width: 50, height: 44)
         button.setTitle("開く", forState: UIControlState.Normal)
         button.addTarget(self,
@@ -82,7 +78,7 @@ class ViewController: UIViewController {
         //
     }
     
-    func respondToButtonClick(sender: UIButton!) {
+    func respondToButtonClick(sender: UIButton) {
         let controller = ModalViewController()
         controller.view.backgroundColor = UIColor.whiteColor()
         self.presentViewController(controller, animated: true, completion: nil)
