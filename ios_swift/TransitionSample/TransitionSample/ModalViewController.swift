@@ -14,7 +14,7 @@ class ModalViewController: UIViewController {
         super.viewDidLoad()
 
         let button = UIButton.buttonWithType(UIButtonType.System)
-            as UIButton
+            as! UIButton
         button.frame = CGRect(x: 0, y: 0, width: 50, height: 44)
         button.setTitle("閉じる", forState: UIControlState.Normal)
         button.addTarget(self,
