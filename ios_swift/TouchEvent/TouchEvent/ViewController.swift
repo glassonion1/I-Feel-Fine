@@ -19,20 +19,20 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         println("touch began")
     }
     
-    override func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
         println("touch moved")
     }
     
-    override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
         println("touch ended")
     }
     
-    override func touchesCancelled(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesCancelled(touches: Set<NSObject>!, withEvent event: UIEvent!) {
         println("touch cancelled")
     }
 
