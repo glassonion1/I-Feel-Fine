@@ -26,13 +26,13 @@ class ViewController: UIViewController, SKProductsRequestDelegate, SKPaymentTran
             }
             SKPaymentQueue.defaultQueue().addTransactionObserver(self)
             for product in response.products {
-                let payment = SKPayment(product: product as SKProduct)
+                let payment = SKPayment(product: product as! SKProduct)
                 SKPaymentQueue.defaultQueue().addPayment(payment)
             }
     }
     
     func paymentQueue(queue: SKPaymentQueue!, updatedTransactions transactions: [AnyObject]!) {
-        for transaction in transactions as [SKPaymentTransaction] {
+        for transaction in transactions as! [SKPaymentTransaction] {
             switch transaction.transactionState {
             case .Purchasing:
                 println("処理中...")
@@ -59,7 +59,7 @@ class ViewController: UIViewController, SKProductsRequestDelegate, SKPaymentTran
     }
     
     func paymentQueue(queue: SKPaymentQueue!, removedTransactions transactions: [AnyObject]!) {
-        for transaction in transactions as [SKPaymentTransaction] {
+        for transaction in transactions as! [SKPaymentTransaction] {
             if transaction.transactionState == .Purchased {
                 self.label.text = "\(transaction.payment.productIdentifier)"
             }
@@ -74,7 +74,7 @@ class ViewController: UIViewController, SKProductsRequestDelegate, SKPaymentTran
     }
     
     func paymentQueueRestoreCompletedTransactionsFinished(queue: SKPaymentQueue!) {
-        for transaction in queue.transactions as [SKPaymentTransaction] {
+        for transaction in queue.transactions as! [SKPaymentTransaction] {
             if transaction.transactionState == .Purchased {
                 self.label.text = "\(transaction.payment.productIdentifier)"
             }
@@ -119,7 +119,7 @@ class ViewController: UIViewController, SKProductsRequestDelegate, SKPaymentTran
 
     @IBAction func respondToBuyButtonClick() {
         let set = NSSet(objects: "com.9revolution9.removeads")
-        let productRequest = SKProductsRequest(productIdentifiers: set)
+        let productRequest = SKProductsRequest(productIdentifiers: set as Set<NSObject>)
         productRequest.delegate = self
         productRequest.start()
     }
