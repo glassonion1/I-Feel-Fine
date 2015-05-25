@@ -36,5 +36,5 @@ array2.append(north)
 println("Array:\(array2)")
 
 //　関数オブジェクトを配列から取り出して実行
-var tmp = array2[4] as (CGFloat, CGFloat) -> CGPoint
+var tmp = array2[4] as! (CGFloat, CGFloat) -> CGPoint
 println(tmp(100, 400))
