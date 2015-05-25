@@ -17,13 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        let splitViewController = self.window!.rootViewController as UISplitViewController
-        let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as UINavigationController
+        let splitViewController = self.window!.rootViewController as! UISplitViewController
+        let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as! UINavigationController
         navigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem()
         splitViewController.delegate = self
         
-        let masterNavigationController = splitViewController.viewControllers[0] as UINavigationController
-        let controller = masterNavigationController.topViewController as MasterViewController
+        let masterNavigationController = splitViewController.viewControllers[0] as! UINavigationController
+        let controller = masterNavigationController.topViewController as! MasterViewController
         controller.managedObjectContext = self.managedObjectContext
         return true
     }
@@ -68,9 +68,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     // MARK: - Core Data stack
     
     lazy var applicationDocumentsDirectory: NSURL = {
-        // The directory the application uses to store the Core Data store file. This code uses a directory named "jp.sample.core" in the application's documents Application Support directory.
+        // The directory the application uses to store the Core Data store file. This code uses a directory named "com.9revolution9.aaa" in the application's documents Application Support directory.
         let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
-        return urls[urls.count-1] as NSURL
+        return urls[urls.count-1] as! NSURL
         }()
     
     lazy var managedObjectModel: NSManagedObjectModel = {
@@ -89,7 +89,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         if coordinator!.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: nil, error: &error) == nil {
             coordinator = nil
             // Report any error we got.
-            let dict = NSMutableDictionary()
+            var dict = [String: AnyObject]()
             dict[NSLocalizedDescriptionKey] = "Failed to initialize the application's saved data"
             dict[NSLocalizedFailureReasonErrorKey] = failureReason
             dict[NSUnderlyingErrorKey] = error
@@ -129,4 +129,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     }
     
 }
-

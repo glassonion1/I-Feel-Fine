@@ -55,7 +55,7 @@ class DetailViewController: UITableViewController {
     override func tableView(tableView: UITableView,
         cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
             // テーブルセルオブジェクトの取得
-            let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
+            let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
             // ラベル
             let label = labels[indexPath.row] as Dictionary;
             // ストーリーボード上で設置したラベルオブジェクトをタグを使って取得する
