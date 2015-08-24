@@ -125,6 +125,7 @@ class ViewController: UIViewController, SKProductsRequestDelegate, SKPaymentTran
     }
     
     @IBAction func respondToRestoreButtonClick() {
+        SKPaymentQueue.defaultQueue().addTransactionObserver(self)
         SKPaymentQueue.defaultQueue().restoreCompletedTransactions()
     }
 }
